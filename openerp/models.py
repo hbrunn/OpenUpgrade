@@ -3291,7 +3291,7 @@ class BaseModel(object):
             instance) for ``self`` in cache.
         """
         # fetch the records of this model without field_name in their cache
-        records = self._in_cache_without(field)
+        records = self._in_cache_without(field, self.env.field_todo(field))
 
         # determine which fields can be prefetched
         fs = {field}
@@ -3317,9 +3317,6 @@ class BaseModel(object):
                 # discard fields with groups that the user may not access
                 if not (f.groups and not self.user_has_groups(f.groups))
             )
-
-        # special case: discard records to recompute for field
-        records -= self.env.field_todo(field)
 
         # in onchange mode, discard computed fields and fields in cache
         if self.env.in_onchange:
@@ -5812,7 +5809,7 @@ class BaseModel(object):
         return RecordCache(self)
 
     @api.model
-    def _in_cache_without(self, field):
+    def _in_cache_without(self, field, exclude_records=None):
         """ Make sure ``self`` is present in cache (for prefetching), and return
             the records of model ``self`` in cache that have no value for ``field``
             (:class:`Field` instance).
@@ -5820,7 +5817,11 @@ class BaseModel(object):
         env = self.env
         prefetch_ids = env.prefetch[self._name]
         prefetch_ids.update(self._ids)
-        ids = filter(None, prefetch_ids - set(env.cache[field]))
+        ids = [
+            i for i in prefetch_ids
+            if i not in env.cache[field]
+            and (not exclude_records or i not in exclude_records._ids)
+        ]
         return self.browse(ids)
 
     @api.model

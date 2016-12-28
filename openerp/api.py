@@ -44,7 +44,7 @@ import logging
 import operator
 
 from inspect import currentframe, getargspec
-from collections import defaultdict, MutableMapping
+from collections import defaultdict, MutableMapping, OrderedDict
 from contextlib import contextmanager
 from pprint import pformat
 from weakref import WeakSet
@@ -975,7 +975,7 @@ class Environments(object):
     """ A common object for all environments in a request. """
     def __init__(self):
         self.envs = WeakSet()           # weak set of environments
-        self.todo = {}                  # recomputations {field: [records]}
+        self.todo = OrderedDict()       # recomputations {field: [records]}
         self.mode = False               # flag for draft/onchange
         self.recompute = True
         self.recompute_old = []        # list of old api compute fields to recompute
