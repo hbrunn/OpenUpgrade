@@ -5,6 +5,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 import operator
+import logging
 from openupgradelib import openupgrade, openupgrade_90
 from openerp.modules.registry import RegistryManager
 from psycopg2.extensions import AsIs
@@ -16,6 +17,9 @@ account_type_map = [
     ('account.conf_account_type_tax',
      'account.data_account_type_current_liabilities'),
 ]
+
+
+_logger = logging.getLogger(__name__)
 
 
 def map_bank_state(cr):
@@ -462,8 +466,12 @@ def fill_move_taxes(env):
 
     * If the tax code is present in only one tax as tax code, then we can fill
       tax_line_id with that tax.
-    * If there are more than one tax with that tax code, try to match tax lines
-      with the name of the move line.
+    * If there are more than one tax with that tax code, search only active
+      taxes
+    * If also then there are multiple taxes, try to match tax lines
+      with the name of the move line, first for all taxes, then only for active
+      ones
+    * Log a warning if nothing could be found
 
     Base amounts
     ------------
@@ -490,13 +498,18 @@ def fill_move_taxes(env):
     for row in env.cr.fetchall():
         tax_code_id = row[0]
         # TAX AMOUNT
-        env.cr.execute(
+        query = (
             """SELECT COUNT(*), MAX(id) FROM account_tax
-            WHERE tax_code_id=%(tax_code_id)s
-            OR ref_tax_code_id=%(tax_code_id)s""",
-            {'tax_code_id': tax_code_id},
+            WHERE (tax_code_id=%(tax_code_id)s
+            OR ref_tax_code_id=%(tax_code_id)s)"""
         )
+        params = {'tax_code_id': tax_code_id}
+        env.cr.execute(query, params)
         row_tax = env.cr.fetchone()
+        if row_tax[0] > 1:
+            env.cr.execute(query + ' AND active', params)
+            row_tax2 = env.cr.fetchone()
+            row_tax = row_tax2[0] and row_tax2 or row_tax
         if row_tax[0] == 1:
             openupgrade.logged_query(
                 env.cr,
@@ -514,7 +527,7 @@ def fill_move_taxes(env):
             )
             for row_name in env.cr.fetchall():
                 # Look for a match also on translated terms
-                env.cr.execute(
+                query = (
                     """SELECT COUNT(DISTINCT(t.id)), MAX(t.id)
                     FROM account_tax t
                     LEFT JOIN ir_translation tr
@@ -526,12 +539,19 @@ def fill_move_taxes(env):
                     AND (
                         t.name = %(name)s OR
                         tr.value = %(name)s
-                    )""", {
-                        'tax_code_id': tax_code_id,
-                        'name': row_name[0],
-                    },
+                    )"""
                 )
+                params = {
+                    'tax_code_id': tax_code_id,
+                    'name': row_name[0],
+                }
+
+                env.cr.execute(query, params)
                 row_tax = env.cr.fetchone()
+                if row_tax[0] > 1:
+                    env.cr.execute(query + ' AND t.active', params)
+                    row_tax2 = env.cr.fetchone()
+                    row_tax = row_tax2[0] and row_tax2 or row_tax
                 if row_tax[0] == 1:
                     openupgrade.logged_query(
                         env.cr,
@@ -540,6 +560,11 @@ def fill_move_taxes(env):
                         WHERE tax_code_id = %s
                         AND name = %s
                         """, (row_tax[1], tax_code_id, row_name[0])
+                    )
+                else:
+                    _logger.warning(
+                        'Could not find a unique tax for tax code %d',
+                        tax_code_id,
                     )
         # BASE AMOUNT
         env.cr.execute(
