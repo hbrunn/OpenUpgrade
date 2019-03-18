@@ -45,6 +45,7 @@ def fork_off_system_user(env):
     user_admin = env.ref('base.user_root').copy({
         'partner_id': partner_admin.id,
         'login': login,
+        # TODO: needs to be done with sql
         'password': user_root.password,
         'password_crypt': 'password_crypt' in user_root._fields and
         user_root.password_crypt or False,
