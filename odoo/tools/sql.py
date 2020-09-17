@@ -208,8 +208,14 @@ def create_unique_index(cr, indexname, tablename, expressions):
 
 def drop_index(cr, indexname, tablename):
     """ Drop the given index if it exists. """
-    cr.execute('DROP INDEX IF EXISTS "{}"'.format(indexname))
-    _schema.debug("Table %r: dropped index %r", tablename, indexname)
+    # OpenUpgrade: do not drop indexes
+    # Odoo will drop any index that is defined in any other module than the module
+    # that adds the column itself. Such indexes were supposedly added by customization
+    # modules because they were needed in real life scenarios. Typically, removing
+    # such indexes are harmful to the performance of the migration, plus it adds the
+    # cost of re-adding the indexes on the upgrade of the module that defines them.
+    # cr.execute('DROP INDEX IF EXISTS "{}"'.format(indexname))
+    _schema.debug("Table %r: not dropping index %r", tablename, indexname)
 
 def drop_view_if_exists(cr, viewname):
     cr.execute("DROP view IF EXISTS %s CASCADE" % (viewname,))
