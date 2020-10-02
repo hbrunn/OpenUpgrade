@@ -88,6 +88,11 @@ merged_modules = {
     'web_sheet_full_width': 'web_responsive',
     # OCA/website
     'website_form_metadata': 'website_form',
+    # VanMoof/odoo-addons
+    'shipping_dynalogic': 'vanmoof_shipping',
+    'vanmoof_paazl': 'vanmoof_shipping',
+    'zb_shipping_base': 'vanmoof_shipping',
+    'zb_shipping_ups': 'vanmoof_shipping',
 }
 
 # only used here for openupgrade_records analysis:
