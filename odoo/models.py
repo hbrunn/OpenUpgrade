@@ -5418,7 +5418,7 @@ class BaseModel(object):
             # determine the fields to recompute
             fs = self.env[field.model_name]._field_computed[field]
             # OpenUpgrade start:
-            _logger.info(
+            _logger.debug(
                 "Actual recompute of field %s for %d recs." %
                 (field, len(recs))
             )
