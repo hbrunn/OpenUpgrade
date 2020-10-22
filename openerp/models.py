@@ -5945,7 +5945,7 @@ class BaseModel(object):
                     )
                     map(recs._recompute_done, fs)
                     continue
-            _logger.info(
+            _logger.debug(
                 "Actual recompute of field %s for %d recs." %
                 (field_key, len(recs))
             )
