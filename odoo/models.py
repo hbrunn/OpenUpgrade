@@ -5312,7 +5312,7 @@ class BaseModel(MetaModel('DummyModel', (object,), {'_register': False})):
                 for f in fs:
                     recs._recompute_done(f)
                 continue
-            _logger.info(
+            _logger.debug(
                 "Actual recompute of field %s for %d recs." %
                 (field_key, len(recs))
             )
