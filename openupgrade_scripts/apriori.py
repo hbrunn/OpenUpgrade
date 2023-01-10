@@ -45,6 +45,8 @@ merged_modules = {
     "sale_project_account": "sale_project",
     "website_sale_delivery_giftcard": "website_sale_loyalty_delivery",
     "website_sale_gift_card": "website_sale_loyalty",
+    # OCA/bank-statement-import
+    "account_statement_import_base": "account_statement_import",
     # OCA/...
 }
 
