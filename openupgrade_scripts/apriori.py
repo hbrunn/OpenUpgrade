@@ -52,6 +52,7 @@ merged_modules = {
     "website_event_track_exhibitor": "website_event_exhibitor",
     "website_form": "website",
     "website_sale_management": "website_sale",
+    "website_legal_page": "account",
     # odoo/design-themes
     "website_animate": "website",
     # odoo/enterprise
