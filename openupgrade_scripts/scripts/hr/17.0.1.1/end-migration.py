@@ -13,6 +13,8 @@ def _merge_employee_contact(env):
         """
         SELECT address_home_id, work_contact_id
         FROM hr_employee
+        WHERE work_contact_id IS NOT NULL AND address_home_id IS NOT NULL
+        AND work_contact_id<>address_home_id
         """
     )
     for address_home_id, work_contact_id in env.cr.fetchall():
