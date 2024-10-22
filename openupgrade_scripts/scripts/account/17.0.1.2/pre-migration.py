@@ -227,6 +227,23 @@ def _am_create_incoterm_location_column(env):
     )
 
 
+def _am_uniquify_name(env):
+    """
+    Make move names unique per journal to satisfy the constraint v17 creates
+    """
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE account_move SET name=name || ' [' || id || ']'
+        FROM (
+            SElECT array_agg(id) ids FROM account_move
+            GROUP BY journal_id, name HAVING COUNT(id)>1
+        ) duplicate_names
+        WHERE account_move.id=ANY(duplicate_names.ids);
+        """,
+    )
+
+
 def _aml_update_invoice_date_like_amount_move(env):
     openupgrade.logged_query(
         env.cr,
@@ -606,6 +623,7 @@ def migrate(env, version):
     _am_create_delivery_date_column(env)
     _am_create_incoterm_location_column(env)
     _aml_update_invoice_date_like_amount_move(env)
+    _am_uniquify_name(env)
     _force_install_account_payment_term_module_module(env)
     _account_payment_term_migration(env)
     _account_report_update_figure_type(env)
