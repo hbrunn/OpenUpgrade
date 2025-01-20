@@ -24,6 +24,12 @@ jobs:
       PGPASSWORD: "odoo"
       PGUSER: "odoo"
     steps:
+      - name: Get number of milestone
+        id: get_milestone
+        run: |
+          echo "number=$(
+            wget -qO- https://api.github.com/repos/OCA/ocb/milestones|jq '.[] | select(.title=="${{ TO_VERSION }}") .number'
+          )" >> "$GITHUB_OUTPUT"
       - name: Configure Postgres
         uses: harmon758/postgresql-action@v1
         with:
@@ -153,11 +159,37 @@ jobs:
           print(analysis_wizard.log)
           EOF
           kill -s KILL $ODOO_PID
+      - name: Determine changed addons
+        id: generate_body
+        env:
+          OPENUPGRADE_DIR: openupgrade-${{ env.TO_VERSION }}
+          PR_BODY: pr_body.txt
+        run: |
+          git -C $OPENUPGRADE_DIR add .
+
+          echo "Analysis or noupdate changes for modules marked as done:
+
+          " > "$PR_BODY"
+
+          for module in $(
+            git -C $OPENUPGRADE_DIR status --short | awk '{print $2}' | awk -F/ '{print $3}' | sort -u
+          ); do
+            if grep -qE "\<$module\>.*\<(Done|No)"; then
+              echo "- $module" >> $PR_BODY
+            fi
+          done
+
+          if ! grep -q - $PR_BODY; then
+            echo None >> $PR_BODY
+          fi
+
+          echo "body-file=$PR_BODY" >> "$GITHUB_OUTPUT"
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
         with:
           path: "openupgrade-${{ env.TO_VERSION }}"
           branch: "${{ env.TO_VERSION }}-update-analysis-bot"
-          milestone: "${{ env.TO_VERSION }}"
+          milestone: "${{ steps.get_milestone.outputs.number }}"
           commit-message: "[${{ env.TO_VERSION }}][UPD] analysis files"
           title: "[${{ env.TO_VERSION }}][UPD] analysis files"
+          body-path: "${{ steps.generate_body.outputs.body-file }}"
