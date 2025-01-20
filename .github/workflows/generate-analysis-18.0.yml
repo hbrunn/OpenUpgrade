@@ -92,7 +92,6 @@ jobs:
           pip install asn1crypto
           odoo -s -c odoo-$TO_VERSION.cfg --addons-path server-tools-$TO_VERSION,openupgrade-$TO_VERSION --stop-after-init
       - name: Create previous Odoo database
-        if: false
         env:
           ODOO: env-${{ env.FROM_VERSION }}/bin/odoo -c odoo-${{ env.FROM_VERSION }}.cfg -d ${{ env.FROM_VERSION }}
           ODOO_SHELL: env-${{ env.FROM_VERSION }}/bin/odoo shell -c odoo-${{ env.FROM_VERSION }}.cfg -d ${{ env.FROM_VERSION }}
@@ -109,7 +108,6 @@ jobs:
           env.cr.commit()
           EOF
       - name: Create current Odoo database
-        if: false
         env:
           ODOO: env-${{ env.TO_VERSION }}/bin/odoo -c odoo-${{ env.TO_VERSION }}.cfg -d ${{ env.TO_VERSION }}
           ODOO_SHELL: env-${{ env.TO_VERSION }}/bin/odoo shell -c odoo-${{ env.TO_VERSION }}.cfg -d ${{ env.TO_VERSION }}
@@ -137,8 +135,8 @@ jobs:
           done
       - name: Create analysis
         env:
-          FROM_ODOO: env-${{ env.FROM_VERSION }}/bin/odoo -c odoo-${{ env.FROM_VERSION }} -d ${{ env.FROM_VERSION }}
-          TO_ODOO_SHELL: env-${{ env.TO_VERSION }}/bin/odoo shell -c odoo-${{ env.TO_VERSION }} -d ${{ env.TO_VERSION }}
+          FROM_ODOO: env-${{ env.FROM_VERSION }}/bin/odoo -c odoo-${{ env.FROM_VERSION }}.cfg -d ${{ env.FROM_VERSION }}
+          TO_ODOO_SHELL: env-${{ env.TO_VERSION }}/bin/odoo shell -c odoo-${{ env.TO_VERSION }}.cfg -d ${{ env.TO_VERSION }}
         run: |
           $FROM_ODOO --max-cron-threads=0 &
           ODOO_PID=$!
