@@ -133,11 +133,3 @@ jobs:
           print(analysis_wizard.log)
           EOF
           kill -s KILL $ODOO_PID
-      - name: Create PR
-        uses: peter-evans/create-pull-request@v7
-        with:
-          path: openupgrade-{{ env.TO_VERSION }}
-          title: [{{ env.TO_VERSION}}][OU-UPD] updated analysis files
-          commit-message: [{{ env.TO_VERSION}}][OU-UPD] updated analysis files
-          branch: {{ env.TO_VERSION }}-update_analysis
-          milestone: {{ env.TO_VERSION }}
