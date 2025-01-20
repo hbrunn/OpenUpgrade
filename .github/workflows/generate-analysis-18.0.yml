@@ -24,6 +24,13 @@ jobs:
       PGPASSWORD: "odoo"
       PGUSER: "odoo"
     steps:
+      - name: Get number of milestone
+        id: get_milestone
+        run: |
+          echo "number=$(
+            wget -qO- https://api.github.com/repos/OCA/ocb/milestones|jq '.[] | select(.title=="${{ env.TO_VERSION }}") .number'
+          )" >> "$GITHUB_OUTPUT"
+          cat $GITHUB_OUTPUT
       - name: Configure Postgres
         uses: harmon758/postgresql-action@v1
         with:
