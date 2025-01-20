@@ -143,3 +143,4 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
         with:
+          branch: openupgrade-18.0
