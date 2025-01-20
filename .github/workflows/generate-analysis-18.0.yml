@@ -43,32 +43,36 @@ jobs:
               python3-werkzeug \
               python3-yaml \
               unixodbc-dev
-      - name: Checkout OpenUpgrade ${{ env.FROM_VERSION }}
+      - name: Checkout previous OpenUpgrade
         uses: actions/checkout@v4
         with:
           ref: "${{ env.FROM_VERSION }}"
           path: openupgrade-${{ env.FROM_VERSION }}
-      - name: Checkout OpenUpgrade ${{ env.TO_VERSION }} from current branch
+      - name: Checkout OpenUpgrade from current branch
         uses: actions/checkout@v4
         with:
           path: openupgrade-${{ env.TO_VERSION }}
-      - name: Install Odoo ${{ env.TO_VERSION }}
+      - name: Install previous Odoo
         run: |
-          wget -O- https://github.com/oca/ocb/archive/refs/heads/$FROM_VERSION.tar.gz | tar -xz
-          wget -O- https://github.com/oca/server-tools/archive/refs/heads/$FROM_VERSION.tar.gz | tar -xz
+          wget -q -O- https://github.com/oca/ocb/archive/refs/heads/$FROM_VERSION.tar.gz | tar -xz
+          wget -q -O- https://github.com/oca/server-tools/archive/refs/heads/$FROM_VERSION.tar.gz | tar -xz
           python -mvenv env-$FROM_VERSION
           . env-$FROM_VERSION/bin/activate
-          pip install OCB-$FROM_VERSION server-tools-$FROM_VERSION/requirements.txt openupgrade-$FROM_VERSION/requirements.txt
+          pip install OCB-$FROM_VERSION
+          pip install -r server-tools-$FROM_VERSION/requirements.txt
+          pip install -r openupgrade-$FROM_VERSION/requirements.txt
           odoo -c odoo-$FROM_VERSION.cfg --addons-path server-tools-$FROM_VERSION openupgrade-$FROM_VERSION --stop-after-init
-      - name: Install Odoo ${{ env.TO_VERSION }}
+      - name: Install current Odoo
         run: |
-          wget -O- https://github.com/oca/ocb/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
-          wget -O- https://github.com/oca/server-tools/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
+          wget -q -O- https://github.com/oca/ocb/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
+          wget -q -O- https://github.com/oca/server-tools/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
           python -mvenv env-$TO_VERSION
           . env-$TO_VERSION/bin/activate
-          pip install OCB-$TO_VERSION server-tools-$TO_VERSION/requirements.txt  openupgrade-$TO_VERSION/requirements.txt
+          pip install OCB-$TO_VERSION
+          pip install -r server-tools-$TO_VERSION/requirements.txt
+          pip install -r openupgrade-$TO_VERSION/requirements.txt
           odoo -c odoo-$TO_VERSION.cfg --addons-path server-tools-$TO_VERSION openupgrade-$TO_VERSION --stop-after-init
-      - name: Create ${{ env.FROM_VERSION }} database
+      - name: Create previous Odoo database
         env:
           ODOO: env-${{ env.FROM_VERSION }}/bin/odoo -c odoo-${{ env.FROM_VERSION }} -d ${{ env.FROM_VERSION }}
           ODOO_SHELL: env-${{ env.FROM_VERSION }}/bin/odoo shell -c odoo-${{ env.FROM_VERSION }} -d ${{ env.FROM_VERSION }}
@@ -84,7 +88,7 @@ jobs:
           env['upgrade.generate.record.wizard'].create({}).generate()
           env.cr.commit()
           EOF
-      - name: Create ${{ env.TO_VERSION }} database
+      - name: Create current Odoo database
         env:
           ODOO: env-${{ env.TO_VERSION }}/bin/odoo -c odoo-${{ env.TO_VERSION }} -d ${{ env.TO_VERSION }}
           ODOO_SHELL: env-${{ env.TO_VERSION }}/bin/odoo shell -c odoo-${{ env.TO_VERSION }} -d ${{ env.TO_VERSION }}
