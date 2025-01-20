@@ -17,6 +17,7 @@ env:
 
 jobs:
   generate-analysis:
+    if: github.repository == 'OCA/OpenUpgrade' || github.repository == 'hbrunn/OpenUpgrade'
     runs-on: ubuntu-latest
     env:
       PGHOST: "localhost"
@@ -91,11 +92,12 @@ jobs:
           pip install asn1crypto
           odoo -s -c odoo-$TO_VERSION.cfg --addons-path server-tools-$TO_VERSION,openupgrade-$TO_VERSION --stop-after-init
       - name: Create previous Odoo database
+        if: false
         env:
           ODOO: env-${{ env.FROM_VERSION }}/bin/odoo -c odoo-${{ env.FROM_VERSION }}.cfg -d ${{ env.FROM_VERSION }}
           ODOO_SHELL: env-${{ env.FROM_VERSION }}/bin/odoo shell -c odoo-${{ env.FROM_VERSION }}.cfg -d ${{ env.FROM_VERSION }}
         run: |
-          $ODOO -i upgrade_analysis --stop-after-init
+          $ODOO --without-demo=all -i upgrade_analysis --stop-after-init
           $ODOO_SHELL <<EOF
           install_wizard = env['upgrade.install.wizard'].create({})
           install_wizard.select_odoo_modules()
@@ -107,11 +109,12 @@ jobs:
           env.cr.commit()
           EOF
       - name: Create current Odoo database
+        if: false
         env:
           ODOO: env-${{ env.TO_VERSION }}/bin/odoo -c odoo-${{ env.TO_VERSION }}.cfg -d ${{ env.TO_VERSION }}
           ODOO_SHELL: env-${{ env.TO_VERSION }}/bin/odoo shell -c odoo-${{ env.TO_VERSION }}.cfg -d ${{ env.TO_VERSION }}
         run: |
-          $ODOO -i upgrade_analysis --stop-after-init
+          $ODOO --without-demo=all -i upgrade_analysis --stop-after-init
           $ODOO_SHELL <<EOF
           install_wizard = env['upgrade.install.wizard'].create({})
           install_wizard.select_odoo_modules()
@@ -122,10 +125,6 @@ jobs:
           env['upgrade.generate.record.wizard'].create({}).generate()
           env.cr.commit()
           EOF
-      - name: Configure git
-        uses: oleksiyrudenko/gha-git-credentials@v2-latest
-        with:
-          global: true
       - name: Delete all files to be generated from repository
         env:
           OPENUPGRADE_DIR: openupgrade-${{ env.TO_VERSION }}
