@@ -12,8 +12,8 @@ on:
 #    - cron: "0 4 1-8 * 1"
 
 env:
-  FROM_VERSION: 17.0
-  TO_VERSION: 18.0
+  FROM_VERSION: "17.0"
+  TO_VERSION: "18.0"
 
 jobs:
   generate-analysis:
@@ -46,7 +46,7 @@ jobs:
       - name: Checkout OpenUpgrade ${{ env.FROM_VERSION }}
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.FROM_VERSION }}
+          ref: "${{ env.FROM_VERSION }}"
           path: openupgrade-${{ env.FROM_VERSION }}
       - name: Checkout OpenUpgrade ${{ env.TO_VERSION }} from current branch
         uses: actions/checkout@v4
@@ -135,3 +135,5 @@ jobs:
           kill -s KILL $ODOO_PID
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
+        with:
+          path: "openupgrade-${{ env.TO_VERSION }}"
