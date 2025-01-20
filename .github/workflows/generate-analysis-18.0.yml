@@ -19,6 +19,10 @@ jobs:
   generate-analysis:
     runs-on: ubuntu-latest
     steps:
+      - name: Configure Postgres
+        uses: harmon758/postgresql-action@v1
+        with:
+          postgresql version: "14"
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
