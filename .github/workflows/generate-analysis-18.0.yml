@@ -24,14 +24,6 @@ jobs:
       PGPASSWORD: "odoo"
       PGUSER: "odoo"
     steps:
-      - name: Get number of milestone
-        id: get_milestone2
-        run: |
-          echo "number=$(
-            wget -qO- https://api.github.com/repos/OCA/ocb/milestones|jq '.[] | select(.title=="${{ env.TO_VERSION }}") .number'
-          )" >> "$GITHUB_OUTPUT"
-          wget -qO- https://api.github.com/repos/OCA/ocb/milestones|jq '.[] | select(.title=="${{ env.TO_VERSION }}") .number'
-          cat $GITHUB_OUTPUT
       - name: Configure Postgres
         uses: harmon758/postgresql-action@v1
         with:
@@ -186,6 +178,8 @@ jobs:
             if grep -qE "\<$module\>.*\<((Done)|(No))" $OPENUPGRADE_DIR/docsource/modules*; then
               echo Done module $module was updated
               echo "- $module" >> $PR_BODY
+            else
+              echo $module is not done yet
             fi
           done
 
@@ -198,7 +192,7 @@ jobs:
         id: get_milestone
         run: |
           echo "number=$(
-            wget -qO- https://api.github.com/repos/OCA/ocb/milestones|jq '.[] | select(.title=="${{ env.TO_VERSION }}") .number'
+            wget -qO- https://api.github.com/repos/${{ github.repository }}/milestones|jq '.[] | select(.title=="${{ env.TO_VERSION }}") .number'
           )" >> "$GITHUB_OUTPUT"
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
