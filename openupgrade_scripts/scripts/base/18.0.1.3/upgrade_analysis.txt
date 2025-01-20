@@ -66,6 +66,7 @@ base         / res.currency             / iso_numeric (integer)         : NEW
 base         / res.device.log           / browser (char)                : NEW
 base         / res.device.log           / city (char)                   : NEW
 base         / res.device.log           / country (char)                : NEW
+base         / res.device.log           / device_type (selection)       : NEW selection_keys: ['computer', 'mobile']
 base         / res.device.log           / first_activity (datetime)     : NEW
 base         / res.device.log           / ip_address (char)             : NEW
 base         / res.device.log           / last_activity (datetime)      : NEW
