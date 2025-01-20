@@ -63,7 +63,7 @@ jobs:
           pip install ./OCB-$FROM_VERSION
           pip install -r server-tools-$FROM_VERSION/requirements.txt
           pip install -r openupgrade-$FROM_VERSION/requirements.txt
-          odoo -c odoo-$FROM_VERSION.cfg --addons-path server-tools-$FROM_VERSION,openupgrade-$FROM_VERSION --stop-after-init
+          odoo -s -c odoo-$FROM_VERSION.cfg --addons-path server-tools-$FROM_VERSION,openupgrade-$FROM_VERSION --stop-after-init
       - name: Install current Odoo
         run: |
           wget -q -O- https://github.com/oca/ocb/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
@@ -74,11 +74,11 @@ jobs:
           pip install ./OCB-$TO_VERSION
           pip install -r server-tools-$TO_VERSION/requirements.txt
           pip install -r openupgrade-$TO_VERSION/requirements.txt
-          odoo -c odoo-$TO_VERSION.cfg --addons-path server-tools-$TO_VERSION,openupgrade-$TO_VERSION --stop-after-init
+          odoo -s -c odoo-$TO_VERSION.cfg --addons-path server-tools-$TO_VERSION,openupgrade-$TO_VERSION --stop-after-init
       - name: Create previous Odoo database
         env:
-          ODOO: env-${{ env.FROM_VERSION }}/bin/odoo -c odoo-${{ env.FROM_VERSION }} -d ${{ env.FROM_VERSION }}
-          ODOO_SHELL: env-${{ env.FROM_VERSION }}/bin/odoo shell -c odoo-${{ env.FROM_VERSION }} -d ${{ env.FROM_VERSION }}
+          ODOO: env-${{ env.FROM_VERSION }}/bin/odoo -c odoo-${{ env.FROM_VERSION }}.cfg -d ${{ env.FROM_VERSION }}
+          ODOO_SHELL: env-${{ env.FROM_VERSION }}/bin/odoo shell -c odoo-${{ env.FROM_VERSION }}.cfg -d ${{ env.FROM_VERSION }}
         run: |
           $ODOO -i upgrade_analysis --stop-after-init
           $ODOO_SHELL <<EOF
@@ -93,8 +93,8 @@ jobs:
           EOF
       - name: Create current Odoo database
         env:
-          ODOO: env-${{ env.TO_VERSION }}/bin/odoo -c odoo-${{ env.TO_VERSION }} -d ${{ env.TO_VERSION }}
-          ODOO_SHELL: env-${{ env.TO_VERSION }}/bin/odoo shell -c odoo-${{ env.TO_VERSION }} -d ${{ env.TO_VERSION }}
+          ODOO: env-${{ env.TO_VERSION }}/bin/odoo -c odoo-${{ env.TO_VERSION }}.cfg -d ${{ env.TO_VERSION }}
+          ODOO_SHELL: env-${{ env.TO_VERSION }}/bin/odoo shell -c odoo-${{ env.TO_VERSION }}.cfg -d ${{ env.TO_VERSION }}
         run: |
           $ODOO -i upgrade_analysis --stop-after-init
           $ODOO_SHELL <<EOF
@@ -107,7 +107,8 @@ jobs:
           env['upgrade.generate.record.wizard'].create({}).generate()
           env.cr.commit()
           EOF
-      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+      - name: Configure git
+        uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
           global: true
       - name: Delete all files to be generated from repository
@@ -118,7 +119,7 @@ jobs:
             if [ ! -f $file ]; then
               continue
             fi
-            git -C $OPENUPGRADE_DIR rm --quiet ${file#$OPENUPGRADE_DIR/}
+            git -C $OPENUPGRADE_DIR rm ${file#$OPENUPGRADE_DIR/}
           done
       - name: Create analysis
         env:
@@ -143,4 +144,8 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
         with:
+          path: "openupgrade-${{ env.TO_VERSION }}"
+          branch: "${{ env.TO_VERSION }}-update-analysis-bot"
+          milestone: "${{ env.TO_VERSION }}"
           commit-message: "[${{ env.TO_VERSION }}][UPD] analysis files"
+          title: "[${{ env.TO_VERSION }}][UPD] analysis files"
