@@ -58,10 +58,10 @@ jobs:
           wget -q -O- https://github.com/oca/server-tools/archive/refs/heads/$FROM_VERSION.tar.gz | tar -xz
           python -mvenv env-$FROM_VERSION
           . env-$FROM_VERSION/bin/activate
+          pip install -r OCB-$FROM_VERSION/requirements.txt
           pip install ./OCB-$FROM_VERSION
           pip install -r server-tools-$FROM_VERSION/requirements.txt
           pip install -r openupgrade-$FROM_VERSION/requirements.txt
-          pip install lxml[html_clean]
           odoo -c odoo-$FROM_VERSION.cfg --addons-path server-tools-$FROM_VERSION openupgrade-$FROM_VERSION --stop-after-init
       - name: Install current Odoo
         run: |
@@ -69,6 +69,7 @@ jobs:
           wget -q -O- https://github.com/oca/server-tools/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
           python -mvenv env-$TO_VERSION
           . env-$TO_VERSION/bin/activate
+          pip install -r OCB-$TO_VERSION/requirements.txt
           pip install ./OCB-$TO_VERSION
           pip install -r server-tools-$TO_VERSION/requirements.txt
           pip install -r openupgrade-$TO_VERSION/requirements.txt
