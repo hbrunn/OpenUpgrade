@@ -135,5 +135,3 @@ jobs:
           kill -s KILL $ODOO_PID
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
-        with:
-          title: [${{ env.TO_VERSION }}][OU-UPD] updated analysis files
