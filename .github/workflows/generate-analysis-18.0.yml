@@ -143,4 +143,6 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: openupgrade-${{ env.TO_VERSION }}
+          branch: ${{ env.TO_VERSION }}-update-analysis
+          path: openupgrade-${{ env.TO_VERSION }}
+          commit-message: [${{ env.TO_VERSION }}][UPD] analysis files
