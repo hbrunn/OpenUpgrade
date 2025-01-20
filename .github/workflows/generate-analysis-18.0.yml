@@ -28,7 +28,7 @@ jobs:
         id: get_milestone
         run: |
           echo "number=$(
-            wget -qO- https://api.github.com/repos/OCA/ocb/milestones|jq '.[] | select(.title=="${{ TO_VERSION }}") .number'
+            wget -qO- https://api.github.com/repos/OCA/ocb/milestones|jq '.[] | select(.title=="${{ env.TO_VERSION }}") .number'
           )" >> "$GITHUB_OUTPUT"
       - name: Configure Postgres
         uses: harmon758/postgresql-action@v1
