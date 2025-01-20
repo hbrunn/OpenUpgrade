@@ -63,7 +63,7 @@ jobs:
           pip install ./OCB-$FROM_VERSION
           pip install -r server-tools-$FROM_VERSION/requirements.txt
           pip install -r openupgrade-$FROM_VERSION/requirements.txt
-          odoo -c odoo-$FROM_VERSION.cfg --addons-path server-tools-$FROM_VERSION openupgrade-$FROM_VERSION --stop-after-init
+          odoo -c odoo-$FROM_VERSION.cfg --addons-path server-tools-$FROM_VERSION,openupgrade-$FROM_VERSION --stop-after-init
       - name: Install current Odoo
         run: |
           wget -q -O- https://github.com/oca/ocb/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
@@ -74,7 +74,7 @@ jobs:
           pip install ./OCB-$TO_VERSION
           pip install -r server-tools-$TO_VERSION/requirements.txt
           pip install -r openupgrade-$TO_VERSION/requirements.txt
-          odoo -c odoo-$TO_VERSION.cfg --addons-path server-tools-$TO_VERSION openupgrade-$TO_VERSION --stop-after-init
+          odoo -c odoo-$TO_VERSION.cfg --addons-path server-tools-$TO_VERSION,openupgrade-$TO_VERSION --stop-after-init
       - name: Create previous Odoo database
         env:
           ODOO: env-${{ env.FROM_VERSION }}/bin/odoo -c odoo-${{ env.FROM_VERSION }} -d ${{ env.FROM_VERSION }}
@@ -142,3 +142,4 @@ jobs:
           kill -s KILL $ODOO_PID
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
+        with:
