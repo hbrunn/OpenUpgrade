@@ -6,6 +6,7 @@ to help the matching process
 renamed_modules = {
     # odoo
     # odoo/enterprise
+    'account_accountant': 'accountant',
     # OCA/...
 }
 
