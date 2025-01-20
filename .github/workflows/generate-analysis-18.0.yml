@@ -61,6 +61,7 @@ jobs:
           pip install ./OCB-$FROM_VERSION
           pip install -r server-tools-$FROM_VERSION/requirements.txt
           pip install -r openupgrade-$FROM_VERSION/requirements.txt
+          pip install lxml[html_clean]
           odoo -c odoo-$FROM_VERSION.cfg --addons-path server-tools-$FROM_VERSION openupgrade-$FROM_VERSION --stop-after-init
       - name: Install current Odoo
         run: |
