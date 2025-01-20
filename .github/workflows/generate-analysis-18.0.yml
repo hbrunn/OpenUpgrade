@@ -144,5 +144,4 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           branch: ${{ env.TO_VERSION }}-update-analysis
-          path: openupgrade-${{ env.TO_VERSION }}
           commit-message: [${{ env.TO_VERSION }}][UPD] analysis files
