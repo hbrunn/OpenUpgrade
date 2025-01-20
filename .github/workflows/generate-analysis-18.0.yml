@@ -9,7 +9,7 @@ on:
     paths: ["openupgrade_scripts/apriori.py"]
   schedule:
     # first monday in month
-    - cron: "0 4 1-8 * 1"
+    - cron: "0 4 * Mon *"
 
 env:
   FROM_VERSION: "17.0"
@@ -60,8 +60,15 @@ jobs:
           ref: "${{ env.FROM_VERSION }}"
           path: openupgrade-${{ env.FROM_VERSION }}
       - name: Checkout OpenUpgrade from current branch
+        if: github.event_name != 'schedule'
         uses: actions/checkout@v4
         with:
+          path: openupgrade-${{ env.TO_VERSION }}
+      - name: Checkout current OpenUpgrade
+        if: github.event_name == 'schedule'
+        uses: actions/checkout@v4
+        with:
+          ref: "${{ env.TO_VERSION }}"
           path: openupgrade-${{ env.TO_VERSION }}
       - name: Install previous Odoo
         run: |
@@ -168,7 +175,7 @@ jobs:
           for module in $(
             git -C $OPENUPGRADE_DIR status --short | awk '{print $2}' | awk -F/ '{print $3}' | sort -u
           ); do
-            if grep -qE "\<$module\>.*\<(Done|No)"; then
+            if grep -qE "\<$module\>.*\<((Done)|(No))" $OPENUPGRADE_DIR/docsource/modules*; then
               echo "- $module" >> $PR_BODY
             fi
           done
@@ -187,9 +194,11 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
         with:
-          path: "openupgrade-${{ env.TO_VERSION }}"
-          branch: "${{ env.TO_VERSION }}-update-analysis-bot"
-          milestone: "${{ steps.get_milestone.outputs.number }}"
-          commit-message: "[${{ env.TO_VERSION }}][UPD] analysis files"
-          title: "[${{ env.TO_VERSION }}][UPD] analysis files"
+          base: "${{ env.TO_VERSION }}"
           body-path: "${{ steps.generate_body.outputs.body-file }}"
+          branch: "${{ env.TO_VERSION }}-update-analysis-bot"
+          commit-message: "[${{ env.TO_VERSION }}][UPD] analysis files"
+          delete-branch: true
+          milestone: "${{ steps.get_milestone.outputs.number }}"
+          path: "openupgrade-${{ env.TO_VERSION }}"
+          title: "[${{ env.TO_VERSION }}][UPD] analysis files"
