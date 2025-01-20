@@ -32,6 +32,17 @@ def _fix_serbian_res_lang_record(cr):
     )
 
 
+def _fix_company_layout_background(cr):
+    """
+    res.company#layout_background has lost the geometric option
+    """
+    openupgrade.logged_query(
+        cr,
+        "UPDATE res_company SET layout_background='Blank' "
+        "WHERE layout_background='Geometric'",
+    )
+
+
 @openupgrade.migrate(use_env=False)
 def migrate(cr, version):
     openupgrade.update_module_names(cr, renamed_modules.items())
@@ -41,3 +52,4 @@ def migrate(cr, version):
 
     _fix_list_view_type(cr)
     _fix_serbian_res_lang_record(cr)
+    _fix_company_layout_background(cr)

@@ -6,4 +6,5 @@ env["res.partner"].with_company(env.ref("base.main_company")).create(
         "barcode": "barcode main company",
     }
 )
+env.ref("base.main_company").layout_background = "Geometric"
 env.cr.commit()

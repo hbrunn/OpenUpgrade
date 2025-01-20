@@ -14,3 +14,9 @@ class TestBaseMigration(TransactionCase):
             .with_company(self.env.ref("base.main_company"))
             .search([("barcode", "=", "barcode main company")]),
         )
+
+    def test_res_company_report_layout(self):
+        """
+        Be sure that 'Geometric' was changed to 'Blank'
+        """
+        self.assertEqual(self.env.ref("base.main_company").layout_background, "Blank")
