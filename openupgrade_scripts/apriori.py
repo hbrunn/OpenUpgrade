@@ -28,3 +28,4 @@ merged_models = {
     # odoo
     # OCA/...
 }
+
