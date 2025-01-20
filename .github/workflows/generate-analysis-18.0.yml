@@ -25,11 +25,12 @@ jobs:
       PGUSER: "odoo"
     steps:
       - name: Get number of milestone
-        id: get_milestone
+        id: get_milestone2
         run: |
           echo "number=$(
             wget -qO- https://api.github.com/repos/OCA/ocb/milestones|jq '.[] | select(.title=="${{ env.TO_VERSION }}") .number'
           )" >> "$GITHUB_OUTPUT"
+          wget -qO- https://api.github.com/repos/OCA/ocb/milestones|jq '.[] | select(.title=="${{ env.TO_VERSION }}") .number'
           cat $GITHUB_OUTPUT
       - name: Configure Postgres
         uses: harmon758/postgresql-action@v1
@@ -183,6 +184,7 @@ jobs:
             git -C $OPENUPGRADE_DIR status --short | awk '{print $2}' | awk -F/ '{print $3}' | sort -u
           ); do
             if grep -qE "\<$module\>.*\<((Done)|(No))" $OPENUPGRADE_DIR/docsource/modules*; then
+              echo Done module $module was updated
               echo "- $module" >> $PR_BODY
             fi
           done
