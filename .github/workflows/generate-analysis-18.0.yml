@@ -133,8 +133,7 @@ jobs:
           print(analysis_wizard.log)
           EOF
           kill -s KILL $ODOO_PID
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+      - uses: peter-evans/create-pull-request@v7
         with:
           path: openupgrade-{{ env.TO_VERSION }}
           title: [{{ env.TO_VERSION}}][OU-UPD] updated analysis files
