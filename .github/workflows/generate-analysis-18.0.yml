@@ -18,11 +18,17 @@ env:
 jobs:
   generate-analysis:
     runs-on: ubuntu-latest
+    env:
+      PGHOST: "localhost"
+      PGPASSWORD: "odoo"
+      PGUSER: "odoo"
     steps:
       - name: Configure Postgres
         uses: harmon758/postgresql-action@v1
         with:
           postgresql version: "14"
+          postgresql user: ${PGUSER}
+          postgresql password: ${PGPASSWORD}
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
