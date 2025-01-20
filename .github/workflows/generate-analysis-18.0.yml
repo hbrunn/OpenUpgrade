@@ -43,16 +43,16 @@ jobs:
               python3-werkzeug \
               python3-yaml \
               unixodbc-dev
-      - name: Checkout OpenUpgrade {{ env.FROM_VERSION }}
+      - name: Checkout OpenUpgrade ${{ env.FROM_VERSION }}
         uses: actions/checkout@v4
         with:
-          ref: {{ env.FROM_VERSION }}
-          path: openupgrade-{{ env.FROM_VERSION }}
-      - name: Checkout OpenUpgrade {{ env.TO_VERSION }} from current branch
+          ref: ${{ env.FROM_VERSION }}
+          path: openupgrade-${{ env.FROM_VERSION }}
+      - name: Checkout OpenUpgrade ${{ env.TO_VERSION }} from current branch
         uses: actions/checkout@v4
         with:
-          path: openupgrade-{{ env.TO_VERSION }}
-      - name: Install Odoo {{ env.TO_VERSION }}
+          path: openupgrade-${{ env.TO_VERSION }}
+      - name: Install Odoo ${{ env.TO_VERSION }}
         run: |
           wget -O- https://github.com/oca/ocb/archive/refs/heads/$FROM_VERSION.tar.gz | tar -xz
           wget -O- https://github.com/oca/server-tools/archive/refs/heads/$FROM_VERSION.tar.gz | tar -xz
@@ -60,7 +60,7 @@ jobs:
           . env-$FROM_VERSION/bin/activate
           pip install OCB-$FROM_VERSION server-tools-$FROM_VERSION/requirements.txt openupgrade-$FROM_VERSION/requirements.txt
           odoo -c odoo-$FROM_VERSION.cfg --addons-path server-tools-$FROM_VERSION openupgrade-$FROM_VERSION --stop-after-init
-      - name: Install Odoo {{ env.TO_VERSION }}
+      - name: Install Odoo ${{ env.TO_VERSION }}
         run: |
           wget -O- https://github.com/oca/ocb/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
           wget -O- https://github.com/oca/server-tools/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
@@ -68,10 +68,10 @@ jobs:
           . env-$TO_VERSION/bin/activate
           pip install OCB-$TO_VERSION server-tools-$TO_VERSION/requirements.txt  openupgrade-$TO_VERSION/requirements.txt
           odoo -c odoo-$TO_VERSION.cfg --addons-path server-tools-$TO_VERSION openupgrade-$TO_VERSION --stop-after-init
-      - name: Create {{ env.FROM_VERSION }} database
+      - name: Create ${{ env.FROM_VERSION }} database
         env:
-          ODOO: env-{{ env.FROM_VERSION }}/bin/odoo -c odoo-{{ env.FROM_VERSION }} -d {{ env.FROM_VERSION }}
-          ODOO_SHELL: env-{{ env.FROM_VERSION }}/bin/odoo shell -c odoo-{{ env.FROM_VERSION }} -d {{ env.FROM_VERSION }}
+          ODOO: env-${{ env.FROM_VERSION }}/bin/odoo -c odoo-${{ env.FROM_VERSION }} -d ${{ env.FROM_VERSION }}
+          ODOO_SHELL: env-${{ env.FROM_VERSION }}/bin/odoo shell -c odoo-${{ env.FROM_VERSION }} -d ${{ env.FROM_VERSION }}
         run: |
           $ODOO -i upgrade_analysis --stop-after-init
           $ODOO_SHELL <<EOF
@@ -84,10 +84,10 @@ jobs:
           env['upgrade.generate.record.wizard'].create({}).generate()
           env.cr.commit()
           EOF
-      - name: Create {{ env.TO_VERSION }} database
+      - name: Create ${{ env.TO_VERSION }} database
         env:
-          ODOO: env-{{ env.TO_VERSION }}/bin/odoo -c odoo-{{ env.TO_VERSION }} -d {{ env.TO_VERSION }}
-          ODOO_SHELL: env-{{ env.TO_VERSION }}/bin/odoo shell -c odoo-{{ env.TO_VERSION }} -d {{ env.TO_VERSION }}
+          ODOO: env-${{ env.TO_VERSION }}/bin/odoo -c odoo-${{ env.TO_VERSION }} -d ${{ env.TO_VERSION }}
+          ODOO_SHELL: env-${{ env.TO_VERSION }}/bin/odoo shell -c odoo-${{ env.TO_VERSION }} -d ${{ env.TO_VERSION }}
         run: |
           $ODOO -i upgrade_analysis --stop-after-init
           $ODOO_SHELL <<EOF
@@ -105,7 +105,7 @@ jobs:
           global: true
       - name: Delete all files to be generated from repository
         env:
-          OPENUPGRADE_DIR: openupgrade-{{ env.TO_VERSION }}
+          OPENUPGRADE_DIR: openupgrade-${{ env.TO_VERSION }}
         run: |
           for file in $OPENUPGRADE_DIR/openupgrade_scripts/scripts/*/*/{noupdate_changes.xml,upgrade_analysis.txt}; do
             if [ ! -f $file ]; then
@@ -115,14 +115,14 @@ jobs:
           done
       - name: Create analysis
         env:
-          FROM_ODOO: env-{{ env.FROM_VERSION }}/bin/odoo -c odoo-{{ env.FROM_VERSION }} -d {{ env.FROM_VERSION }}
-          TO_ODOO_SHELL: env-{{ env.TO_VERSION }}/bin/odoo shell -c odoo-{{ env.TO_VERSION }} -d {{ env.TO_VERSION }}
+          FROM_ODOO: env-${{ env.FROM_VERSION }}/bin/odoo -c odoo-${{ env.FROM_VERSION }} -d ${{ env.FROM_VERSION }}
+          TO_ODOO_SHELL: env-${{ env.TO_VERSION }}/bin/odoo shell -c odoo-${{ env.TO_VERSION }} -d ${{ env.TO_VERSION }}
         run: |
           $FROM_ODOO --max-cron-threads=0 &
           ODOO_PID=$!
           $TO_ODOO_SHELL <<EOF
           config = env['upgrade.comparison.config'].create({
-              'database': '{{ env.FROM_VERSION }}',
+              'database': '${{ env.FROM_VERSION }}',
           })
           analysis_wizard = env['upgrade.analysis'].create({
               'config_id': config.id,
@@ -133,3 +133,10 @@ jobs:
           print(analysis_wizard.log)
           EOF
           kill -s KILL $ODOO_PID
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          path: openupgrade-${{ env.TO_VERSION }}
+          title: [${{ env.TO_VERSION}}][OU-UPD] updated analysis files
+          commit-message: [${{ env.TO_VERSION}}][OU-UPD] updated analysis files
+          branch: ${{ env.TO_VERSION }}-up
