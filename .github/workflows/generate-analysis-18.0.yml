@@ -8,8 +8,8 @@ on:
     # might cause changes in the analysis
     paths: ["openupgrade_scripts/apriori.py"]
   schedule:
-    # first monday in month
-    - cron: "0 4 * Mon *"
+    # every monday at 04:00
+    - cron: "0 4 * 1 *"
 
 env:
   FROM_VERSION: "17.0"
