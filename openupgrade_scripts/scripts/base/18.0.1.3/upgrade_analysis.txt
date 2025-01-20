@@ -16,7 +16,6 @@ base         / ir.actions.client        / path (char)                   : NEW
 base         / ir.actions.report        / domain (char)                 : NEW
 base         / ir.actions.report        / path (char)                   : NEW
 base         / ir.actions.server        / path (char)                   : NEW
-base         / ir.cron                  / doall (boolean)               : DEL
 base         / ir.cron                  / failure_count (integer)       : NEW hasdefault: default
 base         / ir.cron                  / first_failure_date (datetime) : NEW
 base         / ir.cron                  / interval_number (integer)     : now required
