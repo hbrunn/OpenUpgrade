@@ -21,6 +21,12 @@ on:
       to_version_requirements_sed:
         default: '/^gevent\>/d; /^greenlet\>/d'
         type: string
+      python_version:
+        default: "3.10"
+        type: string
+      postgres_version:
+        default: "14"
+        type: string
 
 jobs:
   generate-analysis:
@@ -37,13 +43,13 @@ jobs:
       - name: Configure Postgres
         uses: harmon758/postgresql-action@v1
         with:
-          postgresql version: "14"
+          postgresql version: "${{ inputs.postgres_version }}"
           postgresql user: ${PGUSER}
           postgresql password: ${PGPASSWORD}
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "${{ inputs.python_version }}"
       - name: Install required packages
         run: |
           sudo apt update
@@ -70,12 +76,12 @@ jobs:
           ref: "${{ env.FROM_VERSION }}"
           path: openupgrade-${{ env.FROM_VERSION }}
       - name: Checkout OpenUpgrade from current branch
-        if: github.event_name != 'schedule'
+        if: github.event_name != 'schedule' && startsWith(github.ref_name, env.TO_VERSION)
         uses: actions/checkout@v4
         with:
           path: openupgrade-${{ env.TO_VERSION }}
       - name: Checkout current OpenUpgrade
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || !startsWith(github.ref_name, env.TO_VERSION)
         uses: actions/checkout@v4
         with:
           ref: "${{ env.TO_VERSION }}"
