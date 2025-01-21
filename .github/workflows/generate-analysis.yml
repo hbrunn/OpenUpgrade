@@ -90,7 +90,7 @@ jobs:
           python -mvenv env-$TO_VERSION
           . env-$TO_VERSION/bin/activate
           pip install gevent==22.10.2 greenlet==2.0.2
-          sed -iE '/^gevent\>/d; /^greenlet\>/d' OCB-$FROM_VERSION/requirements.txt
+          sed -iE '/^gevent\>/d; /^greenlet\>/d' OCB-$TO_VERSION/requirements.txt
           pip install -r OCB-$TO_VERSION/requirements.txt
           pip install ./OCB-$TO_VERSION
           pip install -r server-tools-$TO_VERSION/requirements.txt
