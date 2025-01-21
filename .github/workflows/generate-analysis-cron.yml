@@ -11,6 +11,7 @@ on:
 
 jobs:
   generate-analysis15:
+    if: github.event_name == 'schedule'
     uses: ./.github/workflows/generate-analysis.yml
     with:
       from_version: "14.0"
@@ -21,11 +22,13 @@ jobs:
       from_version: "15.0"
       to_version: "16.0"
   generate-analysis17:
+    if: github.event_name == 'schedule'
     uses: ./.github/workflows/generate-analysis.yml
     with:
       from_version: "16.0"
       to_version: "17.0"
   generate-analysis18:
+    if: github.event_name == 'schedule'
     uses: ./.github/workflows/generate-analysis.yml
     with:
       from_version: "17.0"
