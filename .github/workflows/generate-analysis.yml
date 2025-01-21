@@ -6,8 +6,20 @@ on:
       from_version:
         required: true
         type: string
+      from_version_requirements:
+        default: 'gevent==22.10.2 greenlet==2.0.2'
+        type: string
+      from_version_requirements_sed:
+        default: '/^gevent\>/d; /^greenlet\>/d'
+        type: string
       to_version:
         required: true
+        type: string
+      to_version_requirements:
+        default: 'gevent==22.10.2 greenlet==2.0.2'
+        type: string
+      to_version_requirements_sed:
+        default: '/^gevent\>/d; /^greenlet\>/d'
         type: string
 
 jobs:
@@ -74,8 +86,8 @@ jobs:
           wget -q -O- https://github.com/oca/server-tools/archive/refs/heads/$FROM_VERSION.tar.gz | tar -xz
           python -mvenv env-$FROM_VERSION
           . env-$FROM_VERSION/bin/activate
-          pip install gevent==22.10.2 greenlet==2.0.2
-          sed -iE '/^gevent\>/d; /^greenlet\>/d' OCB-$FROM_VERSION/requirements.txt
+          pip install ${{ inputs.from_version_requirements }}
+          sed -iE '${{ inputs.from_version_requirements_sed }}' OCB-$FROM_VERSION/requirements.txt
           pip install -r OCB-$FROM_VERSION/requirements.txt
           pip install ./OCB-$FROM_VERSION
           pip install -r server-tools-$FROM_VERSION/requirements.txt
@@ -89,8 +101,8 @@ jobs:
           wget -q -O- https://github.com/oca/server-tools/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
           python -mvenv env-$TO_VERSION
           . env-$TO_VERSION/bin/activate
-          pip install gevent==22.10.2 greenlet==2.0.2
-          sed -iE '/^gevent\>/d; /^greenlet\>/d' OCB-$TO_VERSION/requirements.txt
+          pip install ${{ inputs.to_version_requirements }}
+          sed -iE '${{ inputs.to_version_requirements_sed }}' OCB-$TO_VERSION/requirements.txt
           pip install -r OCB-$TO_VERSION/requirements.txt
           pip install ./OCB-$TO_VERSION
           pip install -r server-tools-$TO_VERSION/requirements.txt

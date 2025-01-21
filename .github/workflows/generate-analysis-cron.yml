@@ -11,10 +11,12 @@ on:
 
 jobs:
   generate-analysis15:
-    if: github.event_name == 'schedule'
+#    if: github.event_name == 'schedule'
     uses: ./.github/workflows/generate-analysis.yml
     with:
       from_version: "14.0"
+      from_version_requirements: 'gevent==22.10.2 greenlet==2.0.2 Pillow==9.0.1'
+      from_version_requirements_sed: '/^gevent\>/d; /^greenlet\>/d; /^Pillow\>/d'
       to_version: "15.0"
   generate-analysis16:
     uses: ./.github/workflows/generate-analysis.yml
