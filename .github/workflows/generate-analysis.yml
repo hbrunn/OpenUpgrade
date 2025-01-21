@@ -74,7 +74,7 @@ jobs:
           wget -q -O- https://github.com/oca/server-tools/archive/refs/heads/$FROM_VERSION.tar.gz | tar -xz
           python -mvenv env-$FROM_VERSION
           . env-$FROM_VERSION/bin/activate
-          pip install gevent==21.8.0 greenlet==12.0.2
+          pip install gevent==22.10.2 greenlet==2.0.2
           sed -iE '/^gevent\>/d; /^greenlet\>/d' OCB-$FROM_VERSION/requirements.txt
           pip install -r OCB-$FROM_VERSION/requirements.txt
           pip install ./OCB-$FROM_VERSION
@@ -89,7 +89,7 @@ jobs:
           wget -q -O- https://github.com/oca/server-tools/archive/refs/heads/$TO_VERSION.tar.gz | tar -xz
           python -mvenv env-$TO_VERSION
           . env-$TO_VERSION/bin/activate
-          pip install gevent==21.8.0 greenlet==12.0.2
+          pip install gevent==22.10.2 greenlet==2.0.2
           sed -iE '/^gevent\>/d; /^greenlet\>/d' OCB-$FROM_VERSION/requirements.txt
           pip install -r OCB-$TO_VERSION/requirements.txt
           pip install ./OCB-$TO_VERSION
