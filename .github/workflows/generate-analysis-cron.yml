@@ -10,6 +10,11 @@ on:
     - cron: "0 4 * 1 *"
 
 jobs:
+  generate-analysis15:
+    uses: ./.github/workflows/generate-analysis.yml
+    with:
+      from_version: "14.0"
+      to_version: "15.0"
   generate-analysis16:
     uses: ./.github/workflows/generate-analysis.yml
     with:
@@ -23,5 +28,5 @@ jobs:
   generate-analysis18:
     uses: ./.github/workflows/generate-analysis.yml
     with:
-      from_version: "15.0"
-      to_version: "16.0"
+      from_version: "17.0"
+      to_version: "18.0"
