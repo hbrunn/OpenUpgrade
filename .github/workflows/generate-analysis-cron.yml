@@ -1,0 +1,27 @@
+name: Generate analysis files - cron and push
+
+on:
+  push:
+    # when module merges are added to apriori, this
+    # might cause changes in the analysis
+    paths: ["openupgrade_scripts/apriori.py"]
+  schedule:
+    # every monday at 04:00
+    - cron: "0 4 * 1 *"
+
+jobs:
+  generate-analysis16:
+    uses: ./.github/workflows/generate-analysis.yml
+    with:
+      from_version: "15.0"
+      to_version: "16.0"
+  generate-analysis17:
+    uses: ./.github/workflows/generate-analysis.yml
+    with:
+      from_version: "16.0"
+      to_version: "17.0"
+  generate-analysis18:
+    uses: ./.github/workflows/generate-analysis.yml
+    with:
+      from_version: "15.0"
+      to_version: "16.0"
