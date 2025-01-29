@@ -1621,6 +1621,8 @@ DEL account.fiscal.position.tax.template: l10n_es.fptt_reagyp_a_4b_1
 DEL account.fiscal.position.tax.template: l10n_es.fptt_reagyp_a_4b_2
 DEL account.fiscal.position.tax.template: l10n_es.fptt_reagyp_a_4b_3
 DEL account.fiscal.position.tax.template: l10n_es.fptt_reagyp_a_4b_4
+DEL account.fiscal.position.tax.template: l10n_es.fptt_reagyp_a_4b_6
+DEL account.fiscal.position.tax.template: l10n_es.fptt_reagyp_a_4b_7
 DEL account.fiscal.position.tax.template: l10n_es.fptt_reagyp_gp_4b_1
 DEL account.fiscal.position.tax.template: l10n_es.fptt_reagyp_gp_4b_2
 DEL account.fiscal.position.tax.template: l10n_es.fptt_recargo7-5b

@@ -366,6 +366,13 @@ DEL account.group.template: l10n_ee.ee_group_66
 DEL account.group.template: l10n_ee.ee_group_67
 DEL account.group.template: l10n_ee.ee_group_68
 DEL account.group.template: l10n_ee.ee_group_70
+NEW account.report: l10n_ee.tax_report [renamed from l10n_ma module]
+DEL account.report: l10n_ee.tax_report_vat [renamed to l10n_ma module]
+NEW account.report.expression: l10n_ee.tax_report_line_1_1_tax_tag
+NEW account.report.expression: l10n_ee.tax_report_line_1_tax_tag
+NEW account.report.expression: l10n_ee.tax_report_line_2_1_tax_tag
+NEW account.report.expression: l10n_ee.tax_report_line_2_tax_tag
+NEW account.report.expression: l10n_ee.tax_report_line_4_tag_no_rounding
 DEL account.tax.group: l10n_ee.tax_group_vat_0 (noupdate)
 DEL account.tax.group: l10n_ee.tax_group_vat_20 (noupdate)
 DEL account.tax.group: l10n_ee.tax_group_vat_22 (noupdate)

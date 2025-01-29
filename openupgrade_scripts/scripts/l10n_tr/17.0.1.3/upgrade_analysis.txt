@@ -357,6 +357,7 @@ NEW account.report.expression: l10n_tr.purchases_wh_expression_7_balance
 NEW account.report.expression: l10n_tr.purchases_wh_expression_7_tax
 NEW account.report.expression: l10n_tr.purchases_wh_expression_9_balance
 NEW account.report.expression: l10n_tr.purchases_wh_expression_9_tax
+NEW account.report.expression: l10n_tr.sales_vat_expression_0_balance
 NEW account.report.expression: l10n_tr.sales_vat_expression_10_balance
 NEW account.report.expression: l10n_tr.sales_vat_expression_10_tax
 NEW account.report.expression: l10n_tr.sales_vat_expression_1_balance
@@ -399,6 +400,7 @@ NEW account.report.line: l10n_tr.purchases_wh_line_5
 NEW account.report.line: l10n_tr.purchases_wh_line_7
 NEW account.report.line: l10n_tr.purchases_wh_line_9
 NEW account.report.line: l10n_tr.sales_vat
+NEW account.report.line: l10n_tr.sales_vat_line_0
 NEW account.report.line: l10n_tr.sales_vat_line_1
 NEW account.report.line: l10n_tr.sales_vat_line_10
 NEW account.report.line: l10n_tr.sales_vat_line_20

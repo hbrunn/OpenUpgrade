@@ -77,8 +77,6 @@ DEL ir.model.access: hr.access_hr_plan_employee
 DEL ir.model.access: hr.access_hr_plan_hr_user
 DEL ir.model.access: hr.access_hr_plan_wizard
 NEW ir.rule: hr.ir_rule_hr_contract_type_multi_company (noupdate)
-NEW ir.rule: hr.ir_rule_res_partner_bank_employees (noupdate)
-NEW ir.rule: hr.ir_rule_res_partner_bank_internal_users (noupdate)
 NEW ir.rule: hr.mail_plan_rule_group_hr_manager (noupdate)
 NEW ir.rule: hr.mail_plan_templates_rule_group_hr_manager (noupdate)
 DEL ir.rule: hr.hr_plan_activity_type_company_rule (noupdate)

@@ -113,6 +113,8 @@ DEL account.group.template: l10n_il.il_group_200200
 DEL account.group.template: l10n_il.il_group_201000
 DEL account.group.template: l10n_il.il_group_202000
 DEL account.group.template: l10n_il.il_group_300000
+NEW account.report.expression: l10n_il.account_tax_report_line_in_balance_18_tag
+NEW account.report.line: l10n_il.account_tax_report_line_in_balance_18
 DEL account.tax.group: l10n_il.tax_group_vat_16 (noupdate)
 DEL account.tax.group: l10n_il.tax_group_vat_17 (noupdate)
 DEL account.tax.group: l10n_il.tax_group_vat_exempt (noupdate)

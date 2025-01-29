@@ -30,6 +30,7 @@ account      / account.account.template / tag_ids (many2many)           : DEL re
 account      / account.account.template / tax_ids (many2many)           : DEL relation: account.tax.template
 account      / account.account.template / website_message_ids (one2many): DEL relation: mail.message
 account      / account.bank.statement.line / amount_total_words (char)     : previously in module l10n_dz
+account      / account.bank.statement.line / quick_encoding_vals (binary)  : type is now 'json' ('binary')
 account      / account.bank.statement.line / transaction_details (json)    : NEW
 account      / account.chart.template   / account_ids (one2many)        : DEL relation: account.account.template
 account      / account.chart.template   / account_journal_early_pay_discount_gain_account_id (many2one): DEL relation: account.account.template
@@ -109,6 +110,7 @@ account      / account.move             / delivery_date (date)          : NEW is
 account      / account.move             / incoterm_location (char)      : NEW hasdefault: compute
 account      / account.move             / invoice_payment_term_id (many2one): now a function
 account      / account.move             / invoice_pdf_report_file (binary): NEW attachment: True
+account      / account.move             / quick_encoding_vals (binary)  : type is now 'json' ('binary')
 account      / account.move             / rating_ids (one2many)         : NEW relation: rating.rating
 account      / account.move             / send_and_print_values (json)  : NEW
 account      / account.move             / show_update_fpos (boolean)    : NEW
@@ -122,6 +124,7 @@ account      / account.payment          / activity_user_id (many2one)   : not re
 account      / account.payment          / activity_user_id (many2one)   : now a function
 account      / account.payment          / amount_total_words (char)     : previously in module l10n_dz
 account      / account.payment          / qr_code (char)                : type is now 'html' ('char')
+account      / account.payment          / quick_encoding_vals (binary)  : type is now 'json' ('binary')
 account      / account.payment          / rating_ids (one2many)         : NEW relation: rating.rating
 account      / account.payment.term     / discount_days (integer)       : NEW hasdefault: default
 account      / account.payment.term     / discount_percentage (float)   : NEW hasdefault: default
@@ -310,7 +313,6 @@ DEL ir.model.access: account.access_account_reconcile_model_line_template
 DEL ir.model.access: account.access_account_reconcile_model_template
 DEL ir.model.access: account.access_account_tax_repartition_line_template_manager
 DEL ir.model.access: account.access_account_tax_template
-DEL ir.model.access: account.access_product_template_account_manager
 NEW ir.model.constraint: account.constraint_account_account_tag_name_uniq
 NEW ir.model.constraint: account.constraint_account_move_unique_name [renamed from account_sequence module]
 NEW ir.model.constraint: account.constraint_account_report_expression_domain_engine_subformula_required
@@ -322,7 +324,6 @@ DEL ir.model.constraint: account.constraint_account_tax_template_name_company_un
 DEL ir.model.constraint: account_sequence.constraint_account_move_unique_name [renamed to account module]
 NEW ir.module.category: account.module_category_accounting_bank
 NEW ir.rule: account.account_move_send_rule_group_invoice (noupdate)
-NEW ir.rule: account.ir_rule_res_partner_bank_billing_officers (noupdate)
 NEW ir.rule: account.tax_group_comp_rule (noupdate)
 DEL ir.rule: account.account_invoice_send_rule_group_invoice (noupdate)
 DEL ir.sequence: account.sequence_reconcile_seq (noupdate)
