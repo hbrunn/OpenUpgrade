@@ -16,7 +16,6 @@ NEW ir.actions.act_window: hr_attendance.hr_attendance_management_action
 NEW ir.actions.client: hr_attendance.hr_attendance_action_install_kiosk_pwa
 NEW ir.actions.server: hr_attendance.action_load_demo_data
 NEW ir.actions.server: hr_attendance.action_try_kiosk
-DEL ir.actions.server: hr_attendance.open_kiosk_url
 NEW ir.cron: hr_attendance.hr_attendance_absence_cron
 NEW ir.cron: hr_attendance.hr_attendance_check_out_cron
 NEW ir.ui.menu: hr_attendance.menu_action_open_form

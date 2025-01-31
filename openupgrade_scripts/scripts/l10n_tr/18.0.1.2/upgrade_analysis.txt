@@ -3,3 +3,5 @@
 l10n_tr      / account.journal          / l10n_tr_default_sales_return_account_id (many2one): NEW relation: account.account, hasdefault: compute
 l10n_tr      / product.template         / l10n_tr_default_sales_return_account_id (many2one): NEW relation: account.account
 ---XML records in module 'l10n_tr'---
+DEL account.report.expression: l10n_tr.sales_vat_expression_0_balance
+DEL account.report.line: l10n_tr.sales_vat_line_0

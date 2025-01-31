@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="paperformat_l10n_sa_a4" model="report.paperformat">
+    <field name="header_spacing">52</field>
+    <field name="margin_top">52</field>
+    <field name="margin_left">0</field>
+    <field name="margin_right">0</field>
+  </record>
+</odoo>
