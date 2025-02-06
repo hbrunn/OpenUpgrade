@@ -14,6 +14,38 @@ def _stock_move_convert_analytic_account_line_id_m2o_to_m2m(env):
     )
 
 
+def fill_account_move_line_cogs_origin_id(env):
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE account_move_line aml
+        SET cogs_origin_id = line.id
+        FROM account_move am
+        JOIN account_move_line line ON line.move_id = am.id
+                                    AND line.display_type != 'cogs'
+        WHERE aml.move_id = am.id AND aml.display_type = 'cogs'
+            AND line.product_id = aml.product_id
+            AND line.product_uom_id = aml.product_uom_id
+            AND line.quantity = aml.quantity
+            AND left(line.name, 64) = aml.name""",
+    )
+
+
+def delete_obsolete_ir_model_data(env):
+    xml_ids = [
+        "stock_account.property_stock_account_input_categ_id",
+        "stock_account.property_stock_account_output_categ_id",
+    ]
+    for xml_id in xml_ids:
+        module, name = xml_id.split(".")
+        imd = env["ir.model.data"].search(
+            [("module", "=", module), ("name", "=", name)]
+        )
+        imd.unlink()
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     _stock_move_convert_analytic_account_line_id_m2o_to_m2m(env)
+    fill_account_move_line_cogs_origin_id(env)
+    delete_obsolete_ir_model_data(env)

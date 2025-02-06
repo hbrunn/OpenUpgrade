@@ -1,7 +1,7 @@
 ---Models in module 'stock_account'---
 ---Fields in module 'stock_account'---
 stock_account / account.move.line        / cogs_origin_id (many2one)     : NEW relation: account.move.line
-# NOTHING TO DO: new feature
+# DONE: post-migration: filled using display_type = 'cogs'
 
 stock_account / stock.move               / analytic_account_line_id (many2one): DEL relation: account.analytic.line
 stock_account / stock.move               / analytic_account_line_ids (many2many): NEW relation: account.analytic.line
@@ -17,7 +17,7 @@ NEW ir.filters: stock_account.filter_invoice_inventory_valuation
 
 DEL ir.property: stock_account.property_stock_account_input_categ_id (noupdate)
 DEL ir.property: stock_account.property_stock_account_output_categ_id (noupdate)
-# NOTHING TO DO: New noupdate="1" records
+# DONE: pos-migration: ir.model.data deleted (these properties now are created in function)
 
 NEW ir.ui.menu: stock_account.menu_inventory_aging
 NEW ir.ui.view: stock_account.stock_valuation_layer_graph
