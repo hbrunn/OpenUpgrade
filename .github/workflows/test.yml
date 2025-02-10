@@ -127,6 +127,14 @@ jobs:
           echo Set the modules as not installable if they are not in the following list : $MODULES_OLD
           echo Running $REQUEST
           psql $DB -c "$REQUEST"
+          echo Set chart template to generic for companies with charts from not yet migrated localizations
+          REQUEST="update res_company set chart_template_id=(
+            select res_id from ir_model_data where module='l10n_generic_coa' and name='configurable_chart_template'
+          ) where id in (
+            select res_id from ir_model_data where model='res.company' and module not in
+            ('$(echo $MODULES_OLD | sed -e "s/,/','/g")')
+          )"
+          psql $DB -c "$REQUEST"
           ADDONS_PATHS="\
               $GITHUB_WORKSPACE/odoo/addons \
               $GITHUB_WORKSPACE/odoo/odoo/addons \
