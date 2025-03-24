@@ -31,7 +31,6 @@ on:
 jobs:
   generate-analysis:
     name: Generate analysis ${{ inputs.to_version }}
-    if: github.repository == 'OCA/OpenUpgrade' || github.repository == 'hbrunn/OpenUpgrade'
     runs-on: ubuntu-latest
     env:
       PGHOST: "localhost"

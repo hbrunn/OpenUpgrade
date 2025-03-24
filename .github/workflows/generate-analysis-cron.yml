@@ -12,7 +12,7 @@ on:
 
 jobs:
   generate-analysis18:
-    if: github.event_name == 'schedule' || github.ref_name == '18.0'
+    if: (github.repository == 'OCA/OpenUpgrade' || github.repository == 'hbrunn/OpenUpgrade') && (github.event_name == 'schedule' || github.ref_name == '18.0')
     uses: ./.github/workflows/generate-analysis.yml
     with:
       from_version: "17.0"
