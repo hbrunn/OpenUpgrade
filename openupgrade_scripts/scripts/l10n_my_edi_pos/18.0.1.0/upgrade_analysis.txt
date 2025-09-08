@@ -1,0 +1,52 @@
+---Models in module 'l10n_my_edi_pos'---
+new model myinvois.consolidate.invoice.wizard [transient]
+new model myinvois.document
+new model myinvois.document.status.update.wizard [transient]
+---Fields in module 'l10n_my_edi_pos'---
+l10n_my_edi_pos / account.tax              / l10n_my_tax_exemption_reason (char): NEW
+l10n_my_edi_pos / myinvois.document        / active (boolean)              : NEW hasdefault: default
+l10n_my_edi_pos / myinvois.document        / activity_ids (one2many)       : NEW relation: mail.activity
+l10n_my_edi_pos / myinvois.document        / company_id (many2one)         : NEW relation: res.company, required
+l10n_my_edi_pos / myinvois.document        / currency_id (many2one)        : NEW relation: res.currency, required
+l10n_my_edi_pos / myinvois.document        / invoice_ids (many2many)       : NEW relation: account.move
+l10n_my_edi_pos / myinvois.document        / message_follower_ids (one2many): NEW relation: mail.followers
+l10n_my_edi_pos / myinvois.document        / message_ids (one2many)        : NEW relation: mail.message
+l10n_my_edi_pos / myinvois.document        / myinvois_custom_form_reference (char): NEW
+l10n_my_edi_pos / myinvois.document        / myinvois_document_long_id (char): NEW
+l10n_my_edi_pos / myinvois.document        / myinvois_error_document_hash (char): NEW
+l10n_my_edi_pos / myinvois.document        / myinvois_exemption_reason (char): NEW
+l10n_my_edi_pos / myinvois.document        / myinvois_external_uuid (char) : NEW
+l10n_my_edi_pos / myinvois.document        / myinvois_file (binary)        : NEW attachment: True
+l10n_my_edi_pos / myinvois.document        / myinvois_issuance_date (date) : NEW
+l10n_my_edi_pos / myinvois.document        / myinvois_retry_at (char)      : NEW
+l10n_my_edi_pos / myinvois.document        / myinvois_state (selection)    : NEW selection_keys: ['cancelled', 'in_progress', 'invalid', 'rejected', 'valid']
+l10n_my_edi_pos / myinvois.document        / myinvois_submission_uid (char): NEW
+l10n_my_edi_pos / myinvois.document        / myinvois_validation_time (datetime): NEW
+l10n_my_edi_pos / myinvois.document        / name (char)                   : NEW isfunction: function, stored
+l10n_my_edi_pos / myinvois.document        / pos_config_id (many2one)      : NEW relation: pos.config
+l10n_my_edi_pos / myinvois.document        / pos_order_date_range (char)   : NEW isfunction: function, stored
+l10n_my_edi_pos / myinvois.document        / pos_order_ids (many2many)     : NEW relation: pos.order
+l10n_my_edi_pos / myinvois.document        / rating_ids (one2many)         : NEW relation: rating.rating
+l10n_my_edi_pos / myinvois.document        / sequence_number (integer)     : NEW isfunction: function, stored
+l10n_my_edi_pos / myinvois.document        / sequence_prefix (char)        : NEW isfunction: function, stored
+l10n_my_edi_pos / myinvois.document        / website_message_ids (one2many): NEW relation: mail.message
+l10n_my_edi_pos / pos.order                / consolidated_invoice_ids (many2many): NEW relation: myinvois.document
+---XML records in module 'l10n_my_edi_pos'---
+NEW ir.actions.act_window: l10n_my_edi_pos.action_consolidated_invoices
+NEW ir.actions.server: l10n_my_edi_pos.action_generate_myinvois_document_file
+NEW ir.cron: l10n_my_edi_pos.ir_cron_myinvois_document_sync
+NEW ir.model.access: l10n_my_edi_pos.access_myinvois_consolidate_invoice_wizard_user
+NEW ir.model.access: l10n_my_edi_pos.access_myinvois_document_status_update_wizard_user
+NEW ir.model.access: l10n_my_edi_pos.access_myinvois_document_user
+NEW ir.rule: l10n_my_edi_pos.myinvois_document_comp_rule (noupdate)
+NEW ir.ui.menu: l10n_my_edi_pos.menu_consolidated_invoices
+NEW ir.ui.view: l10n_my_edi_pos.myinvois_consolidate_invoice_wizard_form
+NEW ir.ui.view: l10n_my_edi_pos.myinvois_document_form_view
+NEW ir.ui.view: l10n_my_edi_pos.myinvois_document_list_view
+NEW ir.ui.view: l10n_my_edi_pos.myinvois_document_pos_form_view
+NEW ir.ui.view: l10n_my_edi_pos.myinvois_document_pos_list_view
+NEW ir.ui.view: l10n_my_edi_pos.myinvois_document_status_update_form
+NEW ir.ui.view: l10n_my_edi_pos.myinvois_product_product_view_form_normalized_pos
+NEW ir.ui.view: l10n_my_edi_pos.view_pos_pos_form
+NEW ir.ui.view: l10n_my_edi_pos.view_tax_form_inherit_l10n_my_edi_pos
+NEW res.partner: l10n_my_edi_pos.general_public

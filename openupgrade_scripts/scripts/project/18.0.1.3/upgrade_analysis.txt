@@ -28,14 +28,14 @@ NEW ir.actions.act_window.view: project.project_task_action_from_partner_kanban_
 NEW ir.actions.act_window.view: project.project_task_action_from_partner_tree_view
 NEW ir.embedded.actions: project.project_embedded_action_all_tasks_dashboard
 NEW ir.embedded.actions: project.project_embedded_action_project_updates
-NEW ir.exports: project.project_task_export_template
-NEW ir.exports.line: project.project_task_export_template_line_id
-NEW ir.exports.line: project.project_task_export_template_line_name
-NEW ir.exports.line: project.project_task_export_template_line_project_id
-NEW ir.exports.line: project.project_task_export_template_line_stage_id
-NEW ir.exports.line: project.project_task_export_template_line_state
-NEW ir.exports.line: project.project_task_export_template_line_tag_ids
-NEW ir.exports.line: project.project_task_export_template_line_user_ids
+NEW ir.exports: project.project_task_export_template (noupdate)
+NEW ir.exports.line: project.project_task_export_template_line_id (noupdate)
+NEW ir.exports.line: project.project_task_export_template_line_name (noupdate)
+NEW ir.exports.line: project.project_task_export_template_line_project_id (noupdate)
+NEW ir.exports.line: project.project_task_export_template_line_stage_id (noupdate)
+NEW ir.exports.line: project.project_task_export_template_line_state (noupdate)
+NEW ir.exports.line: project.project_task_export_template_line_tag_ids (noupdate)
+NEW ir.exports.line: project.project_task_export_template_line_user_ids (noupdate)
 NEW ir.model.access: project.access_project_share_collaborator_manager
 NEW ir.rule: project.task_visibility_rule_project_user [renamed from project_todo module] (noupdate)
 NEW ir.ui.view: project.open_view_blocked_by_list_view

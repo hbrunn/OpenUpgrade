@@ -5,7 +5,7 @@ new model purchase.bill.line.match [sql_view]
 purchase     / account.move.line        / is_downpayment (boolean)      : previously in module sale
 purchase     / purchase.order           / amount_total_cc (float)       : NEW isfunction: function, stored
 purchase     / purchase.order           / mail_reception_declined (boolean): NEW
-purchase     / purchase.order.line      / analytic_distribution_search (json): DEL
+purchase     / purchase.order.line      / analytic_distribution_search (json): DEL stored: False
 purchase     / purchase.order.line      / is_downpayment (boolean)      : NEW
 purchase     / purchase.order.line      / product_no_variant_attribute_value_ids (many2many): previously in module purchase_product_matrix
 purchase     / purchase.order.line      / product_template_attribute_value_ids (many2many): previously in module purchase_product_matrix

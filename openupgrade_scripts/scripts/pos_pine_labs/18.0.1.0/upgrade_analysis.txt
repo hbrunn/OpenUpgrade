@@ -1,0 +1,12 @@
+---Models in module 'pos_pine_labs'---
+---Fields in module 'pos_pine_labs'---
+pos_pine_labs / pos.payment              / pine_labs_plutus_transaction_ref (char): NEW
+pos_pine_labs / pos.payment.method       / pine_labs_allowed_payment_mode (selection): NEW selection_keys: ['all', 'card', 'upi']
+pos_pine_labs / pos.payment.method       / pine_labs_client (char)       : NEW
+pos_pine_labs / pos.payment.method       / pine_labs_merchant (char)     : NEW
+pos_pine_labs / pos.payment.method       / pine_labs_security_token (char): NEW
+pos_pine_labs / pos.payment.method       / pine_labs_store (char)        : NEW
+pos_pine_labs / pos.payment.method       / pine_labs_test_mode (boolean) : NEW
+---XML records in module 'pos_pine_labs'---
+NEW ir.ui.view: pos_pine_labs.pos_payment_method_view_form_inherit_pos_pine_labs
+NEW ir.ui.view: pos_pine_labs.view_pos_pos_form_inherit_pos_pine_labs

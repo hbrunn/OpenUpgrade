@@ -13,3 +13,4 @@ NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_OrderType
 NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_PartyType
 NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_PaymentTermsType
 NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_TaxCategoryType
+NEW ir.ui.view: purchase_edi_ubl_bis3.portal_connect_software_modal

@@ -3,6 +3,10 @@ new model product.combo
 new model product.combo.item
 new model update.product.attribute.value [transient]
 ---Fields in module 'product'---
+point_of_sale / product.product          / combo_ids (many2many)         : relation is now 'product.combo' ('pos.combo') [nothing to do]
+point_of_sale / product.template         / combo_ids (many2many)         : column2 is now 'product_combo_id' ('pos_combo_id') [pos_combo_product_template_rel]
+point_of_sale / product.template         / combo_ids (many2many)         : relation is now 'product.combo' ('pos.combo') [nothing to do]
+point_of_sale / product.template         / combo_ids (many2many)         : table is now 'product_combo_product_template_rel' ('pos_combo_product_template_rel')
 product      / product.attribute        / active (boolean)              : NEW hasdefault: default
 product      / product.attribute        / template_value_ids (one2many) : NEW relation: product.template.attribute.value
 product      / product.attribute.value  / active (boolean)              : NEW hasdefault: default
@@ -36,8 +40,11 @@ product      / product.template         / is_favorite (boolean)         : NEW
 product      / product.template         / priority (selection)          : DEL selection_keys: ['0', '1']
 product      / product.template         / service_tracking (selection)  : previously in module sale_project
 product      / product.template         / type (selection)              : now required
-product      / product.template         / type (selection)              : selection_keys is now '['combo', 'consu', 'service']' ('['consu', 'service']')
+product      / product.template         / type (selection)              : selection_keys added: [combo] (most likely nothing to do)
 product      / res.partner              / specific_property_product_pricelist (many2one): NEW relation: product.pricelist
+sale_project / product.product          / service_tracking (selection)  : now required
+sale_project / product.template         / service_tracking (selection)  : now required
+sale_project / product.template         / service_tracking (selection)  : selection_keys removed: [project_only, task_global_project, task_in_project]
 ---XML records in module 'product'---
 NEW ir.actions.act_window: product.product_combo_action
 NEW ir.model.access: product.access_product_combo_item_manager

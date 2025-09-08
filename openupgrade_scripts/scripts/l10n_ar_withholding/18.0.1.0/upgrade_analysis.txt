@@ -10,8 +10,8 @@ l10n_ar_withholding / account.tax              / l10n_ar_scale_id (many2one)   :
 l10n_ar_withholding / account.tax              / l10n_ar_state_id (many2one)   : NEW relation: res.country.state
 l10n_ar_withholding / account.tax              / l10n_ar_tax_type (selection)  : NEW selection_keys: ['earnings', 'earnings_scale', 'iibb_total', 'iibb_untaxed']
 l10n_ar_withholding / l10n_ar.earnings.scale   / line_ids (one2many)           : NEW relation: l10n_ar.earnings.scale.line
-l10n_ar_withholding / l10n_ar.earnings.scale   / name (char)                   : NEW required
-l10n_ar_withholding / l10n_ar.earnings.scale.line / currency_id (many2one)        : NEW relation: res.currency, hasdefault: default
+l10n_ar_withholding / l10n_ar.earnings.scale   / name (char)                   : NEW required, translate
+l10n_ar_withholding / l10n_ar.earnings.scale.line / currency_id (many2one)        : NEW relation: res.currency, hasdefault: default, stored: False
 l10n_ar_withholding / l10n_ar.earnings.scale.line / excess_amount (float)         : NEW
 l10n_ar_withholding / l10n_ar.earnings.scale.line / fixed_amount (float)          : NEW
 l10n_ar_withholding / l10n_ar.earnings.scale.line / percentage (float)            : NEW

@@ -18,6 +18,9 @@
     <field name="description">Task cancelled</field>
     <field name="name">Task Cancelled</field>
   </record>
+  <record id="project_project_stage_3" model="project.project.stage">
+    <field name="name">Cancelled</field>
+  </record>
   <record id="project_task_rule_portal" model="ir.rule">
     <field name="domain_force">[
             ('project_id.privacy_visibility', '=', 'portal'),

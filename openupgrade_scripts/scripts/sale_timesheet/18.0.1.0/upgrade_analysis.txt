@@ -22,3 +22,4 @@ NEW ir.ui.view: sale_timesheet.timesheets_analysis_report_list_inherited
 NEW ir.ui.view: sale_timesheet.view_task_project_user_fsm_graph_base_inherited
 NEW ir.ui.view: sale_timesheet.view_task_project_user_fsm_pivot_base_inherited
 DEL ir.ui.view: sale_timesheet.project_create_sale_order_view_form
+DEL ir.ui.view: sale_timesheet.project_sharing_inherit_project_task_view_tree_sale_timesheet

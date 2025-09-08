@@ -9,6 +9,9 @@
   <record id="account_payment_method_manual_out" model="account.payment.method">
     <field name="name">Manual Payment</field>
   </record>
+  <record id="email_template_edi_credit_note" model="mail.template">
+    <field name="report_template_ids" eval="[]"/>
+  </record>
   <record id="email_template_edi_invoice" model="mail.template">
     <field name="body_html" type="html">
       <div style="margin: 0px; padding: 0px;">
@@ -53,6 +56,7 @@
     </p>
       </div>
     </field>
+    <field name="report_template_ids" eval="[]"/>
   </record>
   <record id="journal_group_comp_rule" model="ir.rule">
     <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'parent_of', company_ids)]</field>

@@ -19,7 +19,7 @@ stock        / stock.move               / location_dest_id (many2one)   : now a 
 stock        / stock.move               / location_final_id (many2one)  : NEW relation: stock.location
 stock        / stock.move               / never_product_template_attribute_value_ids (many2many): NEW relation: product.template.attribute.value
 stock        / stock.move.line          / product_category_name (char)  : not stored anymore
-stock        / stock.picking            / search_date_category (selection): NEW selection_keys: ['after', 'before', 'day_1', 'day_2', 'today', 'yesterday']
+stock        / stock.picking            / search_date_category (selection): NEW selection_keys: ['after', 'before', 'day_1', 'day_2', 'today', 'yesterday'], stored: False
 stock        / stock.picking            / shipping_weight (float)       : previously in module stock_delivery
 stock        / stock.picking            / weight_bulk (float)           : previously in module stock_delivery
 stock        / stock.picking.type       / _order                        : _order is now 'is_favorite desc, sequence, id' ('sequence, id')
@@ -36,7 +36,7 @@ stock        / stock.rule               / location_dest_from_rule (boolean): NEW
 stock        / stock.rule               / push_domain (char)            : NEW
 stock        / stock.scrap              / scrap_reason_tag_ids (many2many): NEW relation: stock.scrap.reason.tag
 stock        / stock.scrap.reason.tag   / color (char)                  : NEW hasdefault: default
-stock        / stock.scrap.reason.tag   / name (char)                   : NEW required
+stock        / stock.scrap.reason.tag   / name (char)                   : NEW required, translate
 stock        / stock.scrap.reason.tag   / sequence (integer)            : NEW hasdefault: default
 stock        / stock.warehouse          / qc_type_id (many2one)         : NEW relation: stock.picking.type
 stock        / stock.warehouse          / store_type_id (many2one)      : NEW relation: stock.picking.type
@@ -44,6 +44,7 @@ stock        / stock.warehouse          / xdock_type_id (many2one)      : NEW re
 stock        / stock.warehouse.orderpoint / qty_to_order (float)          : not stored anymore
 stock        / stock.warehouse.orderpoint / qty_to_order (float)          : now a function
 stock        / stock.warehouse.orderpoint / qty_to_order_manual (float)   : NEW
+stock_delivery / stock.picking            / shipping_weight (float)       : not a function anymore
 ---XML records in module 'stock'---
 NEW digest.tip: stock.digest_tip_stock_1
 NEW ir.actions.act_window: stock.action_get_picking_type_ready_moves

@@ -2,15 +2,15 @@
 new model hr.manager.department.report [abstract]
 ---Fields in module 'hr'---
 hr           / hr.department            / activity_ids (one2many)       : NEW relation: mail.activity
-hr           / hr.department            / has_read_access (boolean)     : NEW
+hr           / hr.department            / has_read_access (boolean)     : NEW stored: False
 hr           / hr.department            / message_has_sms_error (boolean): previously in module sms
 hr           / hr.department            / website_message_ids (one2many): previously in module portal
 hr           / hr.employee              / category_ids (many2many)      : column1 is now 'employee_id' ('emp_id') [employee_category_rel]
 hr           / hr.employee              / distance_home_work (integer)  : NEW
 hr           / hr.employee              / distance_home_work_unit (selection): NEW required, selection_keys: ['kilometers', 'miles'], hasdefault: default
-hr           / hr.employee              / employee_type (selection)     : selection_keys is now '['contractor', 'employee', 'freelance', 'student', 'trainee', 'worker']' ('['contractor', 'employee', 'freelance', 'student', 'trainee']')
-hr           / hr.employee              / hr_icon_display (selection)   : selection_keys is now '['presence_absent', 'presence_archive', 'presence_out_of_working_hour', 'presence_present', 'presence_undetermined']' ('['presence_absent', 'presence_absent_active', 'presence_present', 'presence_to_define', 'presence_undetermined']')
-hr           / hr.employee              / hr_presence_state (selection) : selection_keys is now '['absent', 'archive', 'out_of_working_hour', 'present']' ('['absent', 'present', 'to_define']')
+hr           / hr.employee              / employee_type (selection)     : selection_keys added: [worker] (most likely nothing to do)
+hr           / hr.employee              / hr_icon_display (selection)   : selection_keys added: [presence_archive, presence_out_of_working_hour], removed: [presence_absent_active, presence_to_define]
+hr           / hr.employee              / hr_presence_state (selection) : selection_keys added: [archive, out_of_working_hour], removed: [to_define]
 hr           / hr.employee              / is_flexible (boolean)         : NEW isfunction: function, stored
 hr           / hr.employee              / is_fully_flexible (boolean)   : NEW isfunction: function, stored
 hr           / hr.employee              / km_home_work (integer)        : now a function
@@ -21,7 +21,6 @@ hr           / hr.employee              / website_message_ids (one2many): previo
 hr           / hr.employee.category     / employee_ids (many2many)      : column2 is now 'employee_id' ('emp_id') [employee_category_rel]
 hr           / hr.job                   / message_has_sms_error (boolean): previously in module sms
 hr           / hr.job                   / no_of_hired_employee (integer): module is now 'hr_recruitment' ('hr')
-hr           / hr.job                   / no_of_hired_employee (integer): now a function
 hr           / hr.job                   / website_message_ids (one2many): previously in module portal
 hr           / res.company              / hr_presence_control_attendance (boolean): NEW
 hr           / res.company              / hr_presence_control_email (boolean): NEW

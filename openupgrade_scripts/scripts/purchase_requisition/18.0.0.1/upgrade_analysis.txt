@@ -10,9 +10,9 @@ purchase_requisition / purchase.requisition     / origin (char)                 
 purchase_requisition / purchase.requisition     / reference (char)              : NEW
 purchase_requisition / purchase.requisition     / requisition_type (selection)  : NEW required, selection_keys: ['blanket_order', 'purchase_template'], hasdefault: default
 purchase_requisition / purchase.requisition     / schedule_date (date)          : DEL
-purchase_requisition / purchase.requisition     / state (selection)             : selection_keys is now '['cancel', 'confirmed', 'done', 'draft']' ('['cancel', 'done', 'draft', 'in_progress', 'ongoing', 'open']')
+purchase_requisition / purchase.requisition     / state (selection)             : selection_keys added: [confirmed], removed: [in_progress, ongoing, open]
 purchase_requisition / purchase.requisition     / type_id (many2one)            : DEL relation: purchase.requisition.type, required
-purchase_requisition / purchase.requisition.line / analytic_distribution_search (json): DEL
+purchase_requisition / purchase.requisition.line / analytic_distribution_search (json): DEL stored: False
 purchase_requisition / purchase.requisition.line / schedule_date (date)          : DEL
 purchase_requisition / purchase.requisition.type / active (boolean)              : DEL
 purchase_requisition / purchase.requisition.type / exclusive (selection)         : DEL required, selection_keys: ['exclusive', 'multiple']

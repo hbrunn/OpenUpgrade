@@ -4,7 +4,7 @@ obsolete model repair.warn.uncomplete.move [transient]
 repair       / repair.order             / product_location_dest_id (many2one): NEW relation: stock.location, required, hasdefault: compute
 repair       / repair.order             / product_location_src_id (many2one): NEW relation: stock.location, required, hasdefault: compute
 repair       / repair.order             / repair_properties (properties): NEW hasdefault: compute
-repair       / repair.order             / search_date_category (selection): NEW selection_keys: ['after', 'before', 'day_1', 'day_2', 'today', 'yesterday']
+repair       / repair.order             / search_date_category (selection): NEW selection_keys: ['after', 'before', 'day_1', 'day_2', 'today', 'yesterday'], stored: False
 repair       / stock.picking.type       / default_product_location_dest_id (many2one): NEW relation: stock.location, hasdefault: compute
 repair       / stock.picking.type       / default_product_location_src_id (many2one): NEW relation: stock.location, hasdefault: compute
 repair       / stock.picking.type       / repair_properties_definition (properties_definition): NEW

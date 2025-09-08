@@ -1,0 +1,4 @@
+---Models in module 'l10n_si'---
+---Fields in module 'l10n_si'---
+l10n_si      / account.journal          / invoice_reference_model (False): NEW selection_keys: ['be', 'ch', 'euro', 'fi', 'fi_rf', 'no', 'odoo', 'se_ocr2', 'se_ocr3', 'se_ocr4', 'si'], mode: modify
+---XML records in module 'l10n_si'---

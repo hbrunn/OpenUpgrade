@@ -2,13 +2,13 @@
 obsolete model mrp.document
 new model mrp.batch.produce [transient]
 ---Fields in module 'mrp'---
-mrp          / mrp.document             / _inherits                     : DEL _inherits: {'ir.attachment': 'ir_attachment_id'}
+mrp          / mrp.document             / _inherits                     : DEL _inherits: {'ir.attachment': 'ir_attachment_id'}, stored: False
 mrp          / mrp.document             / active (boolean)              : DEL
 mrp          / mrp.document             / ir_attachment_id (many2one)   : DEL relation: ir.attachment, required
 mrp          / mrp.document             / priority (selection)          : DEL selection_keys: ['0', '1', '2', '3']
 mrp          / mrp.production           / location_final_id (many2one)  : NEW relation: stock.location
 mrp          / mrp.production           / never_product_template_attribute_value_ids (many2many): NEW relation: product.template.attribute.value
-mrp          / mrp.production           / search_date_category (selection): NEW selection_keys: ['after', 'before', 'day_1', 'day_2', 'today', 'yesterday']
+mrp          / mrp.production           / search_date_category (selection): NEW selection_keys: ['after', 'before', 'day_1', 'day_2', 'today', 'yesterday'], stored: False
 mrp          / mrp.routing.workcenter   / activity_ids (one2many)       : NEW relation: mail.activity
 mrp          / mrp.routing.workcenter   / message_follower_ids (one2many): NEW relation: mail.followers
 mrp          / mrp.routing.workcenter   / message_ids (one2many)        : NEW relation: mail.message

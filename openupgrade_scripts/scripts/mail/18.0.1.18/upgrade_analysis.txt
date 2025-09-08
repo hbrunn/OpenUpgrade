@@ -11,14 +11,14 @@ mail         / discuss.channel          / from_message_id (many2one)    : NEW re
 mail         / discuss.channel          / last_interest_dt (datetime)   : NEW
 mail         / discuss.channel          / parent_channel_id (many2one)  : NEW relation: discuss.channel
 mail         / discuss.channel          / sub_channel_ids (one2many)    : NEW relation: discuss.channel
-mail         / discuss.channel.member   / custom_notifications (selection): selection_keys is now '['all', 'mentions', 'no_notif']' ('['mentions', 'no_notif']')
+mail         / discuss.channel.member   / custom_notifications (selection): selection_keys added: [all] (most likely nothing to do)
 mail         / discuss.channel.member   / is_minimized (boolean)        : DEL
 mail         / discuss.channel.member   / is_pinned (boolean)           : not stored anymore
 mail         / discuss.channel.member   / is_pinned (boolean)           : now a function
 mail         / discuss.channel.member   / new_message_separator (integer): NEW required, hasdefault: default
 mail         / discuss.channel.member   / unpin_dt (datetime)           : NEW
-mail         / ir.actions.act_window.view / view_mode (False)             : selection_keys is now '['activity', 'calendar', 'form', 'graph', 'hierarchy', 'kanban', 'list', 'pivot']' ('['activity', 'calendar', 'form', 'gantt', 'graph', 'hierarchy', 'kanban', 'pivot', 'tree']')
-mail         / ir.ui.view               / type (False)                  : selection_keys is now '['activity', 'calendar', 'form', 'graph', 'hierarchy', 'kanban', 'list', 'pivot', 'qweb', 'search']' ('['activity', 'calendar', 'form', 'gantt', 'graph', 'hierarchy', 'kanban', 'pivot', 'qweb', 'search', 'tree']')
+mail         / ir.actions.act_window.view / view_mode (False)             : selection_keys added: [list], removed: [gantt, tree]
+mail         / ir.ui.view               / type (False)                  : selection_keys added: [list], removed: [gantt, tree]
 mail         / mail.activity            / user_tz (selection)           : NEW selection_keys: function, isrelated: related, stored
 mail         / mail.activity.plan.template / delay_count (integer)         : NEW hasdefault: default
 mail         / mail.activity.plan.template / delay_from (selection)        : NEW required, selection_keys: ['after_plan_date', 'before_plan_date'], hasdefault: default

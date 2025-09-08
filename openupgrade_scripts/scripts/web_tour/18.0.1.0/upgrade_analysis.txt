@@ -4,7 +4,7 @@ new model web_tour.tour.step
 web_tour     / res.users                / tour_enabled (boolean)        : NEW hasdefault: compute
 web_tour     / web_tour.tour            / _order                        : _order is now 'sequence, name, id' ('id')
 web_tour     / web_tour.tour            / custom (boolean)              : NEW
-web_tour     / web_tour.tour            / rainbow_man_message (html)    : NEW hasdefault: default
+web_tour     / web_tour.tour            / rainbow_man_message (html)    : NEW hasdefault: default, translate
 web_tour     / web_tour.tour            / sequence (integer)            : NEW hasdefault: default
 web_tour     / web_tour.tour            / step_ids (one2many)           : NEW relation: web_tour.tour.step
 web_tour     / web_tour.tour            / url (char)                    : NEW hasdefault: default

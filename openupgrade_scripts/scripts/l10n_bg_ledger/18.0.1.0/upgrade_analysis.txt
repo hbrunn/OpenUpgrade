@@ -1,0 +1,12 @@
+---Models in module 'l10n_bg_ledger'---
+---Fields in module 'l10n_bg_ledger'---
+l10n_bg_ledger / account.journal          / l10n_bg_credit_notes (selection): NEW selection_keys: function, hasdefault: default
+l10n_bg_ledger / account.journal          / l10n_bg_customer_invoice (selection): NEW selection_keys: function, hasdefault: default
+l10n_bg_ledger / account.journal          / l10n_bg_debit_notes (selection): NEW selection_keys: function, hasdefault: default
+l10n_bg_ledger / account.move             / l10n_bg_document_type (selection): NEW selection_keys: function, hasdefault: compute
+l10n_bg_ledger / account.move             / l10n_bg_exemption_reason (selection): NEW selection_keys: ['01', '02', '03']
+---XML records in module 'l10n_bg_ledger'---
+NEW ir.ui.view: l10n_bg_ledger.l10n_bg_journal_view_form
+NEW ir.ui.view: l10n_bg_ledger.l10n_bg_move_view_filter
+NEW ir.ui.view: l10n_bg_ledger.l10n_bg_move_view_form
+NEW ir.ui.view: l10n_bg_ledger.l10n_bg_move_view_tree

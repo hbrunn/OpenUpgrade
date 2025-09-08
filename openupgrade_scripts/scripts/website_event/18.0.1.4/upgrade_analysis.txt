@@ -41,7 +41,6 @@ DEL ir.actions.act_window: website_event.action_event_registration_report [renam
 NEW ir.filters: website_event.ir_filters_event_list_snippet_unfinished
 DEL ir.model.access: website_event.access_event_question_answer_employee [renamed to event module]
 DEL ir.model.access: website_event.access_event_question_answer_registration [renamed to event module]
-DEL ir.model.access: website_event.access_event_question_answer_user [renamed to event module]
 DEL ir.model.access: website_event.access_event_question_employee
 DEL ir.model.access: website_event.access_event_registration_answer [renamed to event module]
 DEL ir.model.constraint: website_event.constraint_event_registration_answer_value_check [renamed to event module]

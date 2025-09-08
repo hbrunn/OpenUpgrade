@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-  <record id="event_product.product_product_event" model="product.product">
+  <record id="event_product.product_product_event" model="product.product" forcecreate="False">
     <field name="invoice_policy">order</field>
   </record>
 </odoo>

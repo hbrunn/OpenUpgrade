@@ -3,6 +3,7 @@ new model candidate.send.mail [transient]
 new model hr.candidate
 new model hr.job.platform
 ---Fields in module 'hr_recruitment'---
+hr           / hr.job                   / no_of_hired_employee (integer): now a function
 hr_recruitment / calendar.event           / candidate_id (many2one)       : NEW relation: hr.candidate, hasdefault: compute
 hr_recruitment / hr.applicant             / applicant_notes (html)        : NEW
 hr_recruitment / hr.applicant             / availability (date)           : not stored anymore
@@ -34,7 +35,7 @@ hr_recruitment / hr.applicant             / partner_phone (char)          : now 
 hr_recruitment / hr.applicant             / partner_phone_sanitized (char): not a function anymore
 hr_recruitment / hr.applicant             / partner_phone_sanitized (char): not stored anymore
 hr_recruitment / hr.applicant             / partner_phone_sanitized (char): now related
-hr_recruitment / hr.applicant             / phone_mobile_search (char)    : DEL
+hr_recruitment / hr.applicant             / phone_mobile_search (char)    : DEL stored: False
 hr_recruitment / hr.applicant             / phone_sanitized (char)        : DEL
 hr_recruitment / hr.applicant             / refuse_date (datetime)        : NEW
 hr_recruitment / hr.applicant             / type_id (many2one)            : not stored anymore
@@ -62,7 +63,7 @@ hr_recruitment / hr.candidate             / partner_id (many2one)         : NEW 
 hr_recruitment / hr.candidate             / partner_name (char)           : NEW
 hr_recruitment / hr.candidate             / partner_phone (char)          : NEW isfunction: function, stored
 hr_recruitment / hr.candidate             / partner_phone_sanitized (char): NEW isfunction: function, stored
-hr_recruitment / hr.candidate             / phone_mobile_search (char)    : NEW
+hr_recruitment / hr.candidate             / phone_mobile_search (char)    : NEW stored: False
 hr_recruitment / hr.candidate             / phone_sanitized (char)        : NEW isfunction: function, stored
 hr_recruitment / hr.candidate             / priority (selection)          : NEW selection_keys: ['0', '1', '2', '3'], isfunction: function, stored
 hr_recruitment / hr.candidate             / rating_ids (one2many)         : NEW relation: rating.rating
@@ -89,7 +90,6 @@ NEW hr.job.platform: hr_recruitment.indeed_job_platform (noupdate)
 NEW hr.job.platform: hr_recruitment.jobsdb_job_platform (noupdate)
 NEW hr.job.platform: hr_recruitment.linkedin_job_platform (noupdate)
 NEW ir.actions.act_window: hr_recruitment.action_hr_candidate
-NEW ir.actions.act_window: hr_recruitment.action_hr_candidate_mass_sms
 NEW ir.actions.act_window: hr_recruitment.action_hr_job_platforms
 NEW ir.actions.act_window: hr_recruitment.mail_activity_plan_action_config_hr_applicant
 NEW ir.actions.server: hr_recruitment.action_candidate_send_mail

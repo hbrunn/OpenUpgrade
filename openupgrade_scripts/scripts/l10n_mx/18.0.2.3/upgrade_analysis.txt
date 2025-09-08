@@ -1,0 +1,7 @@
+---Models in module 'l10n_mx'---
+---Fields in module 'l10n_mx'---
+l10n_mx      / account.tax              / l10n_mx_tax_type (selection)  : selection_keys added: [local] (most likely nothing to do)
+l10n_mx      / res.bank                 / fiscal_country_codes (char)   : NEW hasdefault: default, stored: False
+l10n_mx      / res.partner.bank         / fiscal_country_codes (char)   : NEW hasdefault: default, stored: False
+---XML records in module 'l10n_mx'---
+DEL ir.ui.view: l10n_mx.res_config_settings_view_form

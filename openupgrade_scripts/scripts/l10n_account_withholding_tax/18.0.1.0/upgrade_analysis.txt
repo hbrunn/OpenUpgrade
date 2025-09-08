@@ -1,0 +1,37 @@
+---Models in module 'l10n_account_withholding_tax'---
+new model account.payment.register.withholding.line [transient]
+new model account.payment.withholding.line
+new model account.withholding.line [abstract]
+---Fields in module 'l10n_account_withholding_tax'---
+l10n_account_withholding_tax / account.payment          / outstanding_account_id (False): NEW mode: modify, hasdefault: compute
+l10n_account_withholding_tax / account.payment          / should_withhold_tax (boolean) : NEW hasdefault: compute
+l10n_account_withholding_tax / account.payment          / withholding_line_ids (one2many): NEW relation: account.payment.withholding.line
+l10n_account_withholding_tax / account.payment.withholding.line / account_id (many2one)         : NEW relation: account.account, required, hasdefault: compute
+l10n_account_withholding_tax / account.payment.withholding.line / amount (float)                : NEW hasdefault: compute
+l10n_account_withholding_tax / account.payment.withholding.line / analytic_distribution (json)  : NEW hasdefault: compute
+l10n_account_withholding_tax / account.payment.withholding.line / analytic_precision (integer)  : NEW hasdefault: default, stored: False
+l10n_account_withholding_tax / account.payment.withholding.line / base_amount (float)           : NEW hasdefault: compute
+l10n_account_withholding_tax / account.payment.withholding.line / company_id (many2one)         : NEW relation: res.company, required, isfunction: function, stored
+l10n_account_withholding_tax / account.payment.withholding.line / name (char)                   : NEW
+l10n_account_withholding_tax / account.payment.withholding.line / payment_id (many2one)         : NEW relation: account.payment, required
+l10n_account_withholding_tax / account.payment.withholding.line / placeholder_type (selection)  : NEW required, selection_keys: ['given_by_name', 'given_by_sequence', 'not_defined'], hasdefault: compute
+l10n_account_withholding_tax / account.payment.withholding.line / placeholder_value (char)      : NEW
+l10n_account_withholding_tax / account.payment.withholding.line / previous_placeholder_type (selection): NEW selection_keys: ['given_by_name', 'given_by_sequence', 'not_defined'], hasdefault: compute
+l10n_account_withholding_tax / account.payment.withholding.line / source_base_amount (float)    : NEW
+l10n_account_withholding_tax / account.payment.withholding.line / source_base_amount_currency (float): NEW
+l10n_account_withholding_tax / account.payment.withholding.line / source_currency_id (many2one) : NEW relation: res.currency
+l10n_account_withholding_tax / account.payment.withholding.line / source_tax_amount (float)     : NEW
+l10n_account_withholding_tax / account.payment.withholding.line / source_tax_amount_currency (float): NEW
+l10n_account_withholding_tax / account.payment.withholding.line / source_tax_id (many2one)      : NEW relation: account.tax
+l10n_account_withholding_tax / account.payment.withholding.line / tax_id (many2one)             : NEW relation: account.tax, required
+l10n_account_withholding_tax / account.tax              / is_withholding_tax_on_payment (boolean): NEW
+l10n_account_withholding_tax / account.tax              / withholding_sequence_id (many2one): NEW relation: ir.sequence
+l10n_account_withholding_tax / res.company              / withholding_tax_base_account_id (many2one): NEW relation: account.account
+---XML records in module 'l10n_account_withholding_tax'---
+NEW ir.model.access: l10n_account_withholding_tax.access_account_payment_register_withholding_line
+NEW ir.model.access: l10n_account_withholding_tax.access_account_payment_withholding_line
+NEW ir.ui.view: l10n_account_withholding_tax.report_payment_receipt_document
+NEW ir.ui.view: l10n_account_withholding_tax.res_config_settings_form
+NEW ir.ui.view: l10n_account_withholding_tax.view_account_payment_form
+NEW ir.ui.view: l10n_account_withholding_tax.view_account_payment_register_form
+NEW ir.ui.view: l10n_account_withholding_tax.view_tax_form

@@ -1,4 +1,6 @@
 ---Models in module 'l10n_sa'---
 ---Fields in module 'l10n_sa'---
 ---XML records in module 'l10n_sa'---
----nothing has changed in this module--
+NEW ir.ui.view: l10n_sa.l10n_sa_external_layout_bubble
+NEW ir.ui.view: l10n_sa.l10n_sa_external_layout_folder
+NEW ir.ui.view: l10n_sa.l10n_sa_external_layout_wave

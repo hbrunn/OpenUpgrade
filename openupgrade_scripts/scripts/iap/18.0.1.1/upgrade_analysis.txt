@@ -14,11 +14,11 @@ iap          / iap.account              / state (selection)             : NEW se
 iap          / iap.account              / warning_threshold (float)     : is now stored
 iap          / iap.account              / warning_threshold (float)     : not related anymore
 iap          / iap.account              / warning_user_ids (many2many)  : NEW relation: res.users
-iap          / iap.service              / description (char)            : NEW required
+iap          / iap.service              / description (char)            : NEW required, translate
 iap          / iap.service              / integer_balance (boolean)     : NEW required
 iap          / iap.service              / name (char)                   : NEW required
 iap          / iap.service              / technical_name (char)         : NEW required
-iap          / iap.service              / unit_name (char)              : NEW required
+iap          / iap.service              / unit_name (char)              : NEW required, translate
 ---XML records in module 'iap'---
 NEW iap.service: iap.iap_service_reveal
 NEW ir.model.access: iap.access_iap_service_manager

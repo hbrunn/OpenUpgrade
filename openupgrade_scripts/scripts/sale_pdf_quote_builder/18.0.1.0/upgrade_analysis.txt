@@ -5,7 +5,7 @@ new model sale.pdf.form.field
 sale_pdf_quote_builder / product.document         / attached_on (False)           : DEL selection_keys: ['inside', 'quotation', 'sale_order'], mode: modify
 sale_pdf_quote_builder / product.document         / attached_on_sale (False)      : NEW selection_keys: ['hidden', 'inside', 'quotation', 'sale_order'], mode: modify
 sale_pdf_quote_builder / product.document         / form_field_ids (many2many)    : NEW relation: sale.pdf.form.field, isfunction: function, stored
-sale_pdf_quote_builder / quotation.document       / _inherits                     : NEW _inherits: {'ir.attachment': 'ir_attachment_id'}
+sale_pdf_quote_builder / quotation.document       / _inherits                     : NEW _inherits: {'ir.attachment': 'ir_attachment_id'}, stored: False
 sale_pdf_quote_builder / quotation.document       / active (boolean)              : NEW hasdefault: default
 sale_pdf_quote_builder / quotation.document       / document_type (selection)     : NEW required, selection_keys: ['footer', 'header'], hasdefault: default
 sale_pdf_quote_builder / quotation.document       / form_field_ids (many2many)    : NEW relation: sale.pdf.form.field, isfunction: function, stored

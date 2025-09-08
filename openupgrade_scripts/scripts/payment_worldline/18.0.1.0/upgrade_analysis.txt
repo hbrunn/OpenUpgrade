@@ -1,6 +1,6 @@
 ---Models in module 'payment_worldline'---
 ---Fields in module 'payment_worldline'---
-payment_worldline / payment.provider         / code (False)                  : previously in module payment_sips
+payment_worldline / payment.provider         / code (False)                  : NEW selection_keys: ['adyen', 'aps', 'asiapay', 'authorize', 'buckaroo', 'custom', 'demo', 'flutterwave', 'mercado_pago', 'mollie', 'none', 'nuvei', 'paypal', 'razorpay', 'stripe', 'worldline'], mode: modify
 payment_worldline / payment.provider         / worldline_api_key (char)      : NEW
 payment_worldline / payment.provider         / worldline_api_secret (char)   : NEW
 payment_worldline / payment.provider         / worldline_pspid (char)        : NEW

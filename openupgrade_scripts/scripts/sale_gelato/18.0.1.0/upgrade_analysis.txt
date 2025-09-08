@@ -1,0 +1,23 @@
+---Models in module 'sale_gelato'---
+---Fields in module 'sale_gelato'---
+sale_gelato  / delivery.carrier         / delivery_type (False)         : previously in module website_sale_picking
+sale_gelato  / delivery.carrier         / gelato_shipping_service_type (selection): NEW required, selection_keys: ['express', 'normal'], hasdefault: default
+sale_gelato  / product.document         / is_gelato (boolean)           : NEW
+sale_gelato  / product.product          / gelato_product_uid (char)     : NEW
+sale_gelato  / product.template         / gelato_image_ids (one2many)   : NEW relation: product.document
+sale_gelato  / product.template         / gelato_template_ref (char)    : NEW
+sale_gelato  / res.company              / gelato_api_key (char)         : NEW
+sale_gelato  / res.company              / gelato_webhook_secret (char)  : NEW
+website_sale_picking / delivery.carrier         / delivery_type (False)         : selection_keys added: [gelato], removed: [onsite]
+---XML records in module 'sale_gelato'---
+NEW delivery.carrier: sale_gelato.express_delivery (noupdate)
+NEW delivery.carrier: sale_gelato.standard_delivery (noupdate)
+NEW ir.ui.view: sale_gelato.delivery_carrier_form
+NEW ir.ui.view: sale_gelato.product_document_form
+NEW ir.ui.view: sale_gelato.product_product_easy_form
+NEW ir.ui.view: sale_gelato.product_product_normal_form
+NEW ir.ui.view: sale_gelato.product_template_form
+NEW ir.ui.view: sale_gelato.res_config_settings_form
+NEW mail.template: sale_gelato.order_status_update (noupdate)
+NEW product.product: sale_gelato.express_delivery_product (noupdate)
+NEW product.product: sale_gelato.standard_delivery_product (noupdate)

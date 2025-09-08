@@ -2,17 +2,17 @@
 ---Fields in module 'website_sale'---
 website_sale / product.product          / ribbon_id (many2one)          : DEL relation: product.ribbon
 website_sale / product.product          / variant_ribbon_id (many2one)  : NEW relation: product.ribbon
-website_sale / product.public.category  / website_footer (html)         : NEW
+website_sale / product.public.category  / website_footer (html)         : NEW translate
 website_sale / product.ribbon           / bg_color (char)               : now required
 website_sale / product.ribbon           / html (html)                   : DEL required
 website_sale / product.ribbon           / html_class (char)             : DEL required
-website_sale / product.ribbon           / name (char)                   : NEW required
+website_sale / product.ribbon           / name (char)                   : NEW required, translate
 website_sale / product.ribbon           / position (selection)          : NEW required, selection_keys: ['left', 'right'], hasdefault: default
 website_sale / product.ribbon           / text_color (char)             : now required
 website_sale / sale.order               / access_point_address (json)   : DEL
 website_sale / sale.order.line          / linked_line_id (many2one)     : module is now 'sale' ('website_sale')
 website_sale / sale.order.line          / option_line_ids (one2many)    : DEL relation: sale.order.line
-website_sale / website                  / add_to_cart_action (selection): selection_keys is now '['force_dialog', 'go_to_cart', 'stay']' ('['go_to_cart', 'stay']')
+website_sale / website                  / add_to_cart_action (selection): selection_keys added: [force_dialog] (most likely nothing to do)
 website_sale / website                  / ecommerce_access (selection)  : NEW required, selection_keys: ['everyone', 'logged_in'], hasdefault: default
 website_sale / website                  / shop_gap (char)               : NEW hasdefault: default
 ---XML records in module 'website_sale'---

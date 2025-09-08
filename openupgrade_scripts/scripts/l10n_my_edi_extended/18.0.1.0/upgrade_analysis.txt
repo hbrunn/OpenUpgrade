@@ -1,0 +1,4 @@
+---Models in module 'l10n_my_edi_extended'---
+---Fields in module 'l10n_my_edi_extended'---
+---XML records in module 'l10n_my_edi_extended'---
+NEW ir.ui.view: l10n_my_edi_extended.portal_my_details_fields
