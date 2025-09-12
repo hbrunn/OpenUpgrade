@@ -1,0 +1,89 @@
+name: Generate test database
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+      version_requirements:
+        default: 'gevent==22.10.2 greenlet==2.0.2'
+        type: string
+      version_requirements_sed:
+        default: '/^gevent\>/d; /^greenlet\>/d'
+        type: string
+      python_version:
+        default: "3.10"
+        type: string
+      postgres_version:
+        default: "14"
+        type: string
+
+jobs:
+  generate-testdb:
+    name: Generate test database ${{ inputs.version }}
+    runs-on: ubuntu-latest
+    env:
+      PGHOST: "localhost"
+      PGPASSWORD: "odoo"
+      PGUSER: "odoo"
+      VERSION: "${{ inputs.version }}"
+      DBNAME: "openupgrade"
+    services:
+      postgres:
+        image: postgres:${{ inputs.postgres_version }}
+        env:
+          POSTGRES_USER: odoo
+          POSTGRES_PASSWORD: odoo
+        ports:
+          - 5432:5432
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "${{ inputs.python_version }}"
+      - name: Install required packages
+        run: |
+          sudo apt update
+          sudo apt install \
+              expect \
+              expect-dev \
+              libevent-dev \
+              libldap2-dev \
+              libsasl2-dev \
+              libxml2-dev \
+              libxslt1-dev \
+              nodejs \
+              python3-lxml \
+              python3-passlib \
+              python3-psycopg2 \
+              python3-serial \
+              python3-simplejson \
+              python3-werkzeug \
+              python3-yaml \
+              unixodbc-dev
+      - name: Install Odoo
+        run: |
+          wget -q -O- https://github.com/oca/ocb/archive/refs/heads/$VERSION.tar.gz | tar -xz
+          python -mvenv env
+          . env/bin/activate
+          pip install ${{ inputs.version_requirements }}
+          sed -iE '${{ inputs.version_requirements_sed }}' OCB-$VERSION/requirements.txt
+          pip install -r OCB-$VERSION/requirements.txt
+          pip install ./OCB-$VERSION
+          # this is for l10n_eg_edi_eta which crashes without it
+          pip install asn1crypto
+          odoo -d $DBNAME -i base --stop-after-init
+      - name: Install all modules and an extra language
+          . env/bin/activate
+          odoo shell -d $DBNAME <<EOF
+          env['ir.module.module'].search([]).button_immediate_install()
+          env.cr.commit()
+          EOF
+          odoo -d $DBNAME --load-language=fr_FR --stop-after-init
+      - name: Dump database and push to release
+        run: |
+          pg_dump $DBNAME -Fc -f $VERSION.psql
+      - name: Upload database dump to releases
+        run: |
+          gh release list

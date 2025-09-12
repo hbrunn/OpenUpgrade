@@ -1,0 +1,24 @@
+name: Generate test databases - cron and manually
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'
+        required: true
+        type: choice
+        options:
+        - all
+        - 16.0
+        - 17.0
+  schedule:
+    # every first of month
+    - cron: "0 4 1 * *"
+
+jobs:
+  generate-testdb16:
+#    if: github.repository == 'OCA/OpenUpgrade' && (github.event_name == 'schedule' || github.ref_name == '18.0')
+    if: (github.event_name == 'schedule' || inputs.version == '16.0' || inputs.version == 'all')
+    uses: ./.github/workflows/generate-testdb.yml
+    with:
+      version: "16.0"
