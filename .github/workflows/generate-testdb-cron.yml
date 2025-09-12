@@ -17,6 +17,7 @@ on:
 
 jobs:
   generate-testdb16:
+    name: Generate test database 16.0
 #    if: github.repository == 'OCA/OpenUpgrade' &&
     if: (github.event_name == 'schedule' || inputs.version == '16.0' || inputs.version == 'all')
     uses: ./.github/workflows/generate-testdb.yml

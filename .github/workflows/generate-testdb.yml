@@ -94,10 +94,12 @@ jobs:
         run: |
           pg_dump $DBNAME -Fc -f $VERSION.psql
       - name: Upload database dump to releases
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           RELEASE_TAG=$(gh release list | jq '.[] | select(.name =="${{ inputs.release_name }}") .tagName')
           if [ -z "$RELEASE_TAG" ]; then
               echo release \"${{ inputs.release_name }}\" not found
               exit 1
           fi
-          gh release upload $VERSION.psql
+          gh release upload $RELEASE_TAG $VERSION.psql --clobber
