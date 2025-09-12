@@ -75,6 +75,7 @@ jobs:
           pip install asn1crypto
           odoo -d $DBNAME -i base --stop-after-init
       - name: Install all modules and an extra language
+        run: |
           . env/bin/activate
           odoo shell -d $DBNAME <<EOF
           env['ir.module.module'].search([]).button_immediate_install()
