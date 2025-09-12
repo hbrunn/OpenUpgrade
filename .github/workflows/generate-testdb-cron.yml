@@ -22,4 +22,4 @@ jobs:
     uses: ./.github/workflows/generate-testdb.yml
     with:
       version: "16.0"
-      exclude_modules: "['payment_alipay']"
+      exclude_modules: "['payment_alipay', 'payment_ogone']"
