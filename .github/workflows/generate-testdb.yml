@@ -18,6 +18,9 @@ on:
       postgres_version:
         default: "14"
         type: string
+      exclude_modules:
+        default: "[]"
+        type: string
 
 jobs:
   generate-testdb:
@@ -78,7 +81,9 @@ jobs:
         run: |
           . env/bin/activate
           odoo shell -d $DBNAME <<EOF
-          env['ir.module.module'].search([]).button_immediate_install()
+          env['ir.module.module'].search([
+              ('name', 'not in', ${{ inputs.exclude_modules }})
+          ]).button_immediate_install()
           env.cr.commit()
           EOF
           odoo -d $DBNAME --load-language=fr_FR --stop-after-init
