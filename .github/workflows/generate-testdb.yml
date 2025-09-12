@@ -21,6 +21,9 @@ on:
       exclude_modules:
         default: "[]"
         type: string
+      release_name:
+        default: "Test databases"
+        type: string
 
 jobs:
   generate-testdb:
@@ -92,4 +95,9 @@ jobs:
           pg_dump $DBNAME -Fc -f $VERSION.psql
       - name: Upload database dump to releases
         run: |
-          gh release list
+          RELEASE_TAG=$(gh release list | jq '.[] | select(.name =="${{ inputs.release_name }}") .tagName')
+          if [ -z "$RELEASE_TAG" ]; then
+              echo release \"${{ inputs.release_name }}\" not found
+              exit 1
+          fi
+          gh release upload $VERSION.psql
