@@ -1,0 +1,994 @@
+---Models in module 'general'---
+obsolete model account.fiscal.position.tax [module account]
+obsolete model account_peppol.service.wizard [module account_peppol]
+obsolete model account.reconcile.model.partner.mapping [module account]
+obsolete model bus.presence [module bus]
+obsolete model candidate.send.mail [module hr_recruitment]
+obsolete model chat.room [module website_jitsi]
+obsolete model chat.room.mixin [module website_jitsi]
+obsolete model choose.delivery.package [module stock_delivery]
+obsolete model event.meeting.room [module website_event_meet]
+obsolete model hr.attendance.overtime [module hr_attendance]
+obsolete model hr.candidate [module hr_recruitment]
+obsolete model hr.candidate.skill [module hr_recruitment_skills]
+obsolete model hr.contract [module hr_contract]
+obsolete model hr.contract.history [module hr_contract]
+obsolete model hr.employee.base [module hr]
+obsolete model hr.employee.skill.log [module hr_skills]
+obsolete model hr.expense.sheet [module hr_expense]
+obsolete model im_livechat.report.operator [module im_livechat]
+obsolete model l10n_id_efaktur.document [module l10n_id_efaktur]
+obsolete model l10n_id_efaktur.efaktur.range [module l10n_id_efaktur]
+obsolete model l10n_in.withhold.wizard.line [module l10n_in_withholding]
+obsolete model l10n_my_edi.document.status.update [module l10n_my_edi]
+obsolete model mail.resend.message [module mail]
+obsolete model mail.resend.partner [module mail]
+obsolete model mail.wizard.invite [module mail]
+obsolete model membership.invoice [module membership]
+obsolete model membership.membership_line [module membership]
+obsolete model mrp.batch.produce [module mrp]
+obsolete model payment.provider.onboarding.wizard [module payment]
+obsolete model procurement.group [module stock]
+obsolete model product.fetch.image.wizard [module product_images]
+obsolete model product.packaging [module product]
+obsolete model project.create.invoice [module sale_timesheet]
+obsolete model report.membership [module membership]
+obsolete model report.pos_hr.multi_employee_sales_report [module pos_hr]
+obsolete model res.partner.autocomplete.sync [module partner_autocomplete]
+obsolete model res.partner.title [module base]
+obsolete model sale.edi.common [module sale_edi_ubl]
+obsolete model sale.order.cancel [module sale]
+obsolete model sale.order.option [module sale_management]
+obsolete model sale.order.template.option [module sale_management]
+obsolete model sale.payment.provider.onboarding.wizard [module sale]
+obsolete model sms.resend [module sms]
+obsolete model sms.resend.recipient [module sms]
+obsolete model snailmail.letter.format.error [module snailmail]
+obsolete model snailmail.letter.missing.required.fields [module snailmail]
+obsolete model stock.change.product.qty [module stock]
+obsolete model stock.lot.report [module stock]
+obsolete model stock.package_level [module stock]
+obsolete model stock.quant.package [module stock]
+obsolete model stock.track.confirmation [module stock]
+obsolete model stock.track.line [module stock]
+obsolete model stock.valuation.layer [module stock_account]
+obsolete model stock.valuation.layer.revaluation [module stock_account]
+obsolete model uom.category [module uom]
+obsolete model web_editor.assets [module web_editor]
+obsolete model web_editor.converter.test [module web_editor]
+obsolete model web_editor.converter.test.sub [module web_editor]
+new model account.analytic.line.calendar.employee [module hr_timesheet]
+new model account.document.import.mixin [module account]
+new model discuss.call.history [module mail]
+new model event.mail.slot [module event]
+new model event.slot [module event]
+new model fleet.vehicle.odometer.report [module fleet]
+new model hr.applicant.skill [module hr_recruitment_skills]
+new model hr.attendance.overtime.line [module hr_attendance]
+new model hr.attendance.overtime.rule [module hr_attendance]
+new model hr.attendance.overtime.ruleset [module hr_attendance]
+new model hr.bank.account.allocation.wizard [module hr]
+new model hr.bank.account.allocation.wizard.line [module hr]
+new model hr.employee.certification.report [module hr_skills]
+new model hr.employee.skill.history.report [module hr_skills]
+new model hr.expense.post.wizard [module hr_expense]
+new model hr.individual.skill.mixin [module hr_skills]
+new model hr.job.skill [module hr_skills]
+new model hr.leave.attendance.report [module hr_holidays_attendance]
+new model hr.mixin [module hr]
+new model hr.talent.pool [module hr_recruitment]
+new model hr.version [module hr]
+new model hr.version.wizard [module hr]
+new model html_editor.converter.test [module html_editor]
+new model html_editor.converter.test.sub [module html_editor]
+new model im_livechat.channel.member.history [module im_livechat]
+new model im_livechat.conversation.tag [module im_livechat]
+new model im_livechat.expertise [module im_livechat]
+new model ir.actions.server.history [module base]
+new model job.add.applicants [module hr_recruitment]
+new model l10n_cz.tax_office [module l10n_cz]
+new model l10n_in_edi.cancel [module l10n_in_edi]
+new model l10n.in.hr.leave.optional.holiday [module l10n_in_hr_holidays]
+new model l10n_in.pan.entity [module l10n_in]
+new model mail.activity.schedule.line [module mail]
+new model mail.followers.edit [module mail]
+new model mail.message.link.preview [module mail]
+new model mail.presence [module mail]
+new model mrp.production.group [module mrp]
+new model mrp.production.serials [module mrp]
+new model peppol.config.wizard [module account_peppol]
+new model pos.confirmation.wizard [module point_of_sale]
+new model pos.make.invoice [module point_of_sale]
+new model pos.preset [module point_of_sale]
+new model product.feed [module website_sale]
+new model product.uom [module product]
+new model product.value [module stock_account]
+new model project.role [module project]
+new model project.template.create.wizard [module project]
+new model project.template.role.to.users.map [module project]
+new model properties.base.definition [module base]
+new model properties.base.definition.mixin [module base]
+new model res.groups.privilege [module base]
+new model res.role [module mail]
+new model res.users.settings.embedded.action [module web]
+new model restaurant.order.course [module pos_restaurant]
+new model server.action.history.wizard [module base]
+new model stock_account.stock.valuation.report [module stock_account]
+new model stock.avco.report [module stock_account]
+new model stock.package [module stock]
+new model stock.package.history [module stock]
+new model stock.put.in.pack [module stock]
+new model stock.reference [module stock]
+new model talent.pool.add.applicants [module hr_recruitment]
+new model task.share.wizard [module project]
+new model website.assets [module website]
+new model website.checkout.step [module website_sale]
+new model website.html.text.processor [module website]
+new model website.page_options.mixin [module website]
+new model website.page_visibility_options.mixin [module website]
+new model website.technical.page [module website]
+---Fields in module 'general'---
+# 14079 fields matched,
+# Direct match: 13801
+# Found in other module with different type: 0
+# Found in other module: 246
+# Found with different type: 32
+# In obsolete models: 444
+# New columns: 1827
+# Not matched: 1115
+---XML records in module 'general'---
+---Probably obsolete module account_edi_ubl_cii_tax_extension---
+---Models in module 'account_edi_ubl_cii_tax_extension'---
+---Fields in module 'account_edi_ubl_cii_tax_extension'---
+account_edi_ubl_cii_tax_extension / account.tax              / ubl_cii_tax_category_code (selection): module is now 'account_edi_ubl_cii' ('account_edi_ubl_cii_tax_extension')
+account_edi_ubl_cii_tax_extension / account.tax              / ubl_cii_tax_exemption_reason_code (selection): module is now 'account_edi_ubl_cii' ('account_edi_ubl_cii_tax_extension')
+---XML records in module 'account_edi_ubl_cii_tax_extension'---
+DEL ir.ui.view: account_edi_ubl_cii_tax_extension.view_account_invoice_form_inherit
+---Probably obsolete module auth_totp_mail_enforce---
+---Models in module 'auth_totp_mail_enforce'---
+model auth.totp.rate.limit.log (moved to auth_totp) [transient]
+---Fields in module 'auth_totp_mail_enforce'---
+---XML records in module 'auth_totp_mail_enforce'---
+DEL ir.model.access: auth_totp_mail_enforce.access_auth_totp_rate_limit_log [renamed to auth_totp module]
+DEL ir.ui.view: auth_totp_mail_enforce.auth_totp_mail_form
+DEL ir.ui.view: auth_totp_mail_enforce.res_config_settings_view_form
+DEL mail.template: auth_totp_mail_enforce.mail_template_totp_mail_code [renamed to auth_totp_mail module] (noupdate)
+---Probably obsolete module hr_contract---
+---Models in module 'hr_contract'---
+obsolete model hr.contract
+obsolete model hr.contract.history [sql_view]
+model hr.payroll.structure.type (moved to hr)
+---Fields in module 'hr_contract'---
+hr_contract  / hr.contract              / active (boolean)              : DEL
+hr_contract  / hr.contract              / activity_ids (one2many)       : DEL relation: mail.activity
+hr_contract  / hr.contract              / company_id (many2one)         : DEL relation: res.company, required
+hr_contract  / hr.contract              / contract_type_id (many2one)   : DEL relation: hr.contract.type
+hr_contract  / hr.contract              / date_end (date)               : DEL
+hr_contract  / hr.contract              / date_start (date)             : DEL required
+hr_contract  / hr.contract              / department_id (many2one)      : DEL relation: hr.department
+hr_contract  / hr.contract              / employee_id (many2one)        : DEL relation: hr.employee
+hr_contract  / hr.contract              / hr_responsible_id (many2one)  : DEL relation: res.users
+hr_contract  / hr.contract              / job_id (many2one)             : DEL relation: hr.job
+hr_contract  / hr.contract              / kanban_state (selection)      : DEL selection_keys: ['blocked', 'done', 'normal']
+hr_contract  / hr.contract              / message_follower_ids (one2many): DEL relation: mail.followers
+hr_contract  / hr.contract              / message_ids (one2many)        : DEL relation: mail.message
+hr_contract  / hr.contract              / name (char)                   : DEL required
+hr_contract  / hr.contract              / notes (html)                  : DEL
+hr_contract  / hr.contract              / rating_ids (one2many)         : DEL relation: rating.rating
+hr_contract  / hr.contract              / resource_calendar_id (many2one): DEL relation: resource.calendar
+hr_contract  / hr.contract              / state (selection)             : DEL selection_keys: ['cancel', 'close', 'draft', 'open']
+hr_contract  / hr.contract              / structure_type_id (many2one)  : DEL relation: hr.payroll.structure.type
+hr_contract  / hr.contract              / trial_date_end (date)         : DEL
+hr_contract  / hr.contract              / wage (float)                  : DEL required
+hr_contract  / hr.contract              / website_message_ids (one2many): DEL relation: mail.message
+hr_contract  / hr.employee              / contract_id (many2one)        : DEL relation: hr.contract
+hr_contract  / hr.employee              / contract_ids (one2many)       : DEL relation: hr.contract
+hr_contract  / hr.employee              / contract_warning (boolean)    : DEL
+hr_contract  / hr.employee              / first_contract_date (date)    : DEL
+hr_contract  / hr.employee              / legal_name (char)             : module is now 'hr' ('hr_contract')
+hr_contract  / hr.employee              / vehicle (char)                : DEL
+hr_contract  / hr.payroll.structure.type / _order                        : module is now 'hr' ('hr_contract')
+hr_contract  / hr.payroll.structure.type / country_code (char)           : module is now 'hr' ('hr_contract')
+hr_contract  / hr.payroll.structure.type / country_id (many2one)         : module is now 'hr' ('hr_contract')
+hr_contract  / hr.payroll.structure.type / default_resource_calendar_id (many2one): module is now 'hr' ('hr_contract')
+hr_contract  / hr.payroll.structure.type / display_name (char)           : module is now 'hr' ('hr_contract')
+hr_contract  / hr.payroll.structure.type / name (char)                   : module is now 'hr' ('hr_contract')
+hr_contract  / res.company              / contract_expiration_notice_period (integer): module is now 'hr' ('hr_contract')
+hr_contract  / res.company              / work_permit_expiration_notice_period (integer): module is now 'hr' ('hr_contract')
+---XML records in module 'hr_contract'---
+DEL hr.payroll.structure.type: hr_contract.structure_type_employee [renamed to hr module] (noupdate)
+DEL hr.payroll.structure.type: hr_contract.structure_type_employee_cp200 [renamed to hr module] (noupdate)
+DEL hr.payroll.structure.type: hr_contract.structure_type_employee_cp200_pfi [renamed to hr module] (noupdate)
+DEL hr.payroll.structure.type: hr_contract.structure_type_worker [renamed to hr module] (noupdate)
+DEL ir.actions.act_window: hr_contract.action_hr_contract
+DEL ir.actions.act_window: hr_contract.hr_contract_history_to_review_view_list_action
+DEL ir.actions.act_window: hr_contract.hr_contract_history_view_form_action
+DEL ir.actions.act_window: hr_contract.hr_contract_history_view_list_action
+DEL ir.cron: hr_contract.ir_cron_data_contract_update_state (noupdate)
+DEL ir.model.access: hr_contract.access_hr_contract_history_manager
+DEL ir.model.access: hr_contract.access_hr_contract_hr_employee_manager
+DEL ir.model.access: hr_contract.access_hr_contract_manager
+DEL ir.model.access: hr_contract.access_hr_payroll_structure_type_hr_contract_manager [renamed to hr module]
+DEL ir.model.access: hr_contract.access_hr_resource_calendar_attendance_user [renamed to hr module]
+DEL ir.model.access: hr_contract.access_hr_resource_calendar_user [renamed to hr module]
+DEL ir.model.access: hr_contract.access_hr_resource_manager [renamed to hr module]
+DEL ir.rule: hr_contract.ir_rule_hr_contract_employee_manager (noupdate)
+DEL ir.rule: hr_contract.ir_rule_hr_contract_history_multi_company (noupdate)
+DEL ir.rule: hr_contract.ir_rule_hr_contract_manager [renamed to hr module] (noupdate)
+DEL ir.rule: hr_contract.ir_rule_hr_contract_multi_company [renamed to hr module] (noupdate)
+DEL ir.rule: hr_contract.ir_rule_hr_payroll_structure_type_multi_company [renamed to hr module] (noupdate)
+DEL ir.ui.menu: hr_contract.hr_menu_contract
+DEL ir.ui.menu: hr_contract.menu_hr_employee_contracts
+DEL ir.ui.menu: hr_contract.menu_human_resources_configuration_contract
+DEL ir.ui.view: hr_contract.hr_contract_history_view_form
+DEL ir.ui.view: hr_contract.hr_contract_history_view_kanban
+DEL ir.ui.view: hr_contract.hr_contract_history_view_list
+DEL ir.ui.view: hr_contract.hr_contract_history_view_search
+DEL ir.ui.view: hr_contract.hr_contract_view_activity
+DEL ir.ui.view: hr_contract.hr_contract_view_form
+DEL ir.ui.view: hr_contract.hr_contract_view_kanban
+DEL ir.ui.view: hr_contract.hr_contract_view_search
+DEL ir.ui.view: hr_contract.hr_contract_view_tree
+DEL ir.ui.view: hr_contract.hr_departure_wizard_view_form
+DEL ir.ui.view: hr_contract.hr_employee_view_graph_inherit_hr_contract
+DEL ir.ui.view: hr_contract.hr_employee_view_pivot_inherit_hr_contract
+DEL ir.ui.view: hr_contract.hr_employee_view_search
+DEL ir.ui.view: hr_contract.hr_hr_employee_view_form2
+DEL ir.ui.view: hr_contract.hr_hr_employee_view_form3
+DEL ir.ui.view: hr_contract.hr_user_view_form
+DEL ir.ui.view: hr_contract.res_config_settings_view_form
+DEL ir.ui.view: hr_contract.resource_calendar_view_form
+DEL ir.ui.view: hr_contract.resource_calendar_view_tree
+DEL ir.ui.view: hr_contract.view_employee_public_form
+DEL ir.ui.view: hr_contract.view_employee_tree
+DEL mail.message.subtype: hr_contract.mt_contract_close [renamed to hr module] (noupdate)
+DEL mail.message.subtype: hr_contract.mt_contract_pending [renamed to hr module] (noupdate)
+DEL mail.message.subtype: hr_contract.mt_department_contract_pending [renamed to hr module] (noupdate)
+DEL res.groups: hr_contract.group_hr_contract_employee_manager (noupdate)
+DEL res.groups: hr_contract.group_hr_contract_manager (noupdate)
+---Probably obsolete module hr_work_entry_contract---
+---Models in module 'hr_work_entry_contract'---
+model hr.work.entry.regeneration.wizard (moved to hr_work_entry) [transient]
+---Fields in module 'hr_work_entry_contract'---
+hr_work_entry_contract / hr.contract              / date_generated_from (datetime): DEL required
+hr_work_entry_contract / hr.contract              / date_generated_to (datetime)  : DEL required
+hr_work_entry_contract / hr.contract              / last_generation_date (date)   : DEL
+hr_work_entry_contract / hr.contract              / work_entry_source (selection) : DEL required, selection_keys: ['calendar']
+hr_work_entry_contract / hr.work.entry            / contract_id (many2one)        : DEL relation: hr.contract, required
+hr_work_entry_contract / hr.work.entry            / work_entry_source (selection) : module is now 'hr_work_entry' ('hr_work_entry_contract')
+hr_work_entry_contract / hr.work.entry.type       / is_leave (boolean)            : module is now 'hr_work_entry' ('hr_work_entry_contract')
+---XML records in module 'hr_work_entry_contract'---
+DEL hr.work.entry.type: hr_work_entry_contract.work_entry_type_compensatory [renamed to hr_work_entry module]
+DEL hr.work.entry.type: hr_work_entry_contract.work_entry_type_home_working [renamed to hr_work_entry module]
+DEL hr.work.entry.type: hr_work_entry_contract.work_entry_type_leave [renamed to hr_work_entry module]
+DEL hr.work.entry.type: hr_work_entry_contract.work_entry_type_legal_leave [renamed to hr_work_entry module]
+DEL hr.work.entry.type: hr_work_entry_contract.work_entry_type_sick_leave [renamed to hr_work_entry module]
+DEL hr.work.entry.type: hr_work_entry_contract.work_entry_type_unpaid_leave [renamed to hr_work_entry module]
+DEL ir.actions.act_window: hr_work_entry_contract.hr_work_entry_regeneration_wizard_action [renamed to hr_work_entry module]
+DEL ir.cron: hr_work_entry_contract.ir_cron_generate_missing_work_entries [renamed to hr_work_entry module] (noupdate)
+DEL ir.model.access: hr_work_entry_contract.access_hr_work_entry_regeneration_wizard [renamed to hr_work_entry module]
+DEL ir.rule: hr_work_entry_contract.ir_rule_hr_work_entry_multi_company [renamed to hr_work_entry module] (noupdate)
+DEL ir.ui.view: hr_work_entry_contract.hr_contract_view_form_inherit_work_entry
+DEL ir.ui.view: hr_work_entry_contract.hr_work_entry_contract_type_view_form_inherit
+DEL ir.ui.view: hr_work_entry_contract.hr_work_entry_contract_view_calendar_inherit
+DEL ir.ui.view: hr_work_entry_contract.hr_work_entry_contract_view_form_inherit
+DEL ir.ui.view: hr_work_entry_contract.hr_work_entry_regeneration_wizard
+---Probably obsolete module l10n_ec_website_sale---
+---Models in module 'l10n_ec_website_sale'---
+---Fields in module 'l10n_ec_website_sale'---
+l10n_ec_website_sale / payment.method           / fiscal_country_codes (char)   : module is now 'l10n_ec_sale' ('l10n_ec_website_sale')
+l10n_ec_website_sale / payment.method           / l10n_ec_sri_payment_id (many2one): module is now 'l10n_ec_sale' ('l10n_ec_website_sale')
+---XML records in module 'l10n_ec_website_sale'---
+DEL ir.ui.view: l10n_ec_website_sale.address
+DEL ir.ui.view: l10n_ec_website_sale.partner_info
+DEL ir.ui.view: l10n_ec_website_sale.payment_method_form
+DEL ir.ui.view: l10n_ec_website_sale.portal_my_details_fields
+---Probably obsolete module l10n_id_efaktur---
+---Models in module 'l10n_id_efaktur'---
+obsolete model l10n_id_efaktur.document
+obsolete model l10n_id_efaktur.efaktur.range
+---Fields in module 'l10n_id_efaktur'---
+l10n_id_efaktur / account.bank.statement.line / l10n_id_kode_transaksi (selection): module is now 'l10n_id_efaktur_coretax' ('l10n_id_efaktur')
+l10n_id_efaktur / account.move             / l10n_id_efaktur_document (many2one): DEL relation: l10n_id_efaktur.document
+l10n_id_efaktur / account.move             / l10n_id_efaktur_range (many2one): DEL relation: l10n_id_efaktur.efaktur.range
+l10n_id_efaktur / account.move             / l10n_id_kode_transaksi (selection): module is now 'l10n_id_efaktur_coretax' ('l10n_id_efaktur')
+l10n_id_efaktur / account.move             / l10n_id_replace_invoice_id (many2one): DEL relation: account.move
+l10n_id_efaktur / account.move             / l10n_id_tax_number (char)     : DEL
+l10n_id_efaktur / l10n_id_efaktur.document / active (boolean)              : DEL
+l10n_id_efaktur / l10n_id_efaktur.document / activity_ids (one2many)       : DEL relation: mail.activity
+l10n_id_efaktur / l10n_id_efaktur.document / attachment_id (many2one)      : DEL relation: ir.attachment
+l10n_id_efaktur / l10n_id_efaktur.document / company_id (many2one)         : DEL relation: res.company, required
+l10n_id_efaktur / l10n_id_efaktur.document / invoice_ids (one2many)        : DEL relation: account.move
+l10n_id_efaktur / l10n_id_efaktur.document / message_follower_ids (one2many): DEL relation: mail.followers
+l10n_id_efaktur / l10n_id_efaktur.document / message_ids (one2many)        : DEL relation: mail.message
+l10n_id_efaktur / l10n_id_efaktur.document / name (char)                   : DEL required
+l10n_id_efaktur / l10n_id_efaktur.document / rating_ids (one2many)         : DEL relation: rating.rating
+l10n_id_efaktur / l10n_id_efaktur.document / website_message_ids (one2many): DEL relation: mail.message
+l10n_id_efaktur / l10n_id_efaktur.efaktur.range / available (integer)           : DEL
+l10n_id_efaktur / l10n_id_efaktur.efaktur.range / company_id (many2one)         : DEL relation: res.company, required
+l10n_id_efaktur / l10n_id_efaktur.efaktur.range / max (char)                    : DEL required
+l10n_id_efaktur / l10n_id_efaktur.efaktur.range / min (char)                    : DEL required
+l10n_id_efaktur / res.partner              / l10n_id_kode_transaksi (selection): module is now 'l10n_id_efaktur_coretax' ('l10n_id_efaktur')
+l10n_id_efaktur / res.partner              / l10n_id_nik (char)            : module is now 'l10n_id_efaktur_coretax' ('l10n_id_efaktur')
+l10n_id_efaktur / res.partner              / l10n_id_pkp (boolean)         : module is now 'l10n_id_efaktur_coretax' ('l10n_id_efaktur')
+l10n_id_efaktur / res.users                / l10n_id_kode_transaksi (selection): module is now 'l10n_id_efaktur_coretax' ('l10n_id_efaktur')
+l10n_id_efaktur / res.users                / l10n_id_nik (char)            : module is now 'l10n_id_efaktur_coretax' ('l10n_id_efaktur')
+l10n_id_efaktur / res.users                / l10n_id_pkp (boolean)         : module is now 'l10n_id_efaktur_coretax' ('l10n_id_efaktur')
+---XML records in module 'l10n_id_efaktur'---
+DEL ir.actions.act_window: l10n_id_efaktur.efaktur_invoice_action
+DEL ir.actions.server: l10n_id_efaktur.dowload_efaktur_action [renamed to l10n_id_efaktur_coretax module]
+DEL ir.model.access: l10n_id_efaktur.access_efaktur_document_user
+DEL ir.model.access: l10n_id_efaktur.access_efaktur_user
+DEL ir.rule: l10n_id_efaktur.efaktur_document_multi_company [renamed to l10n_id_efaktur_coretax module] (noupdate)
+DEL ir.ui.view: l10n_id_efaktur.account_move_efaktur_form_view
+DEL ir.ui.view: l10n_id_efaktur.account_move_efaktur_tree_view
+DEL ir.ui.view: l10n_id_efaktur.efaktur_tree_view
+DEL ir.ui.view: l10n_id_efaktur.l10n_id_efaktur_document_filter_view
+DEL ir.ui.view: l10n_id_efaktur.l10n_id_efaktur_document_form_view
+DEL ir.ui.view: l10n_id_efaktur.l10n_id_efaktur_document_list_view
+DEL ir.ui.view: l10n_id_efaktur.res_config_settings_view_form
+DEL ir.ui.view: l10n_id_efaktur.res_partner_tax_form_view
+DEL ir.ui.view: l10n_id_efaktur.view_account_invoice_filter
+---Probably obsolete module l10n_in_edi_ewaybill---
+---Models in module 'l10n_in_edi_ewaybill'---
+model l10n.in.ewaybill.type (moved to l10n_in_ewaybill)
+---Fields in module 'l10n_in_edi_ewaybill'---
+l10n_in_edi_ewaybill / account.move             / l10n_in_distance (integer)    : DEL
+l10n_in_edi_ewaybill / account.move             / l10n_in_mode (selection)      : DEL selection_keys: ['0', '1', '2', '3', '4']
+l10n_in_edi_ewaybill / account.move             / l10n_in_transportation_doc_date (date): DEL
+l10n_in_edi_ewaybill / account.move             / l10n_in_transportation_doc_no (char): DEL
+l10n_in_edi_ewaybill / account.move             / l10n_in_transporter_id (many2one): DEL relation: res.partner
+l10n_in_edi_ewaybill / account.move             / l10n_in_type_id (many2one)    : DEL relation: l10n.in.ewaybill.type
+l10n_in_edi_ewaybill / account.move             / l10n_in_vehicle_no (char)     : DEL
+l10n_in_edi_ewaybill / account.move             / l10n_in_vehicle_type (selection): DEL selection_keys: ['O', 'R']
+l10n_in_edi_ewaybill / l10n.in.ewaybill.type    / _order                        : module is now 'l10n_in_ewaybill' ('l10n_in_edi_ewaybill')
+l10n_in_edi_ewaybill / l10n.in.ewaybill.type    / active (boolean)              : module is now 'l10n_in_ewaybill' ('l10n_in_edi_ewaybill')
+l10n_in_edi_ewaybill / l10n.in.ewaybill.type    / allowed_supply_type (selection): module is now 'l10n_in_ewaybill' ('l10n_in_edi_ewaybill')
+l10n_in_edi_ewaybill / l10n.in.ewaybill.type    / code (char)                   : module is now 'l10n_in_ewaybill' ('l10n_in_edi_ewaybill')
+l10n_in_edi_ewaybill / l10n.in.ewaybill.type    / display_name (char)           : module is now 'l10n_in_ewaybill' ('l10n_in_edi_ewaybill')
+l10n_in_edi_ewaybill / l10n.in.ewaybill.type    / name (char)                   : module is now 'l10n_in_ewaybill' ('l10n_in_edi_ewaybill')
+l10n_in_edi_ewaybill / l10n.in.ewaybill.type    / sub_type (char)               : module is now 'l10n_in_ewaybill' ('l10n_in_edi_ewaybill')
+l10n_in_edi_ewaybill / l10n.in.ewaybill.type    / sub_type_code (char)          : module is now 'l10n_in_ewaybill' ('l10n_in_edi_ewaybill')
+l10n_in_edi_ewaybill / res.company              / l10n_in_edi_ewaybill_auth_validity (datetime): DEL
+l10n_in_edi_ewaybill / res.company              / l10n_in_edi_ewaybill_password (char): DEL
+l10n_in_edi_ewaybill / res.company              / l10n_in_edi_ewaybill_username (char): DEL
+---XML records in module 'l10n_in_edi_ewaybill'---
+DEL account.edi.format: l10n_in_edi_ewaybill.edi_in_ewaybill_json_1_03
+DEL ir.model.access: l10n_in_edi_ewaybill.access_l10n_in_ewaybill_type [renamed to l10n_in_ewaybill module]
+DEL ir.ui.view: l10n_in_edi_ewaybill.invoice_form_inherit_l10n_in_edi_ewaybill
+DEL ir.ui.view: l10n_in_edi_ewaybill.l10n_in_einvoice_report_invoice_document_inherit
+DEL ir.ui.view: l10n_in_edi_ewaybill.res_config_settings_view_form_inherit_l10n_in_edi_ewaybill
+DEL l10n.in.ewaybill.type: l10n_in_edi_ewaybill.type_bill_of_entry_sub_skd_ckd_lots [renamed to l10n_in_ewaybill module]
+DEL l10n.in.ewaybill.type: l10n_in_edi_ewaybill.type_bill_of_entry_sub_type_import [renamed to l10n_in_ewaybill module]
+DEL l10n.in.ewaybill.type: l10n_in_edi_ewaybill.type_bill_of_supply_sub_type_export [renamed to l10n_in_ewaybill module]
+DEL l10n.in.ewaybill.type: l10n_in_edi_ewaybill.type_bill_of_supply_sub_type_skd_ckd_lots [renamed to l10n_in_ewaybill module]
+DEL l10n.in.ewaybill.type: l10n_in_edi_ewaybill.type_bill_of_supply_sub_type_supply [renamed to l10n_in_ewaybill module]
+DEL l10n.in.ewaybill.type: l10n_in_edi_ewaybill.type_tax_invoice_sub_type_export [renamed to l10n_in_ewaybill module]
+DEL l10n.in.ewaybill.type: l10n_in_edi_ewaybill.type_tax_invoice_sub_type_skd_ckd_lots [renamed to l10n_in_ewaybill module]
+DEL l10n.in.ewaybill.type: l10n_in_edi_ewaybill.type_tax_invoice_sub_type_supply [renamed to l10n_in_ewaybill module]
+---Probably obsolete module l10n_in_ewaybill_port---
+---Models in module 'l10n_in_ewaybill_port'---
+---Fields in module 'l10n_in_ewaybill_port'---
+l10n_in_ewaybill_port / account.move             / l10n_in_ewaybill_port_partner_id (many2one): DEL relation: res.partner
+---XML records in module 'l10n_in_ewaybill_port'---
+DEL ir.ui.view: l10n_in_ewaybill_port.invoice_form_inherit_l10n_in_ewaybill_port
+---Probably obsolete module l10n_in_gstin_status---
+---Models in module 'l10n_in_gstin_status'---
+---Fields in module 'l10n_in_gstin_status'---
+l10n_in_gstin_status / account.bank.statement.line / l10n_in_gstin_verified_date (date): module is now 'l10n_in' ('l10n_in_gstin_status')
+l10n_in_gstin_status / account.bank.statement.line / l10n_in_partner_gstin_status (boolean): module is now 'l10n_in' ('l10n_in_gstin_status')
+l10n_in_gstin_status / account.bank.statement.line / l10n_in_show_gstin_status (boolean): module is now 'l10n_in' ('l10n_in_gstin_status')
+l10n_in_gstin_status / account.move             / l10n_in_gstin_verified_date (date): module is now 'l10n_in' ('l10n_in_gstin_status')
+l10n_in_gstin_status / account.move             / l10n_in_partner_gstin_status (boolean): module is now 'l10n_in' ('l10n_in_gstin_status')
+l10n_in_gstin_status / account.move             / l10n_in_show_gstin_status (boolean): module is now 'l10n_in' ('l10n_in_gstin_status')
+l10n_in_gstin_status / res.partner              / l10n_in_gstin_verified_date (date): module is now 'l10n_in' ('l10n_in_gstin_status')
+l10n_in_gstin_status / res.partner              / l10n_in_gstin_verified_status (boolean): module is now 'l10n_in' ('l10n_in_gstin_status')
+l10n_in_gstin_status / res.users                / l10n_in_gstin_verified_date (date): module is now 'l10n_in' ('l10n_in_gstin_status')
+l10n_in_gstin_status / res.users                / l10n_in_gstin_verified_status (boolean): module is now 'l10n_in' ('l10n_in_gstin_status')
+---XML records in module 'l10n_in_gstin_status'---
+DEL ir.ui.view: l10n_in_gstin_status.l10n_in_view_partner_base_vat_form
+DEL ir.ui.view: l10n_in_gstin_status.move_form_inherit_l10n_in_gst_verification
+---Probably obsolete module l10n_in_purchase---
+---Models in module 'l10n_in_purchase'---
+---Fields in module 'l10n_in_purchase'---
+l10n_in_purchase / purchase.order           / l10n_in_gst_treatment (selection): DEL selection_keys: ['composition', 'consumer', 'deemed_export', 'overseas', 'regular', 'special_economic_zone', 'uin_holders', 'unregistered']
+---XML records in module 'l10n_in_purchase'---
+DEL ir.ui.view: l10n_in_purchase.gst_report_purchaseorder_document_inherit
+DEL ir.ui.view: l10n_in_purchase.gst_report_purchasequotation_document_inherit
+DEL ir.ui.view: l10n_in_purchase.view_purchase_order_form_inherit_l10n_in_purchase
+---Probably obsolete module l10n_in_withholding---
+---Models in module 'l10n_in_withholding'---
+model l10n_in.section.alert (moved to l10n_in)
+model l10n_in.withhold.wizard (moved to l10n_in) [transient]
+obsolete model l10n_in.withhold.wizard.line [transient]
+---Fields in module 'l10n_in_withholding'---
+l10n_in_withholding / account.account          / l10n_in_tds_tcs_section_id (many2one): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.bank.statement.line / l10n_in_display_higher_tcs_button (boolean): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.bank.statement.line / l10n_in_is_withholding (boolean): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.bank.statement.line / l10n_in_total_withholding_amount (float): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.bank.statement.line / l10n_in_withhold_move_ids (one2many): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.bank.statement.line / l10n_in_withholding_line_ids (one2many): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.bank.statement.line / l10n_in_withholding_ref_move_id (many2one): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.move             / l10n_in_display_higher_tcs_button (boolean): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.move             / l10n_in_is_withholding (boolean): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.move             / l10n_in_total_withholding_amount (float): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.move             / l10n_in_withhold_move_ids (one2many): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.move             / l10n_in_withholding_line_ids (one2many): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.move             / l10n_in_withholding_ref_move_id (many2one): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.move.line        / l10n_in_withhold_tax_amount (float): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.payment          / l10n_in_total_withholding_amount (float): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.payment          / l10n_in_withhold_move_ids (one2many): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.tax              / l10n_in_section_id (many2one) : module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / account.tax              / l10n_in_tds_tax_type (selection): DEL selection_keys: ['purchase', 'sale']
+l10n_in_withholding / l10n_in.section.alert    / _order                        : module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / l10n_in.section.alert    / aggregate_limit (float)       : module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / l10n_in.section.alert    / aggregate_period (selection)  : module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / l10n_in.section.alert    / consider_amount (selection)   : module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / l10n_in.section.alert    / display_name (char)           : module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / l10n_in.section.alert    / is_aggregate_limit (boolean)  : module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / l10n_in.section.alert    / is_per_transaction_limit (boolean): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / l10n_in.section.alert    / l10n_in_section_tax_ids (one2many): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / l10n_in.section.alert    / name (char)                   : module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / l10n_in.section.alert    / per_transaction_limit (float) : module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / l10n_in.section.alert    / tax_source_type (selection)   : module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / res.company              / l10n_in_withholding_account_id (many2one): module is now 'l10n_in' ('l10n_in_withholding')
+l10n_in_withholding / res.company              / l10n_in_withholding_journal_id (many2one): module is now 'l10n_in' ('l10n_in_withholding')
+---XML records in module 'l10n_in_withholding'---
+DEL account.report: l10n_in_withholding.tcs_report [renamed to l10n_in module]
+DEL account.report: l10n_in_withholding.tds_report [renamed to l10n_in module]
+DEL account.report.column: l10n_in_withholding.tcs_report_balance [renamed to l10n_in module]
+DEL account.report.column: l10n_in_withholding.tds_report_balance [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_alfhc_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_aofpnbtotl_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_mbcoloio_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_s_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_tl_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_tobaotuafl_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_touafl_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1c_maq_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1c_pl_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1c_tp_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1f_mv_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1g_soaotpp_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1g_som_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1h_sog_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_192_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_192a_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_193_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194a_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194b_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194bb_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194c_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194d_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194da_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194e_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194ee_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194f_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194g_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194h_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194i_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194ia_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194ib_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194ic_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194j_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194k_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194la_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194lb_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194lba_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194lbb_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194lbc_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194m_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194n_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194o_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_194q_tag [renamed to l10n_in module]
+DEL account.report.expression: l10n_in_withholding.tds_report_line_section_195_tag [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_alfhc [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_aofpnbtotl [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_mbcoloio [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_s [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_tl [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_tobaotuafl [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_touafl [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1c_maq [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1c_pl [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1c_tp [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1f_mv [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1g_soaotpp [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1g_som [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1h_sog [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_192 [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_192a [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_193 [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194 [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194a [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194b [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194bb [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194c [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194d [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194da [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194e [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194ee [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194f [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194g [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194h [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194i [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194ia [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194ib [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194ic [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194j [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194k [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194la [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194lb [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194lba [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194lbb [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194lbc [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194m [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194n [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194o [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_194q [renamed to l10n_in module]
+DEL account.report.line: l10n_in_withholding.tds_report_line_section_195 [renamed to l10n_in module]
+DEL ir.actions.act_window: l10n_in_withholding.l10n_in_section_alert_action [renamed to l10n_in module]
+DEL ir.actions.act_window: l10n_in_withholding.l10n_in_withholding_entry_form_action [renamed to l10n_in module]
+DEL ir.model.access: l10n_in_withholding.access_l10n_in_section_alert_account_manager [renamed to l10n_in module]
+DEL ir.model.access: l10n_in_withholding.access_l10n_in_section_alert_account_readonly [renamed to l10n_in module]
+DEL ir.model.access: l10n_in_withholding.access_l10n_in_withhold_wizard [renamed to l10n_in module]
+DEL ir.model.access: l10n_in_withholding.access_l10n_in_withhold_wizard_line
+DEL ir.model.constraint: l10n_in_withholding.constraint_l10n_in_section_alert_aggregate_limit [renamed to l10n_in module]
+DEL ir.model.constraint: l10n_in_withholding.constraint_l10n_in_section_alert_per_transaction_limit [renamed to l10n_in module]
+DEL ir.ui.view: l10n_in_withholding.account_account_tds_tcs_view_form_inherit
+DEL ir.ui.view: l10n_in_withholding.account_account_tds_tcs_view_tree_inherit
+DEL ir.ui.view: l10n_in_withholding.account_move_view_form_inherit_l10n_in_withholding
+DEL ir.ui.view: l10n_in_withholding.l10n_in_section_alert_view_form
+DEL ir.ui.view: l10n_in_withholding.l10n_in_section_alert_view_tree
+DEL ir.ui.view: l10n_in_withholding.res_config_settings_view_form_inherit_l10n_in_withholding
+DEL ir.ui.view: l10n_in_withholding.tds_entry_view_form
+DEL ir.ui.view: l10n_in_withholding.view_account_payment_form_inherit_l10n_in_withholding
+DEL ir.ui.view: l10n_in_withholding.view_move_line_tree_l10n_in
+DEL ir.ui.view: l10n_in_withholding.view_tax_form_inherited_l10n_in_withholding
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section206c1h_g
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_alc [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_fo [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_min [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_sc [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_tim [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_tim_o [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_tl [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1c_mq [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1c_p [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1c_t [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1f_mv [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1g_ot [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1g_r [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_192 [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_192a [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_193 [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194 [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194a [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194b [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194ba [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194bb [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194c [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194d [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194da [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194e [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194ee [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194f [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194g [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194h [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194i [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194ia [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194ib [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194ic [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194j [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194j_dir [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194k [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194la [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194lb [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194lba1 [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194lbb [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194lbc [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194m [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194n [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194o [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194o_huf [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_194q [renamed to l10n_in module]
+DEL l10n_in.section.alert: l10n_in_withholding.tds_section_195 [renamed to l10n_in module]
+---Probably obsolete module l10n_in_withholding_payment---
+---Models in module 'l10n_in_withholding_payment'---
+---Fields in module 'l10n_in_withholding_payment'---
+l10n_in_withholding_payment / account.bank.statement.line / l10n_in_withholding_ref_payment_id (many2one): module is now 'l10n_in' ('l10n_in_withholding_payment')
+l10n_in_withholding_payment / account.move             / l10n_in_withholding_ref_payment_id (many2one): module is now 'l10n_in' ('l10n_in_withholding_payment')
+l10n_in_withholding_payment / account.payment          / l10n_in_withhold_move_ids (False): DEL mode: modify
+---XML records in module 'l10n_in_withholding_payment'---
+---Probably obsolete module l10n_it_edi_ndd---
+---Models in module 'l10n_it_edi_ndd'---
+model l10n_it.document.type (moved to l10n_it_edi)
+---Fields in module 'l10n_it_edi_ndd'---
+l10n_it_edi_ndd / account.bank.statement.line / l10n_it_document_type (many2one): module is now 'l10n_it_edi' ('l10n_it_edi_ndd')
+l10n_it_edi_ndd / account.bank.statement.line / l10n_it_payment_method (selection): module is now 'l10n_it_edi' ('l10n_it_edi_ndd')
+l10n_it_edi_ndd / account.move             / l10n_it_document_type (many2one): module is now 'l10n_it_edi' ('l10n_it_edi_ndd')
+l10n_it_edi_ndd / account.move             / l10n_it_payment_method (selection): module is now 'l10n_it_edi' ('l10n_it_edi_ndd')
+l10n_it_edi_ndd / account.payment.method.line / l10n_it_payment_method (selection): module is now 'l10n_it_edi' ('l10n_it_edi_ndd')
+l10n_it_edi_ndd / l10n_it.document.type    / _order                        : module is now 'l10n_it_edi' ('l10n_it_edi_ndd')
+l10n_it_edi_ndd / l10n_it.document.type    / code (char)                   : module is now 'l10n_it_edi' ('l10n_it_edi_ndd')
+l10n_it_edi_ndd / l10n_it.document.type    / display_name (char)           : module is now 'l10n_it_edi' ('l10n_it_edi_ndd')
+l10n_it_edi_ndd / l10n_it.document.type    / name (char)                   : module is now 'l10n_it_edi' ('l10n_it_edi_ndd')
+l10n_it_edi_ndd / l10n_it.document.type    / type (selection)              : module is now 'l10n_it_edi' ('l10n_it_edi_ndd')
+---XML records in module 'l10n_it_edi_ndd'---
+DEL ir.model.access: l10n_it_edi_ndd.access_l10n_it_document_type [renamed to l10n_it_edi module]
+DEL ir.ui.view: l10n_it_edi_ndd.account_invoice_form_l10n_it
+DEL ir.ui.view: l10n_it_edi_ndd.l10n_it_document_type_form
+DEL ir.ui.view: l10n_it_edi_ndd.l10n_it_document_type_tree
+DEL ir.ui.view: l10n_it_edi_ndd.view_account_journal_form_l10n_it
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_01 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_02 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_03 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_04 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_05 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_06 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_07 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_08 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_09 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_16 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_17 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_18 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_19 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_20 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_21 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_22 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_23 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_24 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_25 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_26 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_27 [renamed to l10n_it_edi module]
+DEL l10n_it.document.type: l10n_it_edi_ndd.l10n_it_document_type_28 [renamed to l10n_it_edi module]
+---Probably obsolete module l10n_it_edi_ndd_account_dn---
+---Models in module 'l10n_it_edi_ndd_account_dn'---
+---Fields in module 'l10n_it_edi_ndd_account_dn'---
+---XML records in module 'l10n_it_edi_ndd_account_dn'---
+DEL ir.ui.view: l10n_it_edi_ndd_account_dn.account_invoice_it_FatturaPA_export_debit_note
+---Probably obsolete module l10n_it_edi_website_sale---
+---Models in module 'l10n_it_edi_website_sale'---
+---Fields in module 'l10n_it_edi_website_sale'---
+---XML records in module 'l10n_it_edi_website_sale'---
+DEL ir.ui.view: l10n_it_edi_website_sale.address
+---Probably obsolete module l10n_it_edi_withholding---
+---Models in module 'l10n_it_edi_withholding'---
+---Fields in module 'l10n_it_edi_withholding'---
+l10n_it_edi_withholding / account.tax              / l10n_it_pension_fund_type (selection): module is now 'l10n_it_edi' ('l10n_it_edi_withholding')
+l10n_it_edi_withholding / account.tax              / l10n_it_withholding_reason (selection): module is now 'l10n_it_edi' ('l10n_it_edi_withholding')
+l10n_it_edi_withholding / account.tax              / l10n_it_withholding_type (selection): module is now 'l10n_it_edi' ('l10n_it_edi_withholding')
+---XML records in module 'l10n_it_edi_withholding'---
+DEL account.report: l10n_it_edi_withholding.withh_tax_report_it [renamed to l10n_it module]
+DEL account.report.column: l10n_it_edi_withholding.withh_tax_report_balance [renamed to l10n_it module]
+DEL account.report.expression: l10n_it_edi_withholding.enasarco_purchase_tax_report_it_line_tag [renamed to l10n_it module]
+DEL account.report.expression: l10n_it_edi_withholding.enasarco_sale_tax_report_it_line_tag [renamed to l10n_it module]
+DEL account.report.expression: l10n_it_edi_withholding.withh_purchase_tax_report_it_line_tag [renamed to l10n_it module]
+DEL account.report.expression: l10n_it_edi_withholding.withh_sale_tax_report_it_line_tag [renamed to l10n_it module]
+DEL account.report.line: l10n_it_edi_withholding.enasarco_purchase_tax_report_it_line [renamed to l10n_it module]
+DEL account.report.line: l10n_it_edi_withholding.enasarco_sale_tax_report_it_line [renamed to l10n_it module]
+DEL account.report.line: l10n_it_edi_withholding.withh_purchase_tax_report_it_line [renamed to l10n_it module]
+DEL account.report.line: l10n_it_edi_withholding.withh_sale_tax_report_it_line [renamed to l10n_it module]
+DEL ir.ui.view: l10n_it_edi_withholding.account_invoice_it_FatturaPA_export_withholding
+DEL ir.ui.view: l10n_it_edi_withholding.account_view_tax_form_l10n_it_edi_extended
+DEL ir.ui.view: l10n_it_edi_withholding.view_invoice_tree_l10n_it_edi_extended
+---Probably obsolete module l10n_jo_edi_extended---
+---Models in module 'l10n_jo_edi_extended'---
+---Fields in module 'l10n_jo_edi_extended'---
+l10n_jo_edi_extended / account.bank.statement.line / l10n_jo_edi_invoice_type (selection): module is now 'l10n_jo_edi' ('l10n_jo_edi_extended')
+l10n_jo_edi_extended / account.move             / l10n_jo_edi_invoice_type (selection): module is now 'l10n_jo_edi' ('l10n_jo_edi_extended')
+l10n_jo_edi_extended / account.move             / l10n_jo_edi_state (False)     : DEL selection_keys: ['demo', 'sent', 'to_send'], mode: modify
+l10n_jo_edi_extended / res.company              / l10n_jo_edi_demo_mode (boolean): module is now 'l10n_jo_edi' ('l10n_jo_edi_extended')
+---XML records in module 'l10n_jo_edi_extended'---
+DEL ir.ui.view: l10n_jo_edi_extended.res_config_settings_view_form
+DEL ir.ui.view: l10n_jo_edi_extended.view_account_invoice_filter
+DEL ir.ui.view: l10n_jo_edi_extended.view_move_form
+DEL ir.ui.view: l10n_jo_edi_extended.view_out_credit_note_tree
+DEL ir.ui.view: l10n_jo_edi_extended.view_out_invoice_tree
+---Probably obsolete module l10n_mx_hr---
+---Models in module 'l10n_mx_hr'---
+---Fields in module 'l10n_mx_hr'---
+l10n_mx_hr   / hr.employee              / l10n_mx_curp (char)           : DEL
+l10n_mx_hr   / hr.employee              / l10n_mx_rfc (char)            : DEL
+---XML records in module 'l10n_mx_hr'---
+DEL ir.ui.view: l10n_mx_hr.hr_employee_form
+---Probably obsolete module l10n_my_edi_extended---
+---Models in module 'l10n_my_edi_extended'---
+---Fields in module 'l10n_my_edi_extended'---
+l10n_my_edi_extended / account.bank.statement.line / l10n_my_invoice_need_edi (boolean): module is now 'l10n_my_edi' ('l10n_my_edi_extended')
+l10n_my_edi_extended / account.move             / l10n_my_edi_invoice_long_id (char): DEL
+l10n_my_edi_extended / account.move             / l10n_my_invoice_need_edi (boolean): module is now 'l10n_my_edi' ('l10n_my_edi_extended')
+l10n_my_edi_extended / account.move.line        / l10n_my_edi_classification_code (selection): module is now 'l10n_my_edi' ('l10n_my_edi_extended')
+l10n_my_edi_extended / res.partner              / l10n_my_edi_industrial_classification (many2one): module is now 'l10n_my_edi' ('l10n_my_edi_extended')
+l10n_my_edi_extended / res.partner              / l10n_my_edi_malaysian_tin (char): module is now 'l10n_my_edi' ('l10n_my_edi_extended')
+l10n_my_edi_extended / res.users                / l10n_my_edi_industrial_classification (many2one): module is now 'l10n_my_edi' ('l10n_my_edi_extended')
+l10n_my_edi_extended / res.users                / l10n_my_edi_malaysian_tin (char): module is now 'l10n_my_edi' ('l10n_my_edi_extended')
+---XML records in module 'l10n_my_edi_extended'---
+DEL ir.actions.server: l10n_my_edi_extended.invoice_send_to_myinvois [renamed to l10n_my_edi module]
+DEL ir.ui.view: l10n_my_edi_extended.portal_my_details_fields
+DEL ir.ui.view: l10n_my_edi_extended.report_invoice
+DEL ir.ui.view: l10n_my_edi_extended.report_invoice_document
+DEL ir.ui.view: l10n_my_edi_extended.view_move_form_inherit_l10n_my_myinvois_extended
+DEL ir.ui.view: l10n_my_edi_extended.view_partner_form_inherit_l10n_my_myinvois_extended
+---Probably obsolete module l10n_pe_website_sale---
+---Models in module 'l10n_pe_website_sale'---
+---Fields in module 'l10n_pe_website_sale'---
+---XML records in module 'l10n_pe_website_sale'---
+DEL ir.model.access: l10n_pe_website_sale.access_city_portal [renamed to l10n_pe module]
+DEL ir.model.access: l10n_pe_website_sale.access_city_public [renamed to l10n_pe module]
+DEL ir.ui.view: l10n_pe_website_sale.address
+DEL ir.ui.view: l10n_pe_website_sale.partner_address_info
+DEL ir.ui.view: l10n_pe_website_sale.partner_info
+---Probably obsolete module l10n_pl_taxable_supply_date---
+---Models in module 'l10n_pl_taxable_supply_date'---
+---Fields in module 'l10n_pl_taxable_supply_date'---
+---XML records in module 'l10n_pl_taxable_supply_date'---
+DEL ir.ui.view: l10n_pl_taxable_supply_date.report_invoice_document
+DEL ir.ui.view: l10n_pl_taxable_supply_date.view_move_form_l10n_pl
+---Probably obsolete module l10n_uy_website_sale---
+---Models in module 'l10n_uy_website_sale'---
+---Fields in module 'l10n_uy_website_sale'---
+---XML records in module 'l10n_uy_website_sale'---
+DEL ir.ui.view: l10n_uy_website_sale.address
+DEL ir.ui.view: l10n_uy_website_sale.partner_info
+DEL ir.ui.view: l10n_uy_website_sale.portal_my_details_fields
+---Probably obsolete module membership---
+---Models in module 'membership'---
+obsolete model membership.invoice [transient]
+obsolete model membership.membership_line
+obsolete model report.membership [sql_view]
+---Fields in module 'membership'---
+membership   / membership.membership_line / account_invoice_line (many2one): DEL relation: account.move.line
+membership   / membership.membership_line / company_id (many2one)         : DEL relation: res.company
+membership   / membership.membership_line / date (date)                   : DEL
+membership   / membership.membership_line / date_cancel (date)            : DEL
+membership   / membership.membership_line / date_from (date)              : DEL
+membership   / membership.membership_line / date_to (date)                : DEL
+membership   / membership.membership_line / member_price (float)          : DEL required
+membership   / membership.membership_line / membership_id (many2one)      : DEL relation: product.product, required
+membership   / membership.membership_line / partner (many2one)            : DEL relation: res.partner
+membership   / membership.membership_line / state (selection)             : DEL selection_keys: ['canceled', 'free', 'invoiced', 'none', 'old', 'paid', 'waiting']
+membership   / product.template         / membership (boolean)          : DEL
+membership   / product.template         / membership_date_from (date)   : DEL
+membership   / product.template         / membership_date_to (date)     : DEL
+membership   / res.partner              / associate_member (many2one)   : DEL relation: res.partner
+membership   / res.partner              / free_member (boolean)         : DEL
+membership   / res.partner              / member_lines (one2many)       : DEL relation: membership.membership_line
+membership   / res.partner              / membership_amount (float)     : DEL
+membership   / res.partner              / membership_cancel (date)      : DEL
+membership   / res.partner              / membership_start (date)       : DEL
+membership   / res.partner              / membership_state (selection)  : DEL selection_keys: ['canceled', 'free', 'invoiced', 'none', 'old', 'paid', 'waiting']
+membership   / res.partner              / membership_stop (date)        : DEL
+---XML records in module 'membership'---
+DEL ir.actions.act_window: membership.action_membership_invoice_view
+DEL ir.actions.act_window: membership.action_membership_members
+DEL ir.actions.act_window: membership.action_membership_products
+DEL ir.actions.act_window: membership.action_report_membership_tree
+DEL ir.actions.act_window.view: membership.action_membership_members_view_form
+DEL ir.actions.act_window.view: membership.action_membership_members_view_kanban
+DEL ir.actions.act_window.view: membership.action_membership_members_view_tree
+DEL ir.actions.act_window.view: membership.action_membership_product_view_form
+DEL ir.actions.act_window.view: membership.action_membership_product_view_kanban
+DEL ir.actions.act_window.view: membership.action_membership_product_view_tree
+DEL ir.cron: membership.ir_cron_update_membership (noupdate)
+DEL ir.model.access: membership.access_membership_invoice
+DEL ir.model.access: membership.access_membership_membership_line_employee
+DEL ir.model.access: membership.access_membership_membership_line_partner_manager
+DEL ir.model.access: membership.access_report_membership
+DEL ir.model.constraint: membership.constraint_product_template_membership_date_greater
+DEL ir.ui.menu: membership.menu_association
+DEL ir.ui.menu: membership.menu_marketing_config_association
+DEL ir.ui.menu: membership.menu_membership
+DEL ir.ui.menu: membership.menu_membership_products
+DEL ir.ui.menu: membership.menu_report_membership
+DEL ir.ui.view: membership.membership_members_tree
+DEL ir.ui.view: membership.membership_product_search_form_view
+DEL ir.ui.view: membership.membership_products_form
+DEL ir.ui.view: membership.membership_products_kanban
+DEL ir.ui.view: membership.membership_products_tree
+DEL ir.ui.view: membership.report_membership_view_tree
+DEL ir.ui.view: membership.view_membership_invoice_view
+DEL ir.ui.view: membership.view_partner_form
+DEL ir.ui.view: membership.view_report_membership_graph1
+DEL ir.ui.view: membership.view_report_membership_pivot
+DEL ir.ui.view: membership.view_report_membership_search
+DEL ir.ui.view: membership.view_res_partner_member_filter
+---Probably obsolete module payment_razorpay_oauth---
+---Models in module 'payment_razorpay_oauth'---
+---Fields in module 'payment_razorpay_oauth'---
+payment_razorpay_oauth / payment.provider         / razorpay_access_token (char)  : module is now 'payment_razorpay' ('payment_razorpay_oauth')
+payment_razorpay_oauth / payment.provider         / razorpay_access_token_expiry (datetime): module is now 'payment_razorpay' ('payment_razorpay_oauth')
+payment_razorpay_oauth / payment.provider         / razorpay_account_id (char)    : module is now 'payment_razorpay' ('payment_razorpay_oauth')
+payment_razorpay_oauth / payment.provider         / razorpay_public_token (char)  : module is now 'payment_razorpay' ('payment_razorpay_oauth')
+payment_razorpay_oauth / payment.provider         / razorpay_refresh_token (char) : module is now 'payment_razorpay' ('payment_razorpay_oauth')
+---XML records in module 'payment_razorpay_oauth'---
+DEL ir.ui.view: payment_razorpay_oauth.authorization_error
+DEL ir.ui.view: payment_razorpay_oauth.payment_provider_form_razorpay_oauth
+---Probably obsolete module pos_epson_printer---
+---Models in module 'pos_epson_printer'---
+---Fields in module 'pos_epson_printer'---
+pos_epson_printer / pos.config               / epson_printer_ip (char)       : module is now 'point_of_sale' ('pos_epson_printer')
+pos_epson_printer / pos.printer              / epson_printer_ip (char)       : module is now 'point_of_sale' ('pos_epson_printer')
+pos_epson_printer / pos.printer              / printer_type (False)          : DEL selection_keys: ['epson_epos', 'iot'], mode: modify
+---XML records in module 'pos_epson_printer'---
+DEL ir.ui.view: pos_epson_printer.pos_iot_config_view_form
+DEL ir.ui.view: pos_epson_printer.res_config_settings_view_form
+DEL ir.ui.view: pos_epson_printer.view_pos_printer_form
+---Probably obsolete module pos_paytm---
+---Models in module 'pos_paytm'---
+---Fields in module 'pos_paytm'---
+pos_paytm    / pos.payment.method       / accept_payment (selection)    : DEL selection_keys: ['auto', 'manual']
+pos_paytm    / pos.payment.method       / allowed_payment_modes (selection): DEL selection_keys: ['all', 'card', 'qr']
+pos_paytm    / pos.payment.method       / channel_id (char)             : DEL
+pos_paytm    / pos.payment.method       / paytm_merchant_key (char)     : DEL
+pos_paytm    / pos.payment.method       / paytm_mid (char)              : DEL
+pos_paytm    / pos.payment.method       / paytm_test_mode (boolean)     : DEL
+pos_paytm    / pos.payment.method       / paytm_tid (char)              : DEL
+---XML records in module 'pos_paytm'---
+DEL ir.ui.view: pos_paytm.pos_payment_method_view_form_inherit_pos_paytm
+---Probably obsolete module pos_six---
+---Models in module 'pos_six'---
+---Fields in module 'pos_six'---
+pos_six      / pos.payment.method       / six_terminal_ip (char)        : DEL
+---XML records in module 'pos_six'---
+DEL ir.ui.view: pos_six.pos_payment_method_view_form_inherit_pos_adyen
+---Probably obsolete module pos_viva_wallet---
+---Models in module 'pos_viva_wallet'---
+---Fields in module 'pos_viva_wallet'---
+pos_viva_wallet / pos.payment.method       / viva_wallet_api_key (char)    : DEL
+pos_viva_wallet / pos.payment.method       / viva_wallet_bearer_token (char): DEL
+pos_viva_wallet / pos.payment.method       / viva_wallet_client_id (char)  : DEL
+pos_viva_wallet / pos.payment.method       / viva_wallet_client_secret (char): DEL
+pos_viva_wallet / pos.payment.method       / viva_wallet_latest_response (json): DEL
+pos_viva_wallet / pos.payment.method       / viva_wallet_merchant_id (char): DEL
+pos_viva_wallet / pos.payment.method       / viva_wallet_terminal_id (char): DEL
+pos_viva_wallet / pos.payment.method       / viva_wallet_test_mode (boolean): DEL
+pos_viva_wallet / pos.payment.method       / viva_wallet_webhook_verification_key (char): DEL
+---XML records in module 'pos_viva_wallet'---
+DEL ir.ui.view: pos_viva_wallet.pos_payment_method_view_form_inherit_pos_viva_wallet
+---Probably obsolete module product_images---
+---Models in module 'product_images'---
+obsolete model product.fetch.image.wizard [transient]
+---Fields in module 'product_images'---
+product_images / product.product          / image_fetch_pending (boolean) : DEL
+---XML records in module 'product_images'---
+DEL ir.actions.act_window: product_images.product_product_action_get_pic_with_barcode
+DEL ir.actions.act_window: product_images.product_template_action_get_pic_with_barcode
+DEL ir.cron: product_images.ir_cron_fetch_image
+DEL ir.model.access: product_images.access_product_get_pic_barcode_manager
+DEL ir.rule: product_images.product_images_product_fetch_image_wizard_rule (noupdate)
+DEL ir.ui.view: product_images.product_fetch_image_wizard_view_form
+DEL ir.ui.view: product_images.res_config_settings_view_form
+---Probably obsolete module sale_async_emails---
+---Models in module 'sale_async_emails'---
+---Fields in module 'sale_async_emails'---
+sale_async_emails / sale.order               / pending_email_template_id (many2one): module is now 'sale' ('sale_async_emails')
+---XML records in module 'sale_async_emails'---
+DEL ir.config_parameter: sale_async_emails.async_emails [renamed to sale module] (noupdate)
+DEL ir.cron: sale_async_emails.cron (noupdate)
+---Probably obsolete module web_editor---
+---Models in module 'web_editor'---
+model html.field.history.mixin (moved to html_editor) [abstract]
+obsolete model web_editor.assets [abstract]
+obsolete model web_editor.converter.test
+obsolete model web_editor.converter.test.sub
+---Fields in module 'web_editor'---
+web_editor   / web_editor.converter.test / binary (binary)               : DEL attachment: False
+web_editor   / web_editor.converter.test / char (char)                   : DEL
+web_editor   / web_editor.converter.test / date (date)                   : DEL
+web_editor   / web_editor.converter.test / datetime (datetime)           : DEL
+web_editor   / web_editor.converter.test / float (float)                 : DEL
+web_editor   / web_editor.converter.test / html (html)                   : DEL
+web_editor   / web_editor.converter.test / integer (integer)             : DEL
+web_editor   / web_editor.converter.test / many2one (many2one)           : DEL relation: web_editor.converter.test.sub
+web_editor   / web_editor.converter.test / numeric (float)               : DEL
+web_editor   / web_editor.converter.test / selection_str (selection)     : DEL selection_keys: ['A', 'B', 'C', 'D']
+web_editor   / web_editor.converter.test / text (text)                   : DEL
+web_editor   / web_editor.converter.test.sub / name (char)                   : DEL
+---XML records in module 'web_editor'---
+DEL ir.asset: web_editor.13_0_color_system_support_primary_variables_scss
+DEL ir.model.access: web_editor.access_web_editor_converter_test
+DEL ir.model.access: web_editor.access_web_editor_converter_test_sub
+DEL ir.ui.view: web_editor.colorpicker
+DEL ir.ui.view: web_editor.s_hr
+DEL ir.ui.view: web_editor.snippet_options
+DEL ir.ui.view: web_editor.snippet_options_background_color_widget
+DEL ir.ui.view: web_editor.snippet_options_background_options
+DEL ir.ui.view: web_editor.snippet_options_image_optimization_widgets
+DEL ir.ui.view: web_editor.snippet_options_version_control
+DEL ir.ui.view: web_editor.snippets
+DEL ir.ui.view: web_editor.tests
+---Probably obsolete module website_event_jitsi---
+---Models in module 'website_event_jitsi'---
+---Fields in module 'website_event_jitsi'---
+---XML records in module 'website_event_jitsi'---
+DEL ir.ui.view: website_event_jitsi.res_config_settings_view_form
+---Probably obsolete module website_event_meet---
+---Models in module 'website_event_meet'---
+obsolete model event.meeting.room
+---Fields in module 'website_event_meet'---
+website_event_meet / event.event              / meeting_room_allow_creation (boolean): DEL
+website_event_meet / event.event              / meeting_room_ids (one2many)   : DEL relation: event.meeting.room
+website_event_meet / event.meeting.room       / active (boolean)              : DEL
+website_event_meet / event.meeting.room       / chat_room_id (many2one)       : DEL relation: chat.room, required
+website_event_meet / event.meeting.room       / event_id (many2one)           : DEL relation: event.event, required
+website_event_meet / event.meeting.room       / is_pinned (boolean)           : DEL
+website_event_meet / event.meeting.room       / is_published (boolean)        : DEL
+website_event_meet / event.meeting.room       / name (char)                   : DEL required
+website_event_meet / event.meeting.room       / summary (char)                : DEL
+website_event_meet / event.meeting.room       / target_audience (char)        : DEL
+website_event_meet / event.type               / meeting_room_allow_creation (boolean): DEL
+website_event_meet / website.event.menu       / menu_type (False)             : DEL selection_keys: ['booth', 'community', 'exhibitor', 'introduction', 'location', 'meeting_room', 'register', 'track', 'track_proposal'], mode: modify
+---XML records in module 'website_event_meet'---
+DEL ir.actions.act_window: website_event_meet.action_meeting_room_from_event
+DEL ir.actions.act_window: website_event_meet.event_meeting_room_action
+DEL ir.model.access: website_event_meet.access_chat_room_registration
+DEL ir.model.access: website_event_meet.access_chat_room_user
+DEL ir.model.access: website_event_meet.access_event_meeting_room_employee
+DEL ir.model.access: website_event_meet.access_event_meeting_room_portal
+DEL ir.model.access: website_event_meet.access_event_meeting_room_public
+DEL ir.model.access: website_event_meet.access_event_meeting_room_user
+DEL ir.rule: website_event_meet.event_meeting_room_rule_share (noupdate)
+DEL ir.ui.view: website_event_meet.community_aside
+DEL ir.ui.view: website_event_meet.community_main
+DEL ir.ui.view: website_event_meet.event_event_view_form
+DEL ir.ui.view: website_event_meet.event_meet
+DEL ir.ui.view: website_event_meet.event_meet_main
+DEL ir.ui.view: website_event_meet.event_meeting_room_view_form
+DEL ir.ui.view: website_event_meet.event_meeting_room_view_search
+DEL ir.ui.view: website_event_meet.event_meeting_room_view_tree
+DEL ir.ui.view: website_event_meet.event_type_view_form
+DEL ir.ui.view: website_event_meet.meeting_room_aside
+DEL ir.ui.view: website_event_meet.meeting_room_card
+DEL ir.ui.view: website_event_meet.meeting_room_main
+DEL ir.ui.view: website_event_meet.snippet_options
+---Probably obsolete module website_event_meet_quiz---
+---Models in module 'website_event_meet_quiz'---
+---Fields in module 'website_event_meet_quiz'---
+---XML records in module 'website_event_meet_quiz'---
+DEL ir.ui.view: website_event_meet_quiz.community_aside
+DEL ir.ui.view: website_event_meet_quiz.community_leaderboard_small
+DEL ir.ui.view: website_event_meet_quiz.visitor_quiz_points_card
+---Probably obsolete module website_jitsi---
+---Models in module 'website_jitsi'---
+obsolete model chat.room
+obsolete model chat.room.mixin [abstract]
+---Fields in module 'website_jitsi'---
+website_jitsi / chat.room                / lang_id (many2one)            : DEL relation: res.lang
+website_jitsi / chat.room                / last_activity (datetime)      : DEL
+website_jitsi / chat.room                / max_capacity (selection)      : DEL required, selection_keys: ['12', '16', '20', '4', '8', 'no_limit']
+website_jitsi / chat.room                / max_participant_reached (integer): DEL
+website_jitsi / chat.room                / name (char)                   : DEL required
+website_jitsi / chat.room                / participant_count (integer)   : DEL
+---XML records in module 'website_jitsi'---
+DEL ir.actions.act_window: website_jitsi.chat_room_action
+DEL ir.model.access: website_jitsi.access_chat_room_all
+DEL ir.model.access: website_jitsi.access_chat_room_system
+DEL ir.model.access: website_jitsi.access_chat_room_user
+DEL ir.ui.menu: website_jitsi.chat_room_menu
+DEL ir.ui.view: website_jitsi.chat_room_join_button
+DEL ir.ui.view: website_jitsi.chat_room_view_form
+DEL ir.ui.view: website_jitsi.chat_room_view_search
+DEL ir.ui.view: website_jitsi.chat_room_view_tree
+---Probably obsolete module website_membership---
+---Models in module 'website_membership'---
+---Fields in module 'website_membership'---
+---XML records in module 'website_membership'---
+DEL ir.model.access: website_membership.access_membership_membership_line_portal
+DEL ir.model.access: website_membership.access_membership_membership_line_public
+DEL ir.model.access: website_membership.access_membership_product_product_public
+DEL ir.rule: website_membership.membership_membership_line_public (noupdate)
+DEL ir.rule: website_membership.membership_product_product_public (noupdate)
+DEL ir.ui.view: website_membership.index
+DEL ir.ui.view: website_membership.opt_index_country
+DEL ir.ui.view: website_membership.opt_index_google_map
+DEL ir.ui.view: website_membership.partner
+DEL ir.ui.view: website_membership.product_template_view_form
+DEL ir.ui.view: website_membership.product_template_view_tree
+DEL ir.ui.view: website_membership.snippet_options
+---Probably obsolete module website_payment_authorize---
+---Models in module 'website_payment_authorize'---
+---Fields in module 'website_payment_authorize'---
+---XML records in module 'website_payment_authorize'---
+DEL ir.ui.view: website_payment_authorize.res_config_settings_view_form
