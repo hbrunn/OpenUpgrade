@@ -7,7 +7,7 @@ from odoo import api
 from odoo.exceptions import ValidationError
 from odoo.tools import mute_logger
 
-from odoo.addons.base.models.ir_ui_view import NameManager, View
+from odoo.addons.base.models.ir_ui_view import NameManager, IrUiView
 
 _logger = logging.getLogger(__name__)
 
@@ -18,7 +18,7 @@ def _check_xml(self):
     requested. Mute warnings about views which are common during migration."""
     with mute_logger("odoo.addons.base.models.ir_ui_view"):
         try:
-            return View._check_xml._original_method(self)
+            return IrUiView._check_xml._original_method(self)
         except ValidationError as e:
             _logger.warning(
                 "Can't render custom view %s for model %s. "
@@ -30,7 +30,7 @@ def _check_xml(self):
                 e,
             )
 
-
+# TODO delete if unneeded
 def check(self, view):
     """Because we captured the exception in _raise_view_error and archived that view,
     so info is None, but it is called to info.get('select') in NameManager.check,
@@ -56,7 +56,7 @@ def _raise_view_error(
     to_mute = "odoo.addons.base.models.ir_ui_view" if raise_exception else "not_muted"
     with mute_logger(to_mute):
         try:
-            return View._raise_view_error._original_method(
+            return IrUiView._raise_view_error._original_method(
                 self,
                 message,
                 node=node,
@@ -78,18 +78,18 @@ def _raise_view_error(
 def _check_field_paths(self, node, field_paths, model_name, use):
     """Ignore UnboundLocalError when we squelched the raise about missing fields"""
     try:
-        return View._check_field_paths._original_method(
+        return IrUiView._check_field_paths._original_method(
             self, node, field_paths, model_name, use
         )
     except UnboundLocalError:  # pylint: disable=except-pass
         pass
 
 
-_check_xml._original_method = View._check_xml
-View._check_xml = _check_xml
-check._original_method = NameManager.check
-NameManager.check = check
-_raise_view_error._original_method = View._raise_view_error
-View._raise_view_error = _raise_view_error
-_check_field_paths._original_method = View._check_field_paths
-View._check_field_paths = _check_field_paths
+_check_xml._original_method = IrUiView._check_xml
+IrUiView._check_xml = _check_xml
+#check._original_method = NameManager.check
+#NameManager.check = check
+_raise_view_error._original_method = IrUiView._raise_view_error
+IrUiView._raise_view_error = _raise_view_error
+_check_field_paths._original_method = IrUiView._check_field_paths
+IrUiView._check_field_paths = _check_field_paths

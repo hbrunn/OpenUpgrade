@@ -9,7 +9,6 @@ from odoo.addons.base.models.ir_model import (
     IrModelData,
     IrModelFields,
     IrModelRelation,
-    IrModelSelection,
 )
 
 
@@ -58,7 +57,6 @@ def _module_data_uninstall(self, modules_to_remove):
         patched_self, modules_to_remove
     )
 
-
 _module_data_uninstall._original_method = IrModelData._module_data_uninstall
 IrModelData._module_data_uninstall = _module_data_uninstall
 
@@ -71,25 +69,3 @@ def _module_data_uninstall(self):
 
 
 IrModelRelation._module_data_uninstall = _module_data_uninstall
-
-
-def _process_ondelete(self):
-    """Don't break on missing models or wrong field types
-    when deleting their selection fields"""
-    to_process = self.browse([])
-    for selection in self:
-        try:
-            model_name = selection.field_id.model
-            field = selection.field_id
-            # Validate that the model exists
-            # and that the field has an ondelete attribute
-            self.env[model_name]  # pylint: disable=pointless-statement
-            if hasattr(field, "ondelete"):
-                to_process += selection
-        except KeyError:
-            continue
-    return IrModelSelection._process_ondelete._original_method(to_process)
-
-
-_process_ondelete._original_method = IrModelSelection._process_ondelete
-IrModelSelection._process_ondelete = _process_ondelete

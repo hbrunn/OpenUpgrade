@@ -32,12 +32,14 @@ def __getitem__(self, model_name):
         and self.context.get("missing_model", False)
     ):
         if not self.registry.models.get(model_name, False):
+            import pdb
+            pdb.set_trace()
+            # TODO: keep if still needed
             new_env = lambda: None  # noqa: E731
             new_env._fields = {}
             new_env.browse = lambda i: FakeRecord()
             return new_env
     return Environment.__getitem__._original_method(self, model_name)
-
 
 __getitem__._original_method = Environment.__getitem__
 Environment.__getitem__ = __getitem__
