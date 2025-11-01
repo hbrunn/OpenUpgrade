@@ -1,0 +1,4 @@
+---Models in module 'hr_homeworking_calendar'---
+---Fields in module 'hr_homeworking_calendar'---
+---XML records in module 'hr_homeworking_calendar'---
+---nothing has changed in this module--

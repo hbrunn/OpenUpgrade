@@ -137,7 +137,7 @@ NEW ir.module.category: base.module_category_shipping_connectors (noupdate)
 NEW ir.module.category: base.module_category_supply_chain (noupdate)
 DEL ir.module.category: base.module_category_inventory (noupdate)
 DEL ir.module.category: base.module_category_manufacturing (noupdate)
-DEL ir.module.category: base.module_category_usability
+DEL ir.module.category: base.module_category_usability (noupdate)
 DEL ir.module.category: base.module_category_user_type
 NEW ir.rule: base.properties_base_definition_rule_admin (noupdate)
 NEW ir.rule: base.res_users_rule_portal (noupdate)
