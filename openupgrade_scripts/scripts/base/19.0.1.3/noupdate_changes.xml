@@ -52,10 +52,14 @@
     <field name="code">SA</field>
   </record>
   <record id="user_admin" model="res.users">
-    <field name="signature">Administrator</field>
+    <field name="signature" type="html">
+      <div>Administrator</div>
+    </field>
     <field name="group_ids" eval="[Command.set([])]"/>
   </record>
   <record id="user_root" model="res.users">
-    <field name="signature">System</field>
+    <field name="signature" type="html">
+      <div>System</div>
+    </field>
   </record>
 </odoo>
