@@ -7,6 +7,8 @@ renamed_modules = {
     # odoo
     # odoo/enterprise
     # OCA/...
+    # OCA/sale-workflow
+    "sale_procurement_group_by_line": "sale_stock_reference_by_line",
 }
 
 # Merged modules contain a mapping from old module names to other,
