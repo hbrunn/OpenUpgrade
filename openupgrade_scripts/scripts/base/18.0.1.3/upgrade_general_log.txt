@@ -128,8 +128,8 @@ new model website.page.properties.base [module website]
 # Found in other module: 93
 # Found with different type: 8
 # In obsolete models: 34
-# New columns: 1700
-# Not matched: 845
+# New columns: 1887
+# Not matched: 846
 ---XML records in module 'general'---
 ERROR: module not in list of installed modules:
 ---Models in module 'account_debit_note_sequence'---
