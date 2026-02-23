@@ -19,6 +19,7 @@ import zipfile
 from textwrap import dedent, indent
 from urllib.parse import urlencode, urlparse, urlunparse
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 
 # this is the version currently under development
 # if you increase this, you'll have to update the
@@ -92,6 +93,9 @@ def main(args):
     restore_db(args, db_name, source_version)
     detect_oca_repos(args, db_name)
 
+    if args.experimental:
+        apply_prs(args)
+
     for version in to_run:
         prepare_dockerfiles(args, version)
 
@@ -100,9 +104,6 @@ def main(args):
             build_containers(args, version)
         else:
             docker_compose("up", "-d", version, logfile=False)
-
-    if args.experimental:
-        apply_prs(args)
 
     for version in to_run:
         run_migration(args, db_name, version)
@@ -145,27 +146,32 @@ def get_backup(args):
     ).encode("utf8")
 
     url = url._replace(
-        netloc=url.hostname + (":%s" % url.port) if url.port else "",
+        netloc=url.hostname + ((":%s" % url.port) if url.port else ""),
         path="web/database/backup",
     )
 
     logging.info("downloading backup")
     request = Request(urlunparse(url), data=post_data, method="POST")
-    with urlopen(request, timeout=120) as response:
-        if response.code != 200 or "application/octet-stream" not in dict(
-            response.getheaders()
-        ).get("Content-Type", ""):
-            raise ValueError("password or database name seems to be incorrect")
+    try:
+        with urlopen(request, timeout=120) as response:
+            if response.code != 200 or "application/octet-stream" not in dict(
+                response.getheaders()
+            ).get("Content-Type", ""):
+                raise ValueError("password or database name seems to be incorrect")
 
-        os.makedirs("source", exist_ok=True)
-        with tempfile.NamedTemporaryFile(delete=False) as backup_file:
-            buffer = bytearray(1000 * 1000)
-            while True:
-                buffer_len = response.readinto(buffer)
-                if not buffer_len:
-                    break
-                backup_file.write(buffer[:buffer_len])
-            args.backup = backup_file.name
+            os.makedirs("source", exist_ok=True)
+            with tempfile.NamedTemporaryFile(delete=False) as backup_file:
+                buffer = bytearray(1000 * 1000)
+                while True:
+                    buffer_len = response.readinto(buffer)
+                    if not buffer_len:
+                        break
+                    backup_file.write(buffer[:buffer_len])
+                args.backup = backup_file.name
+    except HTTPError as e:
+        if e.code == 403:
+            raise ValueError('list_db seems to be false (%s)' % str(e))
+        raise ValueError(str(e)) from e
 
 
 def extract_backup(args):
@@ -245,35 +251,22 @@ def apply_prs(args):
         prs = [
             pr["number"]
             for pr in json.load(response)
-            if pr.get("milestone", {}).get("title", "") == experimental_version
+            if (pr.get("milestone", {}) or {}).get("title", "") == experimental_version
         ]
 
     if not prs:
         raise ValueError("no prs given and none found")
 
-    logging.info(f"fetching full git history for {experimental_version}")
-    docker_compose_exec(
-        experimental_version,
-        "git",
-        "-C /odoo/openupgrade fetch --unshallow",
-        logname=f"{experimental_version}-unshallow",
-        # we need this because --unshallow fails if it's already not shallow
-        # and we want to be able to recycle the checkout for subsequent testing
-        check=False,
-        root=True,
+    gitaggregate = templates['gitaggregate'][experimental_version].replace(
+        'openupgrade:\n    defaults:\n        depth: 1', 'openupgrade:'
     )
 
-    for pr in prs:
-        logging.info(
-            f"applying PR #{pr} (https://github.com/oca/openupgrade/pull/{pr})"
-        )
-        docker_compose_exec(
-            experimental_version,
-            "git",
-            f"-C /odoo/openupgrade pull -X theirs --no-rebase oca refs/pull/{pr}/head",
-            logname=f"{experimental_version}-pr-{pr}",
-            root=True,
-        )
+    gitaggregate += '\n'.join(
+        f'        - oca refs/pull/{pr}/head'
+        for pr in prs
+    ) + '\n'
+
+    templates['gitaggregate'][experimental_version] = gitaggregate
 
 
 def restore_db(args, db_name, version):
@@ -335,7 +328,7 @@ def detect_oca_repos(args, db_name):
         )
     )
     if args.repos:
-        logging.info(f"detected OCA repositories {', '.join(args.repos)}")
+        logging.info(f"detected OCA repositories {' '.join(args.repos)}")
 
 
 def run_migration(args, db_name, version):
@@ -604,8 +597,6 @@ templates = {
                     driver: bridge
                     driver_opts:
                         com.docker.network.bridge.enable_ip_masquerade: 0
-                        com.docker.network.bridge.gateway_mode_ipv4: isolated
-                        com.docker.network.bridge.gateway_mode_ipv6: isolated
                     internal: true
             services:
                 db:
@@ -627,6 +618,7 @@ templates = {
             "16.0": indent(odoo_service_template.substitute(version="16.0"), " " * 4),
             "17.0": indent(odoo_service_template.substitute(version="17.0"), " " * 4),
             "18.0": indent(odoo_service_template.substitute(version="18.0"), " " * 4),
+            "19.0": indent(odoo_service_template.substitute(version="19.0"), " " * 4),
         },
     },
     "dockerfile": {
@@ -637,6 +629,7 @@ templates = {
         "16.0": dockerfile_template.safe_substitute(python_version="3.11"),
         "17.0": dockerfile_template.safe_substitute(python_version="3.11"),
         "18.0": dockerfile_template.safe_substitute(python_version="3.11"),
+        "19.0": dockerfile_template.safe_substitute(python_version="3.12"),
     },
     "gitaggregate": {
         "12.0": gitaggregate_template_pre14.substitute(version="12.0"),
@@ -646,12 +639,17 @@ templates = {
         "16.0": gitaggregate_template.substitute(version="16.0"),
         "17.0": gitaggregate_template.substitute(version="17.0"),
         "18.0": gitaggregate_template.substitute(version="18.0"),
+        "19.0": gitaggregate_template.substitute(version="19.0"),
     },
     "requirements": {
         "13.0": (
             "Werkzeug<0.15 pypdf2<2.0.0 pyOpenSSL<23 cryptography<39 lxml<5.0"
         ).split(),
-        "14.0": "Werkzeug<0.17 pyOpenSSL<22 cryptography<23.2.0 pypdf<5.0".split(),
+        "14.0": "Werkzeug<0.17 pyOpenSSL<22 cryptography<23.2.0 pypdf<5.0 lxml<6.0".split(),
+        "15.0": "lxml[html_clean]<6.0".split(),
+        "16.0": "lxml[html_clean]<6.0".split(),
+        "17.0": "lxml[html_clean]<6.0".split(),
+        "18.0": "lxml[html_clean]<6.0".split(),
     },
 }
 
