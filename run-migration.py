@@ -216,10 +216,13 @@ def prepare_dockerfiles(args, version):
             ymlfile.write(
                 gitaggregate_oca_repo_template.substitute(version=version, repo=repo)
             )
-    requirements = templates["requirements"].get(version)
-    if requirements:
-        with open(f"{src}/requirements.txt", "w+") as reqfile:
-            reqfile.write("\n".join(requirements))
+    requirements = templates.get("requirements", {}).get(version, [])
+    with open(f"{src}/requirements.txt", "w+") as reqfile:
+        reqfile.write("\n".join(requirements))
+    constraints = templates.get("constraints", {}).get(version, [])
+    with open(f"{src}/pip.constraint", "w+") as reqfile:
+        reqfile.write("\n".join(constraints))
+
 
 
 def build_containers(args, version):
@@ -519,6 +522,7 @@ COPY src /odoo
 RUN git config --global --add user.name openupgrade &&\
     git config --global --add user.email openupgrade@oca &&\
     git config --global init.defaultBranch main
+ENV PIP_CONSTRAINT=/odoo/pip.constraint
 RUN cd /odoo && for yml_file in *.yml; do \
         gitaggregate -c $yml_file --no-color --jobs 4;\
     done &&\
@@ -628,7 +632,7 @@ templates = {
         "15.0": dockerfile_template.safe_substitute(python_version="3.8"),
         "16.0": dockerfile_template.safe_substitute(python_version="3.11"),
         "17.0": dockerfile_template.safe_substitute(python_version="3.11"),
-        "18.0": dockerfile_template.safe_substitute(python_version="3.11"),
+        "18.0": dockerfile_template.safe_substitute(python_version="3.12"),
         "19.0": dockerfile_template.safe_substitute(python_version="3.12"),
     },
     "gitaggregate": {
@@ -641,16 +645,42 @@ templates = {
         "18.0": gitaggregate_template.substitute(version="18.0"),
         "19.0": gitaggregate_template.substitute(version="19.0"),
     },
-    "requirements": {
+    "constraints": {
         "13.0": (
-            "Werkzeug<0.15 pypdf2<2.0.0 pyOpenSSL<23 cryptography<39 lxml<5.0"
-        ).split(),
-        "14.0": "Werkzeug<0.17 pyOpenSSL<22 cryptography<23.2.0 pypdf<5.0 lxml<6.0".split(),
-        "15.0": "lxml[html_clean]<6.0".split(),
-        "16.0": "lxml[html_clean]<6.0".split(),
-        "17.0": "lxml[html_clean]<6.0".split(),
-        "18.0": "lxml[html_clean]<6.0".split(),
+            "Werkzeug<0.15",
+            "pyOpenSSL<23",
+            "cryptography<23.2.0",
+            "pypdf2<2.0.0",
+            "lxml<5.0",
+        ),
+        "14.0": (
+            "Werkzeug<0.17",
+            "pyOpenSSL<23",
+            "cryptography<23.2.0",
+            "pypdf<5.0",
+            "lxml<5.0",
+        ),
+        "15.0": (
+            "lxml<5.0",
+            "pyOpenSSL<23",
+            "cryptography<23.2.0",
+        ),
+        "16.0": (
+            "lxml<5.0",
+            "pyOpenSSL<23",
+            "cryptography<23.2.0",
+        ),
+        "17.0": (
+            "lxml<5.0",
+            "pyOpenSSL<23",
+            "cryptography<23.2.0",
+        ),
     },
+    "requirements": {
+        experimental_version: (
+            "git+https://github.com/oca/openupgradelib",
+        ),
+    }
 }
 
 supported_versions = sorted(
