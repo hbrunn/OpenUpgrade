@@ -17,9 +17,9 @@ import tempfile
 import time
 import zipfile
 from textwrap import dedent, indent
+from urllib.error import HTTPError
 from urllib.parse import urlencode, urlparse, urlunparse
 from urllib.request import Request, urlopen
-from urllib.error import HTTPError
 
 # this is the version currently under development
 # if you increase this, you'll have to update the
@@ -170,7 +170,7 @@ def get_backup(args):
                 args.backup = backup_file.name
     except HTTPError as e:
         if e.code == 403:
-            raise ValueError('list_db seems to be false (%s)' % str(e))
+            raise ValueError("list_db seems to be false (%s)" % str(e)) from None
         raise ValueError(str(e)) from e
 
 
@@ -224,7 +224,6 @@ def prepare_dockerfiles(args, version):
         reqfile.write("\n".join(constraints))
 
 
-
 def build_containers(args, version):
     """
     Build container from docker/$version, run gitaggregate and pip install in them
@@ -260,16 +259,13 @@ def apply_prs(args):
     if not prs:
         raise ValueError("no prs given and none found")
 
-    gitaggregate = templates['gitaggregate'][experimental_version].replace(
-        'openupgrade:\n    defaults:\n        depth: 1', 'openupgrade:'
+    gitaggregate = templates["gitaggregate"][experimental_version].replace(
+        "openupgrade:\n    defaults:\n        depth: 1", "openupgrade:"
     )
 
-    gitaggregate += '\n'.join(
-        f'        - oca refs/pull/{pr}/head'
-        for pr in prs
-    ) + '\n'
+    gitaggregate += "\n".join(f"        - oca refs/pull/{pr}/head" for pr in prs) + "\n"
 
-    templates['gitaggregate'][experimental_version] = gitaggregate
+    templates["gitaggregate"][experimental_version] = gitaggregate
 
 
 def restore_db(args, db_name, version):
@@ -339,16 +335,20 @@ def run_migration(args, db_name, version):
     Run migration in $version container
     """
     logging.info(f"running migration {version}")
-    addons_path = ",".join(
-        ["/odoo/odoo/odoo/addons", "/odoo/odoo/addons"]
-        + docker_compose_exec(
+    module_manifests = (
+        docker_compose_exec(
             version,
             "find",
-            "/odoo -maxdepth 1 -mindepth 1 -not -name odoo -type d",
+            "/odoo -maxdepth 3 -mindepth 3 "
+            "( -name __manifest__.py -o -name __openerp__.py ) -type f",
             logfile=False,
         )
         .stdout.decode("utf8")
         .split()
+    )
+    extra_paths = set(map(os.path.dirname, map(os.path.dirname, module_manifests)))
+    addons_path = ",".join(
+        ["/odoo/odoo/odoo/addons", "/odoo/odoo/addons"] + list(extra_paths)
     )
     server_wide_modules = ""
     try:
@@ -677,10 +677,8 @@ templates = {
         ),
     },
     "requirements": {
-        experimental_version: (
-            "git+https://github.com/oca/openupgradelib",
-        ),
-    }
+        experimental_version: ("git+https://github.com/oca/openupgradelib",),
+    },
 }
 
 supported_versions = sorted(
