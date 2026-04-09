@@ -334,7 +334,34 @@ def run_migration(args, db_name, version):
     """
     Run migration in $version container
     """
+
+    def run_extra_sql(stage):
+        with os.scandir(f"docker/{version}") as entries:
+            for entry in entries:
+                if (
+                    entry.is_file()
+                    and entry.name.startswith(stage)
+                    and entry.name.endswith(".sql")
+                ):
+                    logging.info(
+                        f"running {version} {stage} migration sql file {entry.name}"
+                    )
+                    docker_compose_run(
+                        "db",
+                        "psql",
+                        f"--host db --user odoo --file /tmp/{entry.name} {db_name}",
+                        dockercommand_args=[
+                            "-v",
+                            f"{os.path.abspath(f"docker/{version}")}:/tmp",
+                            "-T",
+                        ],
+                        logname=f"{version}-migration-{entry.name}",
+                    )
+
+    run_extra_sql("pre")
+
     logging.info(f"running migration {version}")
+
     module_manifests = (
         docker_compose_exec(
             version,
@@ -366,6 +393,8 @@ def run_migration(args, db_name, version):
         f"--max-cron-threads 0 -d {db_name} -u all --stop-after-init",
         logname=f"{version}-migration",
     )
+
+    run_extra_sql("post")
 
 
 def export_backup(args, db_name, target_version):
