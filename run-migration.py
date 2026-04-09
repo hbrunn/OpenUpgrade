@@ -409,9 +409,9 @@ compose_env = {
 }
 docker_compose_cmd = (
     shutil.which("docker-compose")
-    and ["docker-compose"]
+    and [shutil.which("docker-compose")]
     or shutil.which("docker")
-    and ["docker", "compose"]
+    and [shutil.which("docker"), "compose"]
 )
 
 
