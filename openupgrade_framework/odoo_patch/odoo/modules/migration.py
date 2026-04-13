@@ -24,7 +24,7 @@ def _get_files(self):
     """Turns out Odoo SA sometimes add migration scripts that interfere with
     OpenUpgrade. Those we filter out here"""
     MigrationManager._get_files._original_method(self)
-    to_exclude = [("analytic", "1.2")]
+    to_exclude = [("analytic", "1.2"), ("l10n_dk", "1.4")]
     for addon, version in to_exclude:
         self.migrations.get(addon, {}).get("module", {}).pop(version, None)
 
