@@ -90,14 +90,14 @@ def main(args):
 
     os.makedirs("logs", exist_ok=True)
 
+    for version in to_run:
+        prepare_dockerfiles(args, version)
+
     restore_db(args, db_name, source_version)
     detect_oca_repos(args, db_name)
 
     if args.experimental:
         apply_prs(args)
-
-    for version in to_run:
-        prepare_dockerfiles(args, version)
 
     for version in to_run:
         if not args.skip_container_build:
