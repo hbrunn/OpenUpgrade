@@ -1,0 +1,43 @@
+name: Test run-migration.py
+on:
+  push:
+    paths:
+      - 'run-migration.py'
+      - '.github/workflows/test.yml'
+jobs:
+  test:
+    strategy:
+      matrix:
+        image:
+          - ubuntu-22.04
+#          - ubuntu-24.04
+#          - ubuntu-26.04
+    name: ${{ matrix.image }}
+    runs-on: ${{ matrix.image }}
+    steps:
+      - uses: actions/cache@v6
+        id: cache
+        with:
+          path: /tmp/odoo.zip
+          key: odoo.zip
+      - name: Create DB export
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db postgres:12
+          docker run --link db:db odoo:11.0 odoo -d odoo -i account --stop-after-init
+          docker run -e PGUSER=odoo -e PGPASSWORD=odoo -e PGHOST=db --link db:db -i --name odoo odoo:11.0 odoo shell <<HEREDOC
+          from odoo.service.db import dump_db
+          dump_db('odoo', open('/tmp/odoo.zip', 'wb+'))
+          HEREDOC
+          docker cp odoo:/tmp/odoo.zip /tmp/odoo.zip
+      - uses: actions/checkout@v7
+      - name: Run migration
+        run: |
+          python run-migration.py /tmp/odoo.zip --debug
+      - name: Show logs
+        if: true
+        run: |
+          for log in logs/*; do
+            echo $log
+            cat $log
+          done
