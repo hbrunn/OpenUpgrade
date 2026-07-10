@@ -24,7 +24,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db postgres:12
-          docker run --link db:db odoo:11.0 odoo -d odoo -i account --stop-after-init
+          docker run --link db:db odoo:11.0 odoo -d odoo -i account --without-demo=all --stop-after-init
           docker run -e PGUSER=odoo -e PGPASSWORD=odoo -e PGHOST=db --link db:db -i --name odoo odoo:11.0 odoo shell <<HEREDOC
           from odoo.service.db import dump_db
           dump_db('odoo', open('/tmp/odoo.zip', 'wb+'))
