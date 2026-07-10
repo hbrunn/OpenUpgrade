@@ -10,8 +10,8 @@ jobs:
       matrix:
         image:
           - ubuntu-22.04
-#          - ubuntu-24.04
-#          - ubuntu-26.04
+          - ubuntu-24.04
+          - ubuntu-26.04
     name: ${{ matrix.image }}
     runs-on: ${{ matrix.image }}
     steps:
@@ -35,7 +35,7 @@ jobs:
         run: |
           python run-migration.py /tmp/odoo.zip --debug
       - name: Show logs
-        if: true
+        if: ${{ failure() }}
         run: |
           for log in logs/*; do
             echo $log
