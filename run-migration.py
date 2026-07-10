@@ -350,7 +350,7 @@ def run_migration(args, db_name, version):
                         f"--host db --user odoo --file /tmp/{entry.name} {db_name}",
                         dockercommand_args=[
                             "-v",
-                            f"{os.path.abspath(f"docker/{version}")}:/tmp",
+                            os.path.abspath("docker/" + version) + ":/tmp",
                             "-T",
                         ],
                         logname=f"{version}-migration-{entry.name}",
