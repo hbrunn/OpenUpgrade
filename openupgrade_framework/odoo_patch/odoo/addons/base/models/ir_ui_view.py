@@ -16,18 +16,26 @@ def _check_xml(self):
     """Don't raise or log exceptions in view validation unless explicitly
     requested. Mute warnings about views which are common during migration."""
     with mute_logger("odoo.addons.base.models.ir_ui_view"):
-        try:
-            return IrUiView._check_xml._original_method(self)
-        except ValidationError as e:
-            _logger.warning(
-                "Can't render custom view %s for model %s. "
-                "Assuming you are migrating between major versions of Odoo. "
-                "Please review the view contents manually after the migration.\n"
-                "Error: %s",
-                self.xml_id,
-                self.model,
-                e,
-            )
+        for view in self:
+            try:
+                IrUiView._check_xml._original_method(view)
+            # with _raise_view_error not raising, validation can fail later on
+            except (
+                ValidationError,
+                ValueError,
+                AttributeError,
+                KeyError,
+                NameError,
+            ) as e:
+                _logger.warning(
+                    "Can't render custom view %s for model %s. "
+                    "Assuming you are migrating between major versions of Odoo. "
+                    "Please review the view contents manually after the migration.\n"
+                    "Error: %s",
+                    view.xml_id,
+                    view.model,
+                    e,
+                )
 
 
 def _raise_view_error(

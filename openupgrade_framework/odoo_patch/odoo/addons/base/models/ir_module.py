@@ -15,6 +15,7 @@ def update_list(self):
     """
     result = IrModuleModule.update_list._original_method(self)
     new_auto_install_modules = self.browse([])
+    company_countries = self.env["res.company"].sudo().search([]).country_id
     for module in self.env["ir.module.module"].search(
         [
             ("auto_install", "=", True),
@@ -22,6 +23,9 @@ def update_list(self):
             ("name", "not like", ("l10n_%")),
         ]
     ):
+        # same rule as button_install
+        if module.country_ids and not module.country_ids & company_countries:
+            continue
         if all(
             state in ("to upgrade", "to install", "installed")
             for state in module.dependencies_id.mapped("state")
