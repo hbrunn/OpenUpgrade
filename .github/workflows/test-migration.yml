@@ -69,7 +69,7 @@ jobs:
         run: |
           if test -n "$(ls openupgrade/openupgrade_scripts/scripts/*/tests/data*.py 2> /dev/null)"; then
              for snippet in openupgrade/openupgrade_scripts/scripts/*/tests/data*.py; do
-               docker run -ti -e DB_HOST=localhost --net=host $OCA_IMAGE_PREV odoo-bin shell < $snippet
+               docker run -t -e DB_HOST=localhost --net=host $OCA_IMAGE_PREV odoo-bin shell < $snippet
              done
           fi
       - name: OpenUpgrade test
