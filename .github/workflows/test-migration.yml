@@ -64,8 +64,8 @@ jobs:
           docker pull $OCA_IMAGE_PREV
           docker pull $OCA_IMAGE_CURRENT
           docker run -e PGHOST=$DB_HOST --net=host $OCA_IMAGE_PREV psql -l
-          docker run -d --name openupgrade_prev $OCA_IMAGE_PREV sleep infinity
-          docker run -d --name openupgrade_current --volume=$(pwd)/openupgrade:/opt/openupgrade $OCA_IMAGE_CURRENT sleep infinity
+          docker run -d --net=host --name openupgrade_prev $OCA_IMAGE_PREV sleep infinity
+          docker run -d --net=host --name openupgrade_current --volume=$(pwd)/openupgrade:/opt/openupgrade $OCA_IMAGE_CURRENT sleep infinity
       - name: Test data
         run: |
           if test -n "$(ls openupgrade/openupgrade_scripts/scripts/*/tests/data*.py 2> /dev/null)"; then
