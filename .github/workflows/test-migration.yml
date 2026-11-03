@@ -54,6 +54,7 @@ jobs:
           createdb $DB
           wget -q -O- $DOWNLOADS/19.0.psql | pg_restore -d $DB --no-owner
           psql $DB -c "UPDATE ir_module_module SET demo=False"
+          psql -l
       - name: Check out OpenUpgrade
         uses: actions/checkout@v4
         with:
@@ -67,7 +68,7 @@ jobs:
         run: |
           if test -n "$(ls openupgrade/openupgrade_scripts/scripts/*/tests/data*.py 2> /dev/null)"; then
              for snippet in openupgrade/openupgrade_scripts/scripts/*/tests/data*.py; do
-               docker run -t --net=host $OCA_IMAGE_PREV odoo shell -d $DB < $snippet
+               docker run -t --net=host -e PGDATABASE=$DB -e PGHOST=$PGHOST $OCA_IMAGE_PREV odoo shell < $snippet
              done
           fi
       - name: OpenUpgrade test
