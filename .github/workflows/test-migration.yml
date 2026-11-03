@@ -60,14 +60,16 @@ jobs:
           path: openupgrade
       - name: Download docker images
         run: |
+          docker pull $OCA_IMAGE_PREV
+          docker pull $OCA_IMAGE_CURRENT
           docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host $OCA_IMAGE_PREV psql -l
-          docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host $OCA_IMAGE_PREV odoo -i base --stop-after-init
-          docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host --volume=$(pwd)/openupgrade:/openupgrade $OCA_IMAGE_PREV sh -c "cd /openupgrade; oca_install_addons"
+          # this works, use below
+          #docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host --volume=$(pwd)/openupgrade:/openupgrade $OCA_IMAGE_CURRENT sh -c "cd /openupgrade; oca_install_addons"
       - name: Test data
         run: |
           if test -n "$(ls openupgrade/openupgrade_scripts/scripts/*/tests/data*.py 2> /dev/null)"; then
              for snippet in openupgrade/openupgrade_scripts/scripts/*/tests/data*.py; do
-               odoo-old/odoo-bin shell -d $DB < $snippet
+               docker run -ti -e DB_HOST=localhost --net=host $OCA_IMAGE_PREV odoo-bin shell < $snippet
              done
           fi
       - name: OpenUpgrade test
