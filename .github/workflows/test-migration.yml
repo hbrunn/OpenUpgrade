@@ -35,7 +35,7 @@ jobs:
       OCA_IMAGE_CURRENT: ghcr.io/oca/oca-ci/py3.12-ocb20.0:latest
     services:
       postgres:
-        image: postgres:14.0
+        image: postgres:16.0
         env:
           POSTGRES_USER: odoo
           POSTGRES_PASSWORD: odoo
@@ -122,6 +122,7 @@ jobs:
           # Silence redundant logs from unlinking records (1 line is enough)
           # to prevent log overflow
           docker exec -e PGHOST=$DB_HOST openupgrade_current sh -c "
+            cd /opt/openupgrade
             coverage run \\
                 --source=/opt/openupgrade/openupgrade_scripts/scripts \\
             \$(which odoo) \\
@@ -137,8 +138,11 @@ jobs:
       - name: Generate coverage.xml
         if: ${{ steps.run_migration.outputs.modules_new != '' }}
         run: |
-          docker exec openupgrade_current coverage xml
-          docker cp openupgrade_current:coverage.xml .
+          docker exec openupgrade_current sh -c "
+            cd /opt/openupgrade
+            coverage xml
+          "
+          docker cp openupgrade_current:/opt/openupgrade/coverage.xml .
       - uses: codecov/codecov-action@v4
         if: ${{ steps.run_migration.outputs.modules_new != '' }}
         with:
