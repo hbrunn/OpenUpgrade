@@ -77,6 +77,7 @@ DEL hr.attendance.overtime.rule: hr_attendance.hr_attendance_overtime_rule_4_ae 
 DEL hr.attendance.overtime.ruleset: hr_attendance.hr_attendance_default_ruleset (noupdate)
 DEL hr.attendance.overtime.ruleset: hr_attendance.l10n_ae_hr_attendance_overtime_ruleset (noupdate)
 NEW ir.access: hr_attendance.access_hr_time_rule_attendance_admin
+NEW ir.access: hr_attendance.access_hr_work_entry_type_attendance_reader
 NEW ir.access: hr_attendance.hr_attendance_rule_attendance_admin
 NEW ir.access: hr_attendance.hr_attendance_rule_attendance_manager_restrict
 NEW ir.access: hr_attendance.hr_attendance_rule_attendance_own
@@ -85,6 +86,7 @@ NEW ir.access: hr_attendance.hr_attendance_rule_employee_company
 NEW ir.actions.act_window: hr_attendance.hr_attendance_my_action
 DEL ir.actions.act_window: hr_attendance.hr_attendance_overtime_rule_action
 DEL ir.actions.act_window: hr_attendance.hr_attendance_overtime_ruleset_action
+NEW ir.actions.server: hr_attendance.action_attendance_employee_view_access
 NEW ir.actions.server: hr_attendance.action_attendance_refuse
 NEW ir.actions.server: hr_attendance.action_attendance_validate
 NEW ir.cron: hr_attendance.hr_attendance_day_undertime_rules_cron

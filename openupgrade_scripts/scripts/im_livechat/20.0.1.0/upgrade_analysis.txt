@@ -17,6 +17,10 @@ im_livechat  / im_livechat.channel.member.history / rating (float)              
 im_livechat  / im_livechat.channel.member.history / rating (float)                : selection_keys is now '['1', '3', '5']' ('False')
 im_livechat  / im_livechat.channel.member.history / rating (float)                : type is now 'selection' ('float')
 im_livechat  / im_livechat.channel.member.history / rating_id (many2one)          : DEL relation: rating.rating
+im_livechat  / im_livechat.channel.member.history / session_start_hour (float)    : not a function anymore
+im_livechat  / im_livechat.channel.member.history / session_start_hour (float)    : now related
+im_livechat  / im_livechat.channel.member.history / session_week_day (selection)  : not a function anymore
+im_livechat  / im_livechat.channel.member.history / session_week_day (selection)  : now related
 im_livechat  / im_livechat.conversation.tag / color (integer)               : DEL
 im_livechat  / im_livechat.conversation.tag / conversation_ids (many2many)  : DEL relation: discuss.channel
 im_livechat  / im_livechat.conversation.tag / name (char)                   : DEL required

@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
   <record id="payment.payment_provider_xendit" model="payment.provider">
-    <field name="inline_form_view_id" eval="None"/>
     <field name="redirect_form_view_id" ref="payment.generic_redirect_form"/>
   </record>
   <record id="payment_method_akulaku" model="payment.method">

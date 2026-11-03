@@ -5,3 +5,4 @@ NEW ir.access: base_import.access_base_import_import
 NEW ir.access: base_import.access_base_import_mapping
 DEL ir.model.access: base_import.access_base_import_import
 DEL ir.model.access: base_import.access_base_import_mapping
+DEL ir.rule: base_import.base_import_import_own_rule (noupdate)

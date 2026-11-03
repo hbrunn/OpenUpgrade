@@ -461,6 +461,6 @@ DEL ir.ui.view: stock.view_stock_return_picking_form
 DEL ir.ui.view: stock.view_template_property_form
 NEW mail.message.subtype: stock.mt_batch_state [renamed from stock_picking_batch module] (noupdate)
 NEW mail.message.subtype: stock.mt_picking_state (noupdate)
-NEW mail.template: stock.mail_template_data_stock_move_line_recall (noupdate)
+NEW mail.template: stock.mail_template_data_stock_picking_recall (noupdate)
 NEW res.groups: stock.group_stock_picking_batch
 DEL res.groups: stock.group_reception_report

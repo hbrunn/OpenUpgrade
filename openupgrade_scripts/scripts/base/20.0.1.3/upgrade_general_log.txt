@@ -33,6 +33,7 @@ obsolete model l10n_tr.nilvera.alias [module l10n_tr_nilvera]
 obsolete model l10n_tr_nilvera_einvoice_extended.account.tax.code [module l10n_tr_nilvera_einvoice_extended]
 obsolete model l10n_tr_nilvera_einvoice_extended.tax.office [module l10n_tr_nilvera_einvoice_extended]
 obsolete model l10n_tr.nilvera.trailer.plate [module l10n_tr_nilvera_edispatch]
+obsolete model l10n_tr.ticarifatura.response.wizard [module l10n_tr_gib_invoice_scenarios]
 obsolete model l10n_vn_edi_viettel.cancellation [module l10n_vn_edi_viettel]
 obsolete model l10n_vn_edi_viettel.sinvoice.template [module l10n_vn_edi_viettel]
 obsolete model mail.thread.cc [module mail]
@@ -186,14 +187,14 @@ new model withdrawal.request [module website_sale]
 new model zatca.mixin [module l10n_sa]
 new model zatca.ubl.mixin [module l10n_sa_edi]
 ---Fields in module 'general'---
-# 15312 fields matched,
-# Direct match: 14880
+# 15323 fields matched,
+# Direct match: 14891
 # Found in other module with different type: 0
 # Found in other module: 385
 # Found with different type: 47
 # In obsolete models: 275
-# New columns: 2300
-# Not matched: 1060
+# New columns: 2312
+# Not matched: 1070
 ---XML records in module 'general'---
 ---Probably obsolete module account_add_gln---
 ---Models in module 'account_add_gln'---
@@ -268,6 +269,7 @@ DEL ir.cron: account_peppol_response.ir_cron_peppol_auto_register_services [rena
 DEL ir.model.access: account_peppol_response.account_peppol_clarification
 DEL ir.model.access: account_peppol_response.account_peppol_rejection_wizard
 DEL ir.model.access: account_peppol_response.account_peppol_response
+DEL ir.rule: account_peppol_response.account_peppol_response_comp_rule (noupdate)
 DEL ir.ui.view: account_peppol_response.account_peppol_rejection_wizard_view_form
 DEL ir.ui.view: account_peppol_response.account_peppol_response_view_form
 DEL ir.ui.view: account_peppol_response.account_peppol_response_view_list
@@ -10062,6 +10064,25 @@ DEL ir.ui.view: l10n_ro_edi_stock_batch.l10n_ro_edi_stock_report_picking_batch
 DEL ir.ui.view: l10n_ro_edi_stock_batch.l10n_ro_edi_stock_stock_picking_batch_filter
 DEL ir.ui.view: l10n_ro_edi_stock_batch.l10n_ro_edi_stock_stock_picking_batch_view_tree
 DEL ir.ui.view: l10n_ro_edi_stock_batch.l10n_ro_edi_stock_view_batch_form
+---Probably obsolete module l10n_tr_gib_invoice_scenarios---
+---Models in module 'l10n_tr_gib_invoice_scenarios'---
+obsolete model l10n_tr.ticarifatura.response.wizard [transient]
+---Fields in module 'l10n_tr_gib_invoice_scenarios'---
+l10n_tr_gib_invoice_scenarios / account.move             / l10n_tr_gib_invoice_scenario (False): DEL selection_keys: ['KAMU', 'TEMELFATURA', 'TICARIFATURA'], mode: modify
+l10n_tr_gib_invoice_scenarios / account.move             / l10n_tr_gib_invoice_type (False): DEL selection_keys: ['IADE', 'IHRACKAYITLI', 'ISTISNA', 'SATIS', 'TEVKIFAT', 'TEVKIFATIADE'], mode: modify
+l10n_tr_gib_invoice_scenarios / account.move             / l10n_tr_nilvera_send_status (False): DEL selection_keys: ['commercial_answered_automatically', 'commercial_approved', 'commercial_rejected', 'error', 'not_sent', 'sent', 'succeed', 'unknown', 'waiting'], mode: modify
+l10n_tr_gib_invoice_scenarios / account.move             / l10n_tr_original_invoice_date (date): DEL
+l10n_tr_gib_invoice_scenarios / account.move             / l10n_tr_ticarifatura_last_checked_at (datetime): DEL
+l10n_tr_gib_invoice_scenarios / account.move.line        / l10n_tr_original_line_id (many2one): DEL relation: account.move.line
+l10n_tr_gib_invoice_scenarios / account.move.line        / l10n_tr_original_quantity (float): DEL
+l10n_tr_gib_invoice_scenarios / account.move.line        / l10n_tr_original_tax_without_withholding (float): DEL
+---XML records in module 'l10n_tr_gib_invoice_scenarios'---
+DEL ir.cron: l10n_tr_gib_invoice_scenarios.ir_cron_nilvera_sync_ticarifatura_response
+DEL ir.model.access: l10n_tr_gib_invoice_scenarios.access_l10n_tr_ticarifatura_response_wizard_group_invoicing
+DEL ir.ui.view: l10n_tr_gib_invoice_scenarios.account_move_form_view_l10n_tr_nilvera_extended
+DEL ir.ui.view: l10n_tr_gib_invoice_scenarios.account_nilvera_view_invoice_tree
+DEL ir.ui.view: l10n_tr_gib_invoice_scenarios.account_nilvera_view_move_form
+DEL ir.ui.view: l10n_tr_gib_invoice_scenarios.ticarifatura_response_wizard_form
 ---Probably obsolete module l10n_tr_nilvera---
 ---Models in module 'l10n_tr_nilvera'---
 obsolete model l10n_tr.nilvera.alias

@@ -112,8 +112,6 @@ NEW ir.ui.view: purchase.product_view_search_catalog_inherit
 NEW ir.ui.view: purchase.purchase_bill_line_match_search
 NEW ir.ui.view: purchase.purchase_order_line_list_invoice
 NEW ir.ui.view: purchase.purchase_order_line_view_form_invoice
-ir.ui.view: purchase.track_po_line_qty_received_template (noupdate switched)
-ir.ui.view: purchase.track_po_line_template (noupdate switched)
 NEW ir.ui.view: purchase.view_category_property_form
 NEW ir.ui.view: purchase.view_purchase_bill_union_list_invoice
 DEL ir.ui.view: purchase.portal_my_home_purchase

@@ -52,6 +52,7 @@ sale         / utm.campaign             / currency_id (many2one)        : not re
 sale         / utm.campaign             / currency_id (many2one)        : now a function
 sale         / utm.campaign             / invoiced_amount (integer)     : type is now 'float' ('integer')
 sale_timesheet / account.analytic.line    / order_id (many2one)           : not related anymore
+stock        / product.template         / sale_delay (integer)          : now company_dependent
 ---XML records in module 'sale'---
 NEW ir.access: sale.access_account_account_salesman
 NEW ir.access: sale.access_account_account_tag_sale_salesman

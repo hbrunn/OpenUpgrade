@@ -220,5 +220,6 @@ DEL account.report.line: l10n_pk.l10n_pk_wh_vat_line_S8
 DEL account.report.line: l10n_pk.l10n_pk_wh_vat_line_S9
 DEL account.report.line: l10n_pk.l10n_pk_wh_vat_title_purchases_vat
 DEL account.report.line: l10n_pk.l10n_pk_wh_vat_title_sales_vat
+NEW ir.actions.server: l10n_pk.action_l10n_pk_edi_activate
 NEW ir.config_parameter: l10n_pk.l10n_pk_iap_endpoint (noupdate)
 NEW ir.ui.view: l10n_pk.view_tax_form_inherit_l10n_pk

@@ -242,7 +242,6 @@ DEL ir.model.access: website_sale.access_website_base_unit_public_public
 DEL ir.model.access: website_sale.access_website_base_unit_sale_manager
 DEL ir.model.access: website_sale.access_website_checkout_step_website_designer
 NEW ir.model.constraint: website_sale.constraint_product_stock_notification_rel_product_stock_notificat_a3552ee5
-NEW ir.model.constraint: website_sale.constraint_product_template_description_ecommerce_gist_idx
 NEW ir.model.constraint: website_sale.constraint_product_template_minimum_quantity_non_negative
 NEW ir.model.constraint: website_sale.constraint_product_wishlist_product_unique_partner_id [renamed from website_sale_wishlist module]
 DEL ir.rule: website_sale.empty_public_categories_rule (noupdate)

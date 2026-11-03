@@ -11,12 +11,14 @@ NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_base_10
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_base_deemed
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_base_exempt
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_base_fixed_asset_10
+NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_base_fixed_asset_nd_10
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_base_nd_10
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_base_recycled
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_base_zero
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_tax_10
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_tax_deemed
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_tax_fixed_asset_10
+NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_tax_fixed_asset_nd_10
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_tax_nd_10
 NEW account.account.tag: l10n_kr.l10n_kr_tag_purchase_tax_recycled
 NEW account.account.tag: l10n_kr.l10n_kr_tag_sales_base_10
@@ -138,6 +140,8 @@ NEW account.report.expression: l10n_kr.l10n_kr_simplified_tp_vat_stebpi_1_sub_ba
 NEW account.report.expression: l10n_kr.l10n_kr_simplified_tp_vat_stebpi_2_balance
 NEW account.report.expression: l10n_kr.l10n_kr_simplified_tp_vat_stebpi_ex_balance
 NEW account.report.expression: l10n_kr.l10n_kr_simplified_tp_vat_stebpi_t_balance
+NEW account.report.expression: l10n_kr.l10n_kr_simplified_tp_vat_sticra_sub_balance
+NEW account.report.expression: l10n_kr.l10n_kr_simplified_tp_vat_sticra_sub_balance_imp
 NEW account.report.expression: l10n_kr.l10n_kr_simplified_tp_vat_stpad_rate
 NEW account.report.expression: l10n_kr.l10n_kr_simplified_tp_vat_szro_rate
 NEW account.report.expression: l10n_kr.l10n_kr_simplified_tp_vat_szro_tax

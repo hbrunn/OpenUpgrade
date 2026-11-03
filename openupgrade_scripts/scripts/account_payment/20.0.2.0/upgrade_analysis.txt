@@ -13,5 +13,6 @@ DEL ir.rule: account_payment.payment_token_billing_rule (noupdate)
 DEL ir.ui.menu: account_payment.payment_method_menu
 DEL ir.ui.menu: account_payment.payment_token_menu
 DEL ir.ui.menu: account_payment.payment_transaction_menu
+NEW ir.ui.view: account_payment.payment_status
 DEL ir.ui.view: account_payment.portal_my_home_account_payment
 NEW portal.entry: account_payment.portal_entry_overdue_invoices (noupdate)

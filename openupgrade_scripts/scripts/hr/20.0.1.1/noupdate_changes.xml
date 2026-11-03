@@ -28,6 +28,12 @@
   <record id="contract_type_thesis" model="hr.employee.type">
     <field name="sequence">8</field>
   </record>
+  <record id="onboarding_plan_training" model="mail.activity.plan.template">
+    <field name="responsible_type">on_demand</field>
+  </record>
+  <record id="onboarding_setup_it_materials" model="mail.activity.plan.template">
+    <field name="responsible_type">on_demand</field>
+  </record>
   <record id="structure_type_employee_cp200" model="hr.payroll.structure.type">
     <field name="name">Belgium Pay</field>
   </record>

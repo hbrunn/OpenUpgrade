@@ -3,7 +3,7 @@ obsolete model account.group
 new model account.stock.valuation.report [abstract]
 new model res.currency.rate.consolidation.mixin [abstract]
 ---Fields in module 'account'---
-account      / account.account          / _order                        : _order is now 'code_path, account_type, name_path' ('code, placeholder_code')
+account      / account.account          / _order                        : _order is now 'code_path, account_type, name_path, id' ('code, placeholder_code, id')
 account      / account.account          / account_stock_expense_id (many2one): previously in module stock_account
 account      / account.account          / account_stock_variation_id (many2one): previously in module stock_account
 account      / account.account          / parent_id (many2one)          : NEW relation: account.account
@@ -22,7 +22,6 @@ account      / account.cash.rounding    / currency_ids (many2many)      : NEW re
 account      / account.cash.rounding    / partner_category_ids (many2many): NEW relation: res.partner.category
 account      / account.cash.rounding    / payment_method_line_ids (many2many): NEW relation: account.payment.method.line
 account      / account.cash.rounding    / sequence (integer)            : NEW required, hasdefault: default
-account      / account.fiscal.position  / _order                        : _order is now 'sequence, id' ('sequence')
 account      / account.fiscal.position  / account_map (binary)          : type is now 'json' ('binary')
 account      / account.fiscal.position  / tax_map (binary)              : type is now 'json' ('binary')
 account      / account.group            / code_prefix_end (char)        : DEL
@@ -93,6 +92,7 @@ account      / account.report.expression / formula (char)                : type 
 account      / account.report.expression / subformula (char)             : type is now 'text' ('char')
 account      / account.report.line      / foldability (selection)       : NEW selection_keys: ['always_unfolded', 'foldable', 'never_unfolded'], hasdefault: compute
 account      / account.report.line      / foldable (boolean)            : DEL
+account      / account.tax              / tax_group_id (many2one)       : not a function anymore
 account      / account.tax              / website_message_ids (one2many): DEL relation: mail.message
 account      / account.tax.group        / advance_tax_payment_account_id (many2one): DEL relation: account.account
 account      / account.tax.group        / tax_payable_account_id (many2one): DEL relation: account.account
@@ -150,6 +150,38 @@ stock_account / res.company              / cost_method (selection)       : selec
 stock_account / res.company              / inventory_valuation (selection): not stored anymore
 stock_account / res.company              / inventory_valuation (selection): now a function
 ---XML records in module 'account'---
+NEW account.account.tag: account.account_tag_adj_PPE_sale (noupdate)
+NEW account.account.tag: account.account_tag_adj_ROU_sale (noupdate)
+NEW account.account.tag: account.account_tag_adj_depreciation_and_amortization (noupdate)
+NEW account.account.tag: account.account_tag_adj_fin_instr_sale (noupdate)
+NEW account.account.tag: account.account_tag_adj_intangible_asset (noupdate)
+NEW account.account.tag: account.account_tag_adj_net_fin_result (noupdate)
+NEW account.account.tag: account.account_tag_adj_provisions (noupdate)
+NEW account.account.tag: account.account_tag_adj_unrealized_forex (noupdate)
+NEW account.account.tag: account.account_tag_fin_borrowings_lt (noupdate)
+NEW account.account.tag: account.account_tag_fin_borrowings_st (noupdate)
+NEW account.account.tag: account.account_tag_fin_dividends (noupdate)
+NEW account.account.tag: account.account_tag_fin_lease (noupdate)
+NEW account.account.tag: account.account_tag_fin_recov_adv (noupdate)
+NEW account.account.tag: account.account_tag_fin_share_issuance (noupdate)
+NEW account.account.tag: account.account_tag_inv_cash_advances (noupdate)
+NEW account.account.tag: account.account_tag_inv_fin_instr_purchase (noupdate)
+NEW account.account.tag: account.account_tag_inv_fin_instr_sale (noupdate)
+NEW account.account.tag: account.account_tag_inv_int_ass_purchase (noupdate)
+NEW account.account.tag: account.account_tag_inv_int_ass_sale (noupdate)
+NEW account.account.tag: account.account_tag_inv_interest_received (noupdate)
+NEW account.account.tag: account.account_tag_inv_ppe_purchase (noupdate)
+NEW account.account.tag: account.account_tag_inv_ppe_sale (noupdate)
+NEW account.account.tag: account.account_tag_inv_rou_sale (noupdate)
+NEW account.account.tag: account.account_tag_non_applicable (noupdate)
+NEW account.account.tag: account.account_tag_op_income_tax_paid_received (noupdate)
+NEW account.account.tag: account.account_tag_op_interest_paid (noupdate)
+NEW account.account.tag: account.account_tag_wcap_deferred_revenue (noupdate)
+NEW account.account.tag: account.account_tag_wcap_inventory (noupdate)
+NEW account.account.tag: account.account_tag_wcap_other_payable (noupdate)
+NEW account.account.tag: account.account_tag_wcap_other_receivable (noupdate)
+NEW account.account.tag: account.account_tag_wcap_trade_payable (noupdate)
+NEW account.account.tag: account.account_tag_wcap_trade_receivable (noupdate)
 DEL digest.tip: account.digest_tip_account_0
 NEW ir.access: account.access_account_account_manager
 NEW ir.access: account.access_account_account_tax
@@ -448,6 +480,7 @@ DEL ir.ui.menu: account.root_payment_menu
 NEW ir.ui.view: account.account_bank_statement_line_view_graph_cashflow
 NEW ir.ui.view: account.account_bank_statement_line_view_pivot_cashflow
 NEW ir.ui.view: account.account_bank_statement_line_view_search_cashflow
+NEW ir.ui.view: account.account_move_view_list_stock_closing
 NEW ir.ui.view: account.address_form_additional_identifiers
 NEW ir.ui.view: account.tax_repartition_line_form
 NEW ir.ui.view: account.tax_repartition_line_kanban

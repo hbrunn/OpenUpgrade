@@ -1,11 +1,12 @@
 ---Models in module 'resource'---
 ---Fields in module 'resource'---
-resource     / res.company              / tz (selection)                : NEW selection_keys: function, hasdefault: compute
+resource     / res.company              / tz (selection)                : is now stored
+resource     / res.company              / tz (selection)                : not related anymore
 resource     / resource.calendar        / calendar_type (selection)     : NEW required, selection_keys: ['fixed', 'undefined', 'variable'], hasdefault: default
 resource     / resource.calendar        / days_per_week (float)         : NEW hasdefault: compute
 resource     / resource.calendar        / duration_based (boolean)      : DEL
 resource     / resource.calendar        / flexible_hours (boolean)      : DEL
-resource     / resource.calendar        / reference_calendar_id (many2one): NEW relation: resource.calendar, hasdefault: default
+resource     / resource.calendar        / reference_calendar_id (many2one): NEW relation: resource.calendar
 resource     / resource.calendar        / schedule_type (selection)     : DEL required, selection_keys: ['flexible', 'fully_fixed']
 resource     / resource.calendar        / two_weeks_calendar (boolean)  : DEL
 resource     / resource.calendar        / tz (selection)                : DEL required, selection_keys: function

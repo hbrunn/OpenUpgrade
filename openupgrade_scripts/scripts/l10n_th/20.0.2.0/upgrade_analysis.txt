@@ -12,7 +12,7 @@ l10n_th      / l10n_th.tax.invoice      / date (date)                   : NEW
 l10n_th      / l10n_th.tax.invoice      / invoice_move_id (many2one)    : NEW relation: account.move, required
 l10n_th      / l10n_th.tax.invoice      / is_partially_paid (boolean)   : NEW
 l10n_th      / l10n_th.tax.invoice      / payment_move_id (many2one)    : NEW relation: account.move
-l10n_th      / l10n_th.tax.invoice      / reference (char)              : NEW
+l10n_th      / l10n_th.tax.invoice      / reference (char)              : NEW isfunction: function, stored
 l10n_th      / l10n_th.tax.invoice      / state (selection)             : NEW required, selection_keys: ['cancel', 'draft', 'posted']
 l10n_th      / l10n_th.tax.invoice      / tax_group_amounts (json)      : NEW
 l10n_th      / l10n_th.tax.invoice      / tax_invoice_lines (json)      : NEW

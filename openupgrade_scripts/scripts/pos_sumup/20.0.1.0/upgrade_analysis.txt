@@ -1,0 +1,8 @@
+---Models in module 'pos_sumup'---
+---Fields in module 'pos_sumup'---
+pos_sumup    / pos.payment.method       / sumup_api_key (char)          : NEW
+pos_sumup    / pos.payment.method       / sumup_merchant_code (char)    : NEW
+pos_sumup    / pos.payment.method       / sumup_pairing_code (char)     : NEW
+pos_sumup    / pos.payment.method       / sumup_terminal_id (char)      : NEW
+---XML records in module 'pos_sumup'---
+NEW ir.ui.view: pos_sumup.pos_payment_method_view_form_inherit_pos_sumup

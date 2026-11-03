@@ -64,6 +64,7 @@ product      / product.template.attribute.value / sequence (integer)            
 product      / product.template.attribute.value / show_price_extra (boolean)    : NEW
 stock        / product.product          / qty_available (float)         : is now stored
 stock        / product.product          / qty_available (float)         : not a function anymore
+stock        / product.product          / qty_available (float)         : now company_dependent
 stock        / product.product          / show_qty_update_button (boolean): not a function anymore
 stock        / product.product          / show_qty_update_button (boolean): now related
 website_sale / product.product          / base_unit_id (many2one)       : relation is now 'product.base.unit' ('website.base.unit') [nothing to do]
