@@ -1,0 +1,4 @@
+---Models in module 'account_peppol_selfbilling'---
+---Fields in module 'account_peppol_selfbilling'---
+---XML records in module 'account_peppol_selfbilling'---
+---nothing has changed in this module--
