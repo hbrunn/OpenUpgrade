@@ -62,7 +62,7 @@ jobs:
         run: |
           docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host $OCA_IMAGE_PREV psql -l || true
           docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host $OCA_IMAGE_PREV odoo -i base --stop-after-init || true
-          docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host $OCA_IMAGE_PREV --volume $(pwd)/openupgrade:/openupgrade sh -c "cd /openupgrade; oca_install_addons openupgrade_scripts,openupgrade_framework" || true
+          docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host $OCA_IMAGE_PREV --volume=$(pwd)/openupgrade:/openupgrade sh -c "cd /openupgrade; oca_install_addons openupgrade_scripts,openupgrade_framework" || true
       - name: Test data
         run: |
           if test -n "$(ls openupgrade/openupgrade_scripts/scripts/*/tests/data*.py 2> /dev/null)"; then
