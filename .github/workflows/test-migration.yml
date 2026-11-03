@@ -13,6 +13,8 @@ on:
     branches:
       - "20.0"
       - "20.0-ocabot-*"
+# TODO remove
+      - "20.0-mail"
 
 jobs:
   test:
