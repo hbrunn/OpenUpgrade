@@ -60,7 +60,9 @@ jobs:
           path: openupgrade
       - name: Download docker images
         run: |
-          docker run -e DB_HOST=host.docker.internal -e PGHOST=host.docker.internal $OCA_IMAGE_PREV psql -l
+          docker run -e DB_HOST=host.docker.internal -e PGHOST=host.docker.internal --net=host $OCA_IMAGE_PREV psql -l || true
+          docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host $OCA_IMAGE_PREV psql -l || true
+          docker run -e DB_HOST=127.0.0.1 -e PGHOST=127.0.0.1 --net=host $OCA_IMAGE_PREV psql -l || true
           docker run -e DB_HOST=host.docker.internal -e PGHOST=host.docker.internal $OCA_IMAGE_PREV odoo -i base --stop-after-init -l
           docker run $OCA_IMAGE_CURRENT psql -l
       - name: Test data
