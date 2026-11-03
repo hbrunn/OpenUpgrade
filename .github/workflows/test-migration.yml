@@ -62,14 +62,12 @@ jobs:
         run: |
           docker pull $OCA_IMAGE_PREV
           docker pull $OCA_IMAGE_CURRENT
-          docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host $OCA_IMAGE_PREV psql -l
-          # this works, use below
-          #docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host --volume=$(pwd)/openupgrade:/openupgrade $OCA_IMAGE_CURRENT sh -c "cd /openupgrade; oca_install_addons"
+          docker run -e PGHOST=$DB_HOST --net=host $OCA_IMAGE_PREV psql -l
       - name: Test data
         run: |
           if test -n "$(ls openupgrade/openupgrade_scripts/scripts/*/tests/data*.py 2> /dev/null)"; then
              for snippet in openupgrade/openupgrade_scripts/scripts/*/tests/data*.py; do
-               docker run -t -e DB_HOST=localhost --net=host $OCA_IMAGE_PREV odoo-bin shell < $snippet
+               docker run -t --net=host $OCA_IMAGE_PREV odoo shell -d $DB < $snippet
              done
           fi
       - name: OpenUpgrade test
@@ -110,22 +108,21 @@ jobs:
           echo Execution of Openupgrade with the update of the following modules : $MODULES_NEW
           # Silence redundant logs from unlinking records (1 line is enough)
           # to prevent log overflow
-          coverage run \
-              --source=$GITHUB_WORKSPACE/openupgrade/openupgrade_scripts/scripts \
-          $ODOO \
-              --addons-path=`echo $ADDONS_PATHS | awk -v OFS="," '$1=$1'` \
-              --database=$DB \
-              --db_host=$DB_HOST \
-              --db_password=$DB_PASSWORD \
-              --db_port=$DB_PORT \
-              --db_user=$DB_USERNAME \
-              --load=base,web,openupgrade_framework \
-              --test-enable \
-              --test-tags openupgrade \
-              --log-handler odoo.models.unlink:WARNING \
-              --stop-after-init \
-              --without-demo=$MODULES_NEW \
-              --update=$MODULES_NEW
+          docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host --volume=$(pwd)/openupgrade:/openupgrade $OCA_IMAGE_CURRENT sh -c "
+            cd /openupgrade
+            oca_install_addons
+            coverage run \\
+                --source=$GITHUB_WORKSPACE/openupgrade/openupgrade_scripts/scripts \
+            odoo \\
+                --load=base,web,openupgrade_framework \\
+                --database=$DB \\
+                --test-enable \\
+                --test-tags openupgrade \\
+                --log-handler odoo.models.unlink:WARNING \\
+                --stop-after-init \\
+                --without-demo=$MODULES_NEW \\
+                --update=$MODULES_NEW
+          "
       - name: Generate coverage.xml
         if: ${{ steps.run_migration.outputs.modules_new != '' }}
         run: coverage xml
