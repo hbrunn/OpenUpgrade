@@ -66,9 +66,16 @@ jobs:
           docker run -e PGHOST=$DB_HOST --net=host $OCA_IMAGE_PREV psql -l
           docker run -d --net=host --name openupgrade_prev $OCA_IMAGE_PREV sleep infinity
           docker run -d --net=host --name openupgrade_current --volume=$(pwd)/openupgrade:/opt/openupgrade $OCA_IMAGE_CURRENT sleep infinity
+      - name: Install dependencies
+        run: |
           # install dependencies not available in the oca image
           # cloud_storage_google, needs pin to not pull incompatible cryptography version
           docker exec openupgrade_prev pip install "google-auth<2.48.0"
+          # install openupgrade dependencies
+          docker exec openupgrade_current sh -c "
+            cd /opt/openupgrade
+            oca_install_addons
+          "
       - name: Test data
         run: |
           if test -n "$(ls openupgrade/openupgrade_scripts/scripts/*/tests/data*.py 2> /dev/null)"; then
@@ -114,12 +121,10 @@ jobs:
           echo Execution of Openupgrade with the update of the following modules : $MODULES_NEW
           # Silence redundant logs from unlinking records (1 line is enough)
           # to prevent log overflow
-          docker run -e DB_HOST=localhost -e PGHOST=localhost --net=host --volume=$(pwd)/openupgrade:/openupgrade $OCA_IMAGE_CURRENT sh -c "
-            cd /openupgrade
-            oca_install_addons
+          docker exec -e PGHOST=$DB_HOST openupgrade_current sh -c "
             coverage run \\
-                --source=$GITHUB_WORKSPACE/openupgrade/openupgrade_scripts/scripts \\
-            odoo \\
+                --source=/opt/openupgrade/openupgrade_scripts/scripts \\
+            \$(which odoo) \\
                 --load=base,web,openupgrade_framework \\
                 --database=$DB \\
                 --test-enable \\
@@ -131,7 +136,9 @@ jobs:
           "
       - name: Generate coverage.xml
         if: ${{ steps.run_migration.outputs.modules_new != '' }}
-        run: coverage xml
+        run: |
+          docker exec openupgrade_current coverage xml
+          docker cp openupgrade_current:coverage.xml .
       - uses: codecov/codecov-action@v4
         if: ${{ steps.run_migration.outputs.modules_new != '' }}
         with:
