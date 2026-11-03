@@ -29,6 +29,8 @@ jobs:
       PGPASSWORD: "odoo"
       PGUSER: "odoo"
       OPENUPGRADE_USE_DEMO: "yes"
+      OCA_IMAGE_PREV: ghcr.io/oca/oca-ci/py3.10-ocb19.0:latest
+      OCA_IMAGE_CURRENT: ghcr.io/oca/oca-ci/py3.12-ocb20.0:latest
     services:
       postgres:
         image: postgres:14.0
@@ -43,65 +45,22 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-      - name: Sleep for 10 seconds
-        run: sleep 10s
-      - name: DB Creation
-        run: createdb $DB
-      - name: DB Restore
-        run: |
+      - name: Wait for postgres
+        run: while ! pg_isready; do sleep 1; done
+      - name: Restore database
+        run:
+          createdb $DB
           wget -q -O- $DOWNLOADS/19.0.psql | pg_restore -d $DB --no-owner
           psql $DB -c "UPDATE ir_module_module SET demo=False"
-      - name: Check out Odoo
-        uses: actions/checkout@v4
-        with:
-          repository: odoo/odoo
-          ref: "20.0"
-          fetch-depth: 1
-          path: odoo
-      - name: Check out previous Odoo
-        uses: actions/checkout@v4
-        with:
-          repository: odoo/odoo
-          ref: "19.0"
-          fetch-depth: 1
-          path: odoo-old
       - name: Check out OpenUpgrade
         uses: actions/checkout@v4
         with:
           path: openupgrade
-      - name: Configuration
+      - name: Download docker images
         run: |
-          sudo apt update
-          sudo apt install \
-              expect \
-              expect-dev \
-              libevent-dev \
-              libldap2-dev \
-              libsasl2-dev \
-              libxml2-dev \
-              libxslt1-dev \
-              nodejs \
-              python3-lxml \
-              python3-passlib \
-              python3-psycopg2 \
-              python3-serial \
-              python3-simplejson \
-              python3-werkzeug \
-              python3-yaml \
-              unixodbc-dev
-      - name: Requirements Installation
-        run: |
-          sed -i -E "s/(gevent==)21\.8\.0( ; sys_platform != 'win32' and python_version == '3.10')/\122.10.2\2/;s/(greenlet==)1.1.2( ; sys_platform != 'win32' and python_version == '3.10')/\12.0.2\2/" odoo/requirements.txt
-          pip install -q -r odoo/requirements.txt
-          pip install -r ./openupgrade/requirements.txt
-          pip install -U git+https://github.com/oca/openupgradelib
-          # this is for v18 l10n_eg_edi_eta which crashes without it
-          pip install asn1crypto
-          # required by v18
-          pip install decorator
-          pip install coverage
-          # this is for account_peppol
-          pip install phonenumbers
+          docker run -e DB_HOST=host.docker.internal -e PGHOST=host.docker.internal $OCA_IMAGE_PREV psql -l
+          docker run -e DB_HOST=host.docker.internal -e PGHOST=host.docker.internal $OCA_IMAGE_PREV odoo -i base --stop-after-init -l
+          docker run $OCA_IMAGE_CURRENT psql -l
       - name: Test data
         run: |
           if test -n "$(ls openupgrade/openupgrade_scripts/scripts/*/tests/data*.py 2> /dev/null)"; then
