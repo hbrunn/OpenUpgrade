@@ -11,7 +11,7 @@ new model account.move.send.batch.wizard [transient]
 new model account.move.send.wizard [transient]
 new model account.secure.entries.wizard [transient]
 ---Fields in module 'account'---
-account      / account.account          / _order                        : _order is now 'code, placeholder_code' ('code, company_id')
+account      / account.account          / _order                        : _order is now 'code, placeholder_code, id' ('code, company_id')
 account      / account.account          / code (char)                   : not stored anymore
 account      / account.account          / code (char)                   : now a function
 account      / account.account          / code_mapping_ids (one2many)   : NEW relation: account.code.mapping
@@ -31,6 +31,7 @@ account      / account.bank.statement.line / company_id (many2one)         : now
 account      / account.bank.statement.line / journal_id (many2one)         : is now stored
 account      / account.cash.rounding    / loss_account_id (many2one)    : needs conversion to v18-style company dependent
 account      / account.cash.rounding    / profit_account_id (many2one)  : needs conversion to v18-style company dependent
+account      / account.fiscal.position  / _order                        : _order is now 'sequence, id' ('sequence')
 account      / account.group            / parent_path (char)            : DEL
 account      / account.journal          / autocheck_on_post (boolean)   : NEW hasdefault: default
 account      / account.journal          / sale_activity_note (text)     : DEL
@@ -49,6 +50,7 @@ account      / account.lock_exception   / user_id (many2one)            : NEW re
 account      / account.move             / amount_untaxed_in_currency_signed (float): NEW isfunction: function, stored
 account      / account.move             / audit_trail_message_ids (one2many): NEW relation: mail.message
 account      / account.move             / checked (boolean)             : NEW
+account      / account.move             / delivery_date (date)          : now a function
 account      / account.move             / invoice_currency_rate (float) : NEW hasdefault: compute
 account      / account.move             / is_manually_modified (boolean): NEW
 account      / account.move             / journal_group_id (many2one)   : NEW relation: account.journal.group, stored: False
