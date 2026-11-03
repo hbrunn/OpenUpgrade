@@ -59,16 +59,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: openupgrade
-      - name: Download docker images
+      - name: Download docker images and start containers
         run: |
           docker pull $OCA_IMAGE_PREV
           docker pull $OCA_IMAGE_CURRENT
           docker run -e PGHOST=$DB_HOST --net=host $OCA_IMAGE_PREV psql -l
+          docker run --name openupgrade_prev $OCA_IMAGE_PREV sleep infinity
+          docker run --name openupgrade_current --volume=$(pwd)/openupgrade:/opt/openupgrade $OCA_IMAGE_CURRENT sleep infinity
       - name: Test data
         run: |
           if test -n "$(ls openupgrade/openupgrade_scripts/scripts/*/tests/data*.py 2> /dev/null)"; then
              for snippet in openupgrade/openupgrade_scripts/scripts/*/tests/data*.py; do
-               docker run -t --net=host -e PGDATABASE=$DB -e PGHOST=$PGHOST $OCA_IMAGE_PREV odoo shell < $snippet
+               docker exec openupgrade_prev odoo shell -d $DB < $snippet
              done
           fi
       - name: OpenUpgrade test
@@ -113,7 +115,7 @@ jobs:
             cd /openupgrade
             oca_install_addons
             coverage run \\
-                --source=$GITHUB_WORKSPACE/openupgrade/openupgrade_scripts/scripts \
+                --source=$GITHUB_WORKSPACE/openupgrade/openupgrade_scripts/scripts \\
             odoo \\
                 --load=base,web,openupgrade_framework \\
                 --database=$DB \\
