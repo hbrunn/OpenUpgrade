@@ -67,7 +67,8 @@ jobs:
           docker run -d --net=host --name openupgrade_prev $OCA_IMAGE_PREV sleep infinity
           docker run -d --net=host --name openupgrade_current --volume=$(pwd)/openupgrade:/opt/openupgrade $OCA_IMAGE_CURRENT sleep infinity
           # install dependencies not available in the oca image
-          docker exec openupgrade_prev pip install google-auth
+          # cloud_storage_google, needs pin to not pull incompatible cryptography version
+          docker exec openupgrade_prev pip install "google-auth<2.48.0"
       - name: Test data
         run: |
           if test -n "$(ls openupgrade/openupgrade_scripts/scripts/*/tests/data*.py 2> /dev/null)"; then
