@@ -1,0 +1,4 @@
+---Models in module 'pos_adyen'---
+---Fields in module 'pos_adyen'---
+---XML records in module 'pos_adyen'---
+DEL ir.ui.view: pos_restaurant_adyen.pos_payment_method_view_form_inherit_pos_restaurant_adyen

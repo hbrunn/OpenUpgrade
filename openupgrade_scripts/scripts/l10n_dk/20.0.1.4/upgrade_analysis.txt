@@ -1,0 +1,48 @@
+---Models in module 'l10n_dk'---
+obsolete model account.edi.xml.oioubl_201 [abstract]
+---Fields in module 'l10n_dk'---
+l10n_dk_nemhandel / account.move             / nemhandel_move_state (selection): selection_keys added: [BusinessAccept, BusinessReject] (most likely nothing to do)
+l10n_dk_nemhandel / res.partner              / invoice_edi_format (False)    : selection_keys removed: [pint_ae, pint_jp, pint_my, pint_sg, tw_ecpay, ubl_tr]
+l10n_dk_nemhandel_response / account.move             / nemhandel_move_state (False)  : DEL selection_keys: ['BusinessAccept', 'BusinessReject', 'done', 'error', 'processing', 'ready', 'to_send'], mode: modify
+l10n_dk_oioubl / res.partner              / invoice_edi_format (False)    : DEL selection_keys: ['facturx', 'nlcius', 'oioubl_201', 'oioubl_21', 'pint_ae', 'pint_anz', 'pint_jp', 'pint_my', 'pint_sg', 'tw_ecpay', 'ubl_a_nz', 'ubl_bis3', 'ubl_sg', 'ubl_tr', 'xrechnung', 'zugferd'], mode: modify
+---XML records in module 'l10n_dk'---
+NEW ir.access: l10n_dk.l10n_dk_registration
+NEW ir.access: l10n_dk.nemhandel_rejection_wizard
+NEW ir.access: l10n_dk.nemhandel_response
+DEL ir.actions.server: l10n_dk_nemhandel.partner_action_verify_l10n_dk_nemhandel
+NEW ir.cron: l10n_dk.ir_cron_nemhandel_get_message_status [renamed from l10n_dk_nemhandel module]
+NEW ir.cron: l10n_dk.ir_cron_nemhandel_get_new_documents [renamed from l10n_dk_nemhandel module]
+NEW ir.cron: l10n_dk.ir_cron_nemhandel_get_participant_status [renamed from l10n_dk_nemhandel module]
+NEW ir.cron: l10n_dk.ir_cron_nemhandel_webhook_keepalive [renamed from l10n_dk_nemhandel module]
+DEL ir.cron: l10n_dk_nemhandel.ir_cron_nemhandel_get_message_status [renamed to l10n_dk module]
+DEL ir.cron: l10n_dk_nemhandel.ir_cron_nemhandel_get_new_documents [renamed to l10n_dk module]
+DEL ir.cron: l10n_dk_nemhandel.ir_cron_nemhandel_get_participant_status [renamed to l10n_dk module]
+DEL ir.cron: l10n_dk_nemhandel.ir_cron_nemhandel_webhook_keepalive [renamed to l10n_dk module]
+DEL ir.model.access: l10n_dk_nemhandel.l10n_dk_nemhandel_registration
+DEL ir.model.access: l10n_dk_nemhandel_response.nemhandel_rejection_wizard
+DEL ir.model.access: l10n_dk_nemhandel_response.nemhandel_response
+NEW ir.ui.view: l10n_dk.l10n_dk_nemhandel_view_move_form
+NEW ir.ui.view: l10n_dk.nemhandel_registration_form
+NEW ir.ui.view: l10n_dk.nemhandel_rejection_wizard_view_form
+NEW ir.ui.view: l10n_dk.nemhandel_response_view_form
+NEW ir.ui.view: l10n_dk.nemhandel_response_view_list
+NEW ir.ui.view: l10n_dk.nemhandel_view_account_invoice_filter
+NEW ir.ui.view: l10n_dk.nemhandel_view_out_credit_note_tree_inherit
+NEW ir.ui.view: l10n_dk.nemhandel_view_out_invoice_tree_inherit
+NEW ir.ui.view: l10n_dk.res_config_settings_view_form
+DEL ir.ui.view: l10n_dk.view_company_form_inherit_l10n_dk
+DEL ir.ui.view: l10n_dk_nemhandel.account_journal_dashboard_kanban_view
+DEL ir.ui.view: l10n_dk_nemhandel.l10n_dk_nemhandel_view_move_form
+DEL ir.ui.view: l10n_dk_nemhandel.nemhandel_registration_form
+DEL ir.ui.view: l10n_dk_nemhandel.nemhandel_view_account_invoice_filter
+DEL ir.ui.view: l10n_dk_nemhandel.nemhandel_view_out_credit_note_tree_inherit
+DEL ir.ui.view: l10n_dk_nemhandel.nemhandel_view_out_invoice_tree_inherit
+DEL ir.ui.view: l10n_dk_nemhandel.res_config_settings_view_form
+DEL ir.ui.view: l10n_dk_nemhandel.res_partner_form_l10n_dk_nemhandel
+DEL ir.ui.view: l10n_dk_nemhandel_response.nemhandel_rejection_wizard_view_form
+DEL ir.ui.view: l10n_dk_nemhandel_response.nemhandel_response_view_form
+DEL ir.ui.view: l10n_dk_nemhandel_response.nemhandel_response_view_list
+DEL ir.ui.view: l10n_dk_nemhandel_response.nemhandel_response_view_move_form
+DEL ir.ui.view: l10n_dk_nemhandel_response.res_partner_form_l10n_dk_nemhandel_response
+NEW web_tour.tour: l10n_dk.nemhandel_onboarding_tour [renamed from l10n_dk_nemhandel module]
+DEL web_tour.tour: l10n_dk_nemhandel.nemhandel_onboarding_tour [renamed to l10n_dk module]

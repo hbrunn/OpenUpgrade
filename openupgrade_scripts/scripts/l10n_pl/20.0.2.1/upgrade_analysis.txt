@@ -1,0 +1,12 @@
+---Models in module 'l10n_pl'---
+---Fields in module 'l10n_pl'---
+---XML records in module 'l10n_pl'---
+NEW ir.access: l10n_pl.access_l10n_pl_bank_account_verification
+NEW ir.access: l10n_pl.access_l10n_pl_tax_office
+DEL ir.model.access: l10n_pl.access_l10n_pl_tax_office
+DEL ir.model.access: l10n_pl_bank_verification.access_l10n_pl_bank_account_verification
+NEW ir.model.constraint: l10n_pl.constraint_l10n_pl_bank_account_verification_verification_index
+NEW ir.ui.view: l10n_pl.l10n_pl_view_account_payment_register_form
+NEW ir.ui.view: l10n_pl.view_account_payment_form_inherit_l10n_pl
+DEL ir.ui.view: l10n_pl_bank_verification.l10n_pl_view_account_payment_register_form
+DEL ir.ui.view: l10n_pl_bank_verification.view_account_payment_form_inherit_l10n_pl
