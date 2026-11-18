@@ -1,0 +1,4 @@
+---Models in module 'l10n_es_website_sale_id_type'---
+---Fields in module 'l10n_es_website_sale_id_type'---
+---XML records in module 'l10n_es_website_sale_id_type'---
+NEW ir.ui.view: l10n_es_website_sale_id_type.address_form_l10n_es_id_type

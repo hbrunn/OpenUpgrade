@@ -1,0 +1,1498 @@
+---Models in module 'general'---
+obsolete model account.edi.xml.oioubl_201 [module l10n_dk]
+obsolete model account.edi.xml.ubl.tr [module l10n_tr_nilvera_einvoice]
+obsolete model account.group [module account]
+obsolete model account_peppol.service [module account_peppol]
+obsolete model applicant.send.mail [module hr_recruitment]
+obsolete model barcodes.barcode_events_mixin [module barcodes]
+obsolete model calendar.popover.delete.wizard (renamed to calendar.event.archive.or.unlink.wizard) [module calendar]
+obsolete model calendar.provider.config [module calendar]
+obsolete model crm.lead2opportunity.partner (merged to crm.lead2opportunity.partner.mass) [module crm]
+obsolete model google.calendar.sync (renamed to google.event.sync) [module google_calendar]
+obsolete model hr.attendance.overtime.line [module hr_attendance]
+obsolete model hr.attendance.overtime.rule [module hr_attendance]
+obsolete model hr.attendance.overtime.ruleset [module hr_attendance]
+obsolete model hr.contract.type (renamed to hr.employee.type) [module hr]
+obsolete model hr.departure.wizard [module hr]
+obsolete model hr.employee.certification.report [module hr_skills]
+obsolete model hr.expense.post.wizard [module hr_expense]
+obsolete model hr.leave.type (merged to hr.work.entry.type) [module hr_holidays]
+obsolete model hr.version.wizard [module hr]
+obsolete model hr.work.entry [module hr_work_entry]
+obsolete model hr.work.entry.regeneration.wizard [module hr_work_entry]
+obsolete model im_livechat.conversation.tag [module im_livechat]
+obsolete model ir.model.access (merged to ir.access) [module base]
+obsolete model ir.rule (merged to ir.access) [module base]
+obsolete model l10n_ar.payment.register.withholding [module l10n_ar_withholding]
+obsolete model l10n_hu_edi_receive.bills.wizard (renamed to l10n_hu_edi.receive.bills.wizard) [module l10n_hu_edi]
+obsolete model l10n_in.section.alert [module l10n_in]
+obsolete model l10n_in.withhold.wizard [module l10n_in]
+obsolete model l10n_latam.identification.type [module account]
+obsolete model l10n_ph_2307.wizard [module l10n_ph]
+obsolete model l10n_tr.nilvera.alias [module l10n_tr_nilvera]
+obsolete model l10n_tr_nilvera_einvoice_extended.account.tax.code [module l10n_tr_nilvera_einvoice]
+obsolete model l10n_tr_nilvera_einvoice_extended.tax.office (renamed to l10n_tr.tax.office) [module l10n_tr_nilvera_einvoice]
+obsolete model l10n_tr.nilvera.trailer.plate [module l10n_tr_nilvera_edispatch]
+obsolete model l10n_tr.ticarifatura.response.wizard [module l10n_tr_nilvera_einvoice]
+obsolete model l10n_vn_edi_viettel.cancellation [module l10n_vn_edi_viettel]
+obsolete model l10n_vn_edi_viettel.sinvoice.template [module l10n_vn_edi_viettel]
+obsolete model mail.thread.cc [module mail]
+obsolete model mailing.list.merge [module mass_mailing]
+obsolete model pdp.config.wizard [module l10n_fr_pdp]
+obsolete model peppol.config.wizard [module account_peppol]
+obsolete model pos.close.session.wizard [module point_of_sale]
+obsolete model product.template.attribute.exclusion [module product]
+obsolete model purchase.requisition.alternative.warning (renamed to purchase.alternative.warning) [module purchase_requisition]
+obsolete model purchase.requisition.create.alternative (renamed to purchase.alternative.create) [module purchase_requisition]
+obsolete model report.product.report_producttemplatelabel2x7 [module product]
+obsolete model report.product.report_producttemplatelabel4x12 [module product]
+obsolete model report.product.report_producttemplatelabel4x12noprice [module product]
+obsolete model report.product.report_producttemplatelabel4x7 [module product]
+obsolete model report.product.report_producttemplatelabel_dymo [module product]
+obsolete model report.stock.label_lot_template_view [module stock]
+obsolete model report.stock.label_product_product_view [module stock]
+obsolete model report.stock.report_reception [module stock]
+obsolete model res.bank (merged to res.partner.bank) [module base]
+obsolete model res.partner.iap [module mail_plugin]
+obsolete model stock_account.stock.valuation.report (renamed to account.stock.valuation.report) [module stock_account]
+obsolete model stock.quantity.history [module stock]
+obsolete model stock.return.picking [module stock]
+obsolete model stock.return.picking.line [module stock]
+obsolete model stock.scrap (merged to stock.move) [module stock]
+obsolete model stock.warn.insufficient.qty.repair [module repair]
+obsolete model transifex.code.translation [module transifex]
+obsolete model transifex.translation [module transifex]
+obsolete model utm.source.mixin [module utm]
+obsolete model website.base.unit (renamed to product.base.unit) [module website_sale]
+new model account.edi.xml.ubl_gr [module l10n_gr_edi]
+new model account.stock.valuation.report (renamed from stock_account.stock.valuation.report) [module account]
+new model applicant.refuse.single [module hr_recruitment]
+new model bus.sync.mixin [module mail]
+new model calendar.calendar [module calendar]
+new model calendar.event.archive.or.unlink.wizard (renamed from calendar.popover.delete.wizard) [module calendar]
+new model calendar.event.multi.archive.or.unlink.wizard [module calendar]
+new model calendar.user [module calendar]
+new model clearing.label [module base]
+new model crm.iap.lead.industry.division [module crm_iap_mine]
+new model customer.product.reference [module sale_edi_ubl]
+new model delivery.note.wizard [module delivery]
+new model delivery.note.wizard.line [module delivery]
+new model digest.test [module digest]
+new model discuss.category [module mail]
+new model discuss.channel.last.interest.update [module mail]
+new model expense.attachment.selection.wizard [module sale_expense]
+new model forum.post.comment [module website_forum]
+new model google.event.sync (renamed from google.calendar.sync) [module google_calendar]
+new model google.sync [module google_calendar]
+new model hr.employee.create.version.wizard [module hr]
+new model hr.employee.departure [module hr]
+new model hr.employee.type (renamed from hr.contract.type) [module hr]
+new model hr.expense.product.job.position.limit [module hr_expense]
+new model hr.export.work.entries [module hr_work_entry]
+new model hr.export.work.entries.employee [module hr_work_entry]
+new model hr.job.tag [module hr_recruitment]
+new model hr.leave.display.name.mixin [module hr_holidays]
+new model hr.leave.employee.report [module hr_holidays]
+new model hr.recruitment.survey.invite [module hr_recruitment_survey]
+new model hr.time.rule [module hr_work_entry]
+new model hr.time.rule.allocation.log [module hr_holidays]
+new model hr.time.rule.source.mixin [module hr_work_entry]
+new model iap.service.pack [module iap]
+new model ir.access [module base]
+new model ir.profile.query [module base]
+new model l10n_ar.arca.activity [module l10n_ar]
+new model l10n_cn.balance.deduction [module l10n_cn]
+new model l10n_eg_edi.cancel.wizard [module l10n_eg_edi_eta]
+new model l10n_eg_edi.eta.submission [module l10n_eg_edi_eta]
+new model l10n_es_edi_sii.document [module l10n_es_edi_sii]
+new model l10n_es_edi_verifactu.issuer [module l10n_es_edi_verifactu]
+new model l10n_fr_pdp.annuaire.line [module l10n_fr_pdp]
+new model l10n_fr_pdp.partner.lookup [module l10n_fr_pdp]
+new model l10n_hu_edi.receive.bills.wizard (renamed from l10n_hu_edi_receive.bills.wizard) [module l10n_hu_edi]
+new model l10n_in.boe.wizard [module l10n_in_boe]
+new model l10n_in.boe.wizard.line [module l10n_in_boe]
+new model l10n_pa.res.city.corregimiento [module l10n_pa]
+new model l10n_ph.discount.privilege [module l10n_ph_invoice]
+new model l10n_ph.discount.privilege.line.mixin [module l10n_ph_invoice]
+new model l10n_ph.discount.privilege.wizard [module l10n_ph_invoice]
+new model l10n_ph.discount.privilege.wizard.line [module l10n_ph_invoice]
+new model l10n_pk_edi.sro [module l10n_pk_edi]
+new model l10n_pk_edi.sro.item [module l10n_pk_edi]
+new model l10n_ro_edi.account_move_fetch_invoices.wizard [module l10n_ro_edi]
+new model l10n_sa_edi.document [module l10n_sa_edi]
+new model l10n_sa_edi.log [module l10n_sa_edi]
+new model l10n_sa_edi.transaction.type [module l10n_sa_edi]
+new model l10n_th.tax.invoice [module l10n_th]
+new model l10n_tr.tax.office (renamed from l10n_tr_nilvera_einvoice_extended.tax.office) [module l10n_tr]
+new model l10n_us.res.county [module l10n_us]
+new model l10n_vn_edi_viettel_stock.send_wizard [module l10n_vn_edi_viettel_stock]
+new model l10n_vn_edi_viettel_stock.template_field_line [module l10n_vn_edi_viettel_stock]
+new model load.public.holiday.wizard [module hr_holidays]
+new model load.public.holiday.wizard.line [module hr_holidays]
+new model mail.call.artifact [module mail]
+new model mail.poll [module mail]
+new model mail.poll.option [module mail]
+new model mail.poll.vote [module mail]
+new model mail.thread.subject.suggested [module mail]
+new model mail.track.mixin [module mail]
+new model mrp.finished.product.label.layout [module mrp]
+new model mysubscription.mysubscription [module mysubscription]
+new model pay.on.delivery [module stock_delivery]
+new model payment.data [module payment]
+new model populate.blueprint [module populate]
+new model populate.job [module populate]
+new model populate.model.data [module populate]
+new model populate.session [module populate]
+new model portal.entry [module portal]
+new model pos.course [module pos_restaurant]
+new model pos.order.receipt [module point_of_sale]
+new model pos.prep.line [module point_of_sale]
+new model pos.prep.order [module point_of_sale]
+new model pos.price.inclusion.wizard [module point_of_sale]
+new model pos.snooze [module point_of_sale]
+new model printer.printer [module printer]
+new model product.base.unit (renamed from website.base.unit) [module product]
+new model product.catalog.line.mixin [module product]
+new model product.stock.notification [module website_sale]
+new model project.task.stage.report [module project]
+new model purchase.alternative.create (renamed from purchase.requisition.create.alternative) [module purchase_alternative]
+new model purchase.alternative.warning (renamed from purchase.requisition.alternative.warning) [module purchase_alternative]
+new model repair.consumption.warning [module repair]
+new model repair.consumption.warning.line [module repair]
+new model repair.service.line [module repair]
+new model report.l10n_th.report_50_tawi [module l10n_th]
+new model report.product.label.base [module product]
+new model report.product.report_product_label_dymo [module product]
+new model report.product.report_product_label_pdf [module product]
+new model report.product.report_product_label_zpl [module product]
+new model report.stock_fleet.report_cmr [module stock]
+new model report.stock_fleet.report_cmr_batch [module stock]
+new model res.currency.rate.consolidation.mixin [module account]
+new model res.session [module base]
+new model return.reason [module sale_stock]
+new model select.printers.wizard [module printer]
+new model spreadsheet.dashboard.favorite.filters [module spreadsheet_dashboard]
+new model stock.allocation.report [module stock]
+new model stock.location.label.layout [module stock]
+new model stock.orderpoint.suggest [module stock]
+new model stock.package.label.layout [module stock]
+new model stock.picking.type.label.layout [module stock]
+new model stock.zero.demand.confirmation [module stock]
+new model website.checkout.alert.mixin [module website_sale]
+new model website.llms [module website]
+new model website.located.mixin [module website]
+new model website.structured_data.mixin [module website]
+new model website.trackable.mixin [module website]
+new model withdrawal.request [module website_sale]
+new model zatca.mixin [module l10n_sa]
+new model zatca.ubl.mixin [module l10n_sa_edi]
+---Fields in module 'general'---
+# 15390 fields matched,
+# Direct match: 15179
+# Found in other module with different type: 0
+# Found in other module: 164
+# Found with different type: 47
+# In obsolete models: 139
+# New columns: 2299
+# Not matched: 1055
+---XML records in module 'general'---
+---Probably obsolete module account_peppol_advanced_fields---
+---Models in module 'account_peppol_advanced_fields'---
+---Fields in module 'account_peppol_advanced_fields'---
+account_peppol_advanced_fields / account.move             / peppol_accounting_cost (char) : DEL
+account_peppol_advanced_fields / account.move             / peppol_additional_document_reference (char): DEL
+account_peppol_advanced_fields / account.move             / peppol_contract_document_reference (char): DEL
+account_peppol_advanced_fields / account.move             / peppol_delivery_location_id (char): DEL
+account_peppol_advanced_fields / account.move             / peppol_despatch_document_reference (char): DEL
+account_peppol_advanced_fields / account.move             / peppol_originator_document_reference (char): DEL
+account_peppol_advanced_fields / account.move             / peppol_project_reference (char): DEL
+---XML records in module 'account_peppol_advanced_fields'---
+DEL ir.ui.view: account_peppol_advanced_fields.view_move_form_inherit_peppol
+---Probably obsolete module delivery_mondialrelay---
+---Models in module 'delivery_mondialrelay'---
+---Fields in module 'delivery_mondialrelay'---
+delivery_mondialrelay / delivery.carrier         / mondialrelay_brand (char)     : DEL
+delivery_mondialrelay / delivery.carrier         / mondialrelay_packagetype (char): DEL
+---XML records in module 'delivery_mondialrelay'---
+DEL delivery.carrier: delivery_mondialrelay.delivery_carrier_mondialrelay_be_lu (noupdate)
+DEL delivery.carrier: delivery_mondialrelay.delivery_carrier_mondialrelay_es (noupdate)
+DEL delivery.carrier: delivery_mondialrelay.delivery_carrier_mondialrelay_fr_nl (noupdate)
+DEL delivery.price.rule: delivery_mondialrelay.delivery_price_rule1 (noupdate)
+DEL delivery.price.rule: delivery_mondialrelay.delivery_price_rule2 (noupdate)
+DEL delivery.price.rule: delivery_mondialrelay.delivery_price_rule_es_1 (noupdate)
+DEL delivery.price.rule: delivery_mondialrelay.delivery_price_rule_es_2 (noupdate)
+DEL delivery.price.rule: delivery_mondialrelay.delivery_price_rule_es_3 (noupdate)
+DEL delivery.price.rule: delivery_mondialrelay.delivery_price_rule_fr_nl_1 (noupdate)
+DEL delivery.price.rule: delivery_mondialrelay.delivery_price_rule_fr_nl_2 (noupdate)
+DEL delivery.price.rule: delivery_mondialrelay.delivery_price_rule_fr_nl_3 (noupdate)
+DEL ir.ui.view: delivery_mondialrelay.address_card
+DEL ir.ui.view: delivery_mondialrelay.choose_delivery_carrier_view_form
+DEL ir.ui.view: delivery_mondialrelay.view_delivery_carrier_form_provider_mondialrelay
+DEL ir.ui.view: delivery_mondialrelay.view_delivery_carrier_tree_provider_mondialrelay
+DEL product.product: delivery_mondialrelay.product_product_delivery_mondialrelay (noupdate)
+---Probably obsolete module l10n_tr_gib_invoice_scenarios---
+---Models in module 'l10n_tr_gib_invoice_scenarios'---
+---Fields in module 'l10n_tr_gib_invoice_scenarios'---
+---XML records in module 'l10n_tr_gib_invoice_scenarios'---
+---nothing has changed in this module--
+---Probably obsolete module l10n_tr_nilvera---
+---Models in module 'l10n_tr_nilvera'---
+obsolete model l10n_tr.nilvera.alias
+---Fields in module 'l10n_tr_nilvera'---
+l10n_tr_nilvera / account.journal          / is_nilvera_journal (boolean)  : DEL
+l10n_tr_nilvera / l10n_tr.nilvera.alias    / name (char)                   : DEL
+l10n_tr_nilvera / l10n_tr.nilvera.alias    / partner_id (many2one)         : DEL relation: res.partner
+l10n_tr_nilvera / res.company              / l10n_tr_nilvera_api_key (char): DEL
+l10n_tr_nilvera / res.company              / l10n_tr_nilvera_purchase_journal_id (many2one): DEL relation: account.journal
+l10n_tr_nilvera / res.company              / l10n_tr_nilvera_use_test_env (boolean): DEL required
+l10n_tr_nilvera / res.partner              / invoice_edi_format (False)    : module is now 'l10n_gr_edi' ('l10n_tr_nilvera')
+l10n_tr_nilvera / res.partner              / l10n_tr_nilvera_customer_alias_id (many2one): DEL relation: l10n_tr.nilvera.alias
+l10n_tr_nilvera / res.partner              / l10n_tr_nilvera_customer_alias_ids (one2many): DEL relation: l10n_tr.nilvera.alias
+l10n_tr_nilvera / res.partner              / l10n_tr_nilvera_customer_status (selection): DEL selection_keys: ['earchive', 'einvoice', 'not_checked']
+---XML records in module 'l10n_tr_nilvera'---
+DEL ir.actions.server: l10n_tr_nilvera.action_account_reports_customer_statements_do_followup
+DEL ir.model.access: l10n_tr_nilvera.access_l10n_tr_nilvera_alias
+DEL ir.model.access: l10n_tr_nilvera.access_l10n_tr_nilvera_alias_invoice
+DEL ir.model.access: l10n_tr_nilvera.access_l10n_tr_nilvera_alias_manager
+DEL ir.model.access: l10n_tr_nilvera.access_l10n_tr_nilvera_alias_readonly
+DEL ir.ui.view: l10n_tr_nilvera.res_config_settings_view_form
+DEL ir.ui.view: l10n_tr_nilvera.view_partner_property_form_inherit_ubl_tr
+DEL uom.uom: l10n_tr_nilvera.product_uom_ann (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_bg (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_bx (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_cmk (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_cmq (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_cr (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_d61 (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_d62 (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_gt (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_kwh (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_kwt (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_mgm (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_mlt (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_mmq (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_mon (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_mwh (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_pa (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_pf (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_pk (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_pr (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_sa (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_set (noupdate)
+DEL uom.uom: l10n_tr_nilvera.product_uom_standard_cubic_meter (noupdate)
+---Probably obsolete module l10n_tr_nilvera_edispatch---
+---Models in module 'l10n_tr_nilvera_edispatch'---
+obsolete model l10n_tr.nilvera.trailer.plate
+---Fields in module 'l10n_tr_nilvera_edispatch'---
+l10n_tr_nilvera_edispatch / l10n_tr.nilvera.trailer.plate / name (char)                   : DEL
+l10n_tr_nilvera_edispatch / l10n_tr.nilvera.trailer.plate / plate_number_type (selection) : DEL required, selection_keys: ['trailer', 'vehicle']
+l10n_tr_nilvera_edispatch / res.partner              / l10n_tr_nilvera_edispatch_customs_zip (char): DEL
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_buyer_id (many2one): DEL relation: res.partner
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_buyer_originator_id (many2one): DEL relation: res.partner
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_carrier_id (many2one): DEL relation: res.partner
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_delivery_date (date): DEL
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_delivery_notes (char): DEL
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_delivery_printed_number (char): DEL
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_dispatch_state (selection): DEL selection_keys: ['sent', 'to_send']
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_dispatch_type (selection): DEL selection_keys: ['MATBUDAN', 'SEVK']
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_driver_ids (many2many): DEL relation: res.partner
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_seller_supplier_id (many2one): DEL relation: res.partner
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_nilvera_trailer_plate_ids (many2many): DEL relation: l10n_tr.nilvera.trailer.plate
+l10n_tr_nilvera_edispatch / stock.picking            / l10n_tr_vehicle_plate (many2one): DEL relation: l10n_tr.nilvera.trailer.plate
+---XML records in module 'l10n_tr_nilvera_edispatch'---
+DEL ir.actions.act_window: l10n_tr_nilvera_edispatch.action_l10n_tr_nilvera_trailer_plate
+DEL ir.actions.server: l10n_tr_nilvera_edispatch.action_export_l10n_tr_nilvera_edispatch_list
+DEL ir.actions.server: l10n_tr_nilvera_edispatch.action_mark_l10n_tr_nilvera_edispatch_status
+DEL ir.model.access: l10n_tr_nilvera_edispatch.access_l10n_tr_nilvera_trailer_plate
+DEL ir.model.constraint: l10n_tr_nilvera_edispatch.constraint_l10n_tr_nilvera_trailer_plate_name_uniq
+DEL ir.ui.menu: l10n_tr_nilvera_edispatch.menu_l10n_tr_nilvera
+DEL ir.ui.menu: l10n_tr_nilvera_edispatch.menu_l10n_tr_nilvera_trailer_plate
+DEL ir.ui.view: l10n_tr_nilvera_edispatch.l10n_tr_edispatch_format
+DEL ir.ui.view: l10n_tr_nilvera_edispatch.l10n_tr_nilvera_trailer_plate_view_form
+DEL ir.ui.view: l10n_tr_nilvera_edispatch.l10n_tr_nilvera_trailer_plate_view_tree
+DEL ir.ui.view: l10n_tr_nilvera_edispatch.nilvera_dispatch_line
+DEL ir.ui.view: l10n_tr_nilvera_edispatch.nilvera_party_details
+DEL ir.ui.view: l10n_tr_nilvera_edispatch.nilvera_party_template
+DEL ir.ui.view: l10n_tr_nilvera_edispatch.view_partner_form_inherit_l10n_tr_nilvera_edispatch
+DEL ir.ui.view: l10n_tr_nilvera_edispatch.view_picking_form_inherit_l10n_tr_nilvera_edispatch
+DEL ir.ui.view: l10n_tr_nilvera_edispatch.view_picking_internal_search_inherit_l10n_tr_nilvera_edispatch
+DEL ir.ui.view: l10n_tr_nilvera_edispatch.vpicktree_inherit_l10n_tr_nilvera_edispatch
+---Probably obsolete module l10n_tr_nilvera_einvoice---
+---Models in module 'l10n_tr_nilvera_einvoice'---
+obsolete model account.edi.xml.ubl.tr [abstract]
+obsolete model l10n_tr_nilvera_einvoice_extended.account.tax.code
+obsolete model l10n_tr_nilvera_einvoice_extended.tax.office (renamed to l10n_tr.tax.office in module l10n_tr)
+obsolete model l10n_tr.ticarifatura.response.wizard [transient]
+---Fields in module 'l10n_tr_nilvera_einvoice'---
+l10n_tr_gib_invoice_scenarios / account.move             / l10n_tr_gib_invoice_scenario (False): DEL selection_keys: ['KAMU', 'TEMELFATURA', 'TICARIFATURA'], mode: modify
+l10n_tr_gib_invoice_scenarios / account.move             / l10n_tr_gib_invoice_type (False): DEL selection_keys: ['IADE', 'IHRACKAYITLI', 'ISTISNA', 'SATIS', 'TEVKIFAT', 'TEVKIFATIADE'], mode: modify
+l10n_tr_gib_invoice_scenarios / account.move             / l10n_tr_nilvera_send_status (False): DEL selection_keys: ['commercial_answered_automatically', 'commercial_approved', 'commercial_rejected', 'error', 'not_sent', 'sent', 'succeed', 'unknown', 'waiting'], mode: modify
+l10n_tr_gib_invoice_scenarios / account.move             / l10n_tr_original_invoice_date (date): DEL
+l10n_tr_gib_invoice_scenarios / account.move             / l10n_tr_ticarifatura_last_checked_at (datetime): DEL
+l10n_tr_gib_invoice_scenarios / account.move.line        / l10n_tr_original_line_id (many2one): DEL relation: account.move.line
+l10n_tr_gib_invoice_scenarios / account.move.line        / l10n_tr_original_quantity (float): DEL
+l10n_tr_gib_invoice_scenarios / account.move.line        / l10n_tr_original_tax_without_withholding (float): DEL
+l10n_tr_nilvera_einvoice / account.move             / l10n_tr_nilvera_send_status (selection): DEL selection_keys: ['error', 'not_sent', 'sent', 'succeed', 'unknown', 'waiting']
+l10n_tr_nilvera_einvoice / account.move             / l10n_tr_nilvera_uuid (char)   : DEL
+l10n_tr_nilvera_einvoice_extended / account.move             / l10n_tr_exemption_code_id (many2one): DEL relation: l10n_tr_nilvera_einvoice_extended.account.tax.code
+l10n_tr_nilvera_einvoice_extended / account.move             / l10n_tr_gib_invoice_scenario (selection): DEL selection_keys: ['KAMU', 'TEMELFATURA']
+l10n_tr_nilvera_einvoice_extended / account.move             / l10n_tr_gib_invoice_type (selection): DEL selection_keys: ['IHRACKAYITLI', 'ISTISNA', 'SATIS', 'TEVKIFAT']
+l10n_tr_nilvera_einvoice_extended / account.move             / l10n_tr_is_export_invoice (boolean): DEL
+l10n_tr_nilvera_einvoice_extended / account.move             / l10n_tr_shipping_type (selection): DEL selection_keys: ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+l10n_tr_nilvera_einvoice_extended / account.move.line        / l10n_tr_ctsp_number (char)    : DEL
+l10n_tr_nilvera_einvoice_extended / account.tax              / l10n_tr_tax_withholding_code_id (many2one): DEL relation: l10n_tr_nilvera_einvoice_extended.account.tax.code
+l10n_tr_nilvera_einvoice_extended / l10n_tr_nilvera_einvoice_extended.account.tax.code / code (integer)                : DEL required
+l10n_tr_nilvera_einvoice_extended / l10n_tr_nilvera_einvoice_extended.account.tax.code / code_type (selection)         : DEL required, selection_keys: ['exception', 'export_exception', 'export_registration', 'withholding']
+l10n_tr_nilvera_einvoice_extended / l10n_tr_nilvera_einvoice_extended.account.tax.code / name (char)                   : DEL required
+l10n_tr_nilvera_einvoice_extended / l10n_tr_nilvera_einvoice_extended.account.tax.code / percentage (float)            : DEL
+l10n_tr_nilvera_einvoice_extended / l10n_tr_nilvera_einvoice_extended.tax.office / _order                        : module is now 'l10n_tr' ('l10n_tr_nilvera_einvoice_extended')
+l10n_tr_nilvera_einvoice_extended / l10n_tr_nilvera_einvoice_extended.tax.office / code (integer)                : module is now 'l10n_tr' ('l10n_tr_nilvera_einvoice_extended')
+l10n_tr_nilvera_einvoice_extended / l10n_tr_nilvera_einvoice_extended.tax.office / display_name (char)           : module is now 'l10n_tr' ('l10n_tr_nilvera_einvoice_extended')
+l10n_tr_nilvera_einvoice_extended / l10n_tr_nilvera_einvoice_extended.tax.office / name (char)                   : module is now 'l10n_tr' ('l10n_tr_nilvera_einvoice_extended')
+l10n_tr_nilvera_einvoice_extended / l10n_tr_nilvera_einvoice_extended.tax.office / state_code (char)             : module is now 'l10n_tr' ('l10n_tr_nilvera_einvoice_extended')
+l10n_tr_nilvera_einvoice_extended / l10n_tr_nilvera_einvoice_extended.tax.office / state_id (many2one)           : module is now 'l10n_tr' ('l10n_tr_nilvera_einvoice_extended')
+l10n_tr_nilvera_einvoice_extended / product.product          / l10n_tr_ctsp_number (char)    : DEL
+l10n_tr_nilvera_einvoice_extended / res.company              / l10n_tr_nilvera_export_alias (char): DEL
+l10n_tr_nilvera_einvoice_extended / res.company              / l10n_tr_tax_office_id (many2one): module is now 'l10n_tr' ('l10n_tr_nilvera_einvoice_extended')
+l10n_tr_nilvera_einvoice_extended / res.partner              / l10n_tr_tax_office_id (many2one): module is now 'l10n_tr' ('l10n_tr_nilvera_einvoice_extended')
+l10n_tr_nilvera_einvoice_extended / res.users                / l10n_tr_tax_office_id (many2one): module is now 'l10n_tr' ('l10n_tr_nilvera_einvoice_extended')
+---XML records in module 'l10n_tr_nilvera_einvoice'---
+DEL account.incoterms: l10n_tr_nilvera_einvoice_extended.incoterm_DAF
+DEL account.incoterms: l10n_tr_nilvera_einvoice_extended.incoterm_DDU
+DEL account.incoterms: l10n_tr_nilvera_einvoice_extended.incoterm_DEQ
+DEL account.incoterms: l10n_tr_nilvera_einvoice_extended.incoterm_DES
+DEL ir.actions.act_window: l10n_tr_nilvera_einvoice_extended.action_l10n_tr_nilvera_einvoice_extended_account_tax_code_list
+DEL ir.actions.act_window: l10n_tr_nilvera_einvoice_extended.action_l10n_tr_nilvera_einvoice_extended_tax_office_list
+DEL ir.cron: l10n_tr_gib_invoice_scenarios.ir_cron_nilvera_sync_ticarifatura_response
+DEL ir.cron: l10n_tr_nilvera_einvoice.ir_cron_nilvera_get_invoice_status
+DEL ir.cron: l10n_tr_nilvera_einvoice.ir_cron_nilvera_get_new_earchive_sale_documents
+DEL ir.cron: l10n_tr_nilvera_einvoice.ir_cron_nilvera_get_new_einvoice_sale_documents
+DEL ir.cron: l10n_tr_nilvera_einvoice.ir_cron_nilvera_get_new_purchase_documents
+DEL ir.cron: l10n_tr_nilvera_einvoice.ir_cron_nilvera_get_sale_pdf
+DEL ir.model.access: l10n_tr_gib_invoice_scenarios.access_l10n_tr_ticarifatura_response_wizard_group_invoicing
+DEL ir.model.access: l10n_tr_nilvera_einvoice_extended.access_l10n_tr_nilvera_einvoice_extended_account_tax_code
+DEL ir.model.access: l10n_tr_nilvera_einvoice_extended.access_l10n_tr_nilvera_einvoice_extended_account_tax_code_readonly
+DEL ir.model.access: l10n_tr_nilvera_einvoice_extended.access_l10n_tr_nilvera_einvoice_extended_tax_office_employee
+DEL ir.model.access: l10n_tr_nilvera_einvoice_extended.access_l10n_tr_nilvera_einvoice_extended_tax_office_group_partner_manager
+DEL ir.model.access: l10n_tr_nilvera_einvoice_extended.access_l10n_tr_nilvera_einvoice_extended_tax_office_group_system
+DEL ir.model.access: l10n_tr_nilvera_einvoice_extended.access_l10n_tr_nilvera_einvoice_extended_tax_office_portal
+DEL ir.model.access: l10n_tr_nilvera_einvoice_extended.access_l10n_tr_nilvera_einvoice_extended_tax_office_public
+DEL ir.ui.menu: l10n_tr_nilvera_einvoice_extended.l10n_tr_menu_account_tax_code
+DEL ir.ui.menu: l10n_tr_nilvera_einvoice_extended.l10n_tr_menu_state_office_partner [renamed to l10n_tr module]
+DEL ir.ui.view: l10n_tr_gib_invoice_scenarios.account_move_form_view_l10n_tr_nilvera_extended
+DEL ir.ui.view: l10n_tr_gib_invoice_scenarios.account_nilvera_view_invoice_tree
+DEL ir.ui.view: l10n_tr_gib_invoice_scenarios.account_nilvera_view_move_form
+DEL ir.ui.view: l10n_tr_gib_invoice_scenarios.ticarifatura_response_wizard_form
+DEL ir.ui.view: l10n_tr_nilvera_einvoice.account_nilvera_view_account_invoice_filter
+DEL ir.ui.view: l10n_tr_nilvera_einvoice.account_nilvera_view_invoice_tree
+DEL ir.ui.view: l10n_tr_nilvera_einvoice.account_nilvera_view_move_form
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.account_move_form_view_l10n_tr_nilvera_extended
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_account_tax_code_view_form
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_account_tax_code_view_list
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_view_form
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_view_list
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.product_product_only_form_view_inherit_l10n_tr_nilvera_extended
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.product_template_only_form_view_inherit_l10n_tr_nilvera_extended
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.res_config_settings_view_form_l10n_tr_nilvera_extended
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.ubl_tr_LineDelivery
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.view_account_tax_form_view_l10n_tr_nilvera_extended
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.view_company_form_inherit_l10n_tr_nilvera_extended
+DEL ir.ui.view: l10n_tr_nilvera_einvoice_extended.view_partner_form_l10n_tr_nilvera_extended
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_001
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_002
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_003
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_004
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_005
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_006
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_007
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_008
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_009
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_010
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_011
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_012
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_013
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_014
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_015
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_016
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_017
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_018
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_019
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_020
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_021
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_022
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_023
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_024
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_025
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_026
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_027
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_028
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_029
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_030
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_031
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_032
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_033
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_034
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_035
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_036
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_037
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_038
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_039
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_040
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_041
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_042
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_043
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_044
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_045
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_046
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_047
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_048
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_049
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_050
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_051
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_052
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_053
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_054
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_055
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_056
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_057
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_058
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_059
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_060
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_061
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_062
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_063
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_064
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_065
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_066
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_067
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_068
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_069
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_070
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_071
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_072
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_073
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_074
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_075
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_076
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_077
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_078
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_079
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_080
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_081
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_082
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_083
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_084
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_085
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_086
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_087
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_088
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_089
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_090
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_091
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_092
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_093
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_094
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_095
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_096
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_097
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_098
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_099
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_100
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1000
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1001
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1002
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1003
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1004
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1005
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1006
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1007
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1008
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1009
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_101
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1010
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1011
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1012
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1013
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1014
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1015
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1016
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1017
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1018
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1019
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_102
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1020
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1021
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1022
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1023
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1024
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1025
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1026
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1027
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1028
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1029
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_103
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1030
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1031
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1032
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1033
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1034
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1035
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1036
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1037
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1038
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1039
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_104
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1040
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1041
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1042
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1043
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1044
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1045
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_1046
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_105
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_106
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_107
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_108
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_109
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_110
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_111
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_112
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_113
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_114
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_115
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_116
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_117
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_118
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_119
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_120
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_121
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_122
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_123
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_124
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_125
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_126
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_127
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_128
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_129
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_130
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_131
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_132
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_133
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_134
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_135
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_136
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_137
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_138
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_139
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_140
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_141
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_142
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_143
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_144
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_145
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_146
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_147
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_148
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_149
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_150
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_151
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_152
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_153
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_154
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_155
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_156
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_157
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_158
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_159
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_160
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_161
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_162
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_163
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_164
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_165
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_166
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_167
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_168
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_169
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_170
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_171
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_172
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_173
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_174
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_175
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_176
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_177
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_178
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_179
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_180
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_181
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_182
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_183
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_184
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_185
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_186
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_187
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_188
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_189
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_190
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_191
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_192
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_193
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_194
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_195
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_196
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_197
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_198
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_199
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_200
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_201
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_202
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_203
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_204
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_205
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_206
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_207
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_208
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_209
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_210
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_211
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_212
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_213
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_214
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_215
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_216
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_217
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_218
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_219
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_220
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_221
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_222
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_223
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_224
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_225
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_226
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_227
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_228
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_229
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_230
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_231
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_232
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_233
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_234
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_235
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_236
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_237
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_238
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_239
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_240
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_241
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_242
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_243
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_244
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_245
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_246
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_247
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_248
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_249
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_250
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_251
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_252
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_253
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_254
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_255
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_256
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_257
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_258
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_259
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_260
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_261
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_262
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_263
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_264
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_265
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_266
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_267
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_268
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_269
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_270
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_271
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_272
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_273
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_274
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_275
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_276
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_277
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_278
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_279
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_280
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_281
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_282
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_283
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_284
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_285
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_286
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_287
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_288
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_289
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_290
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_291
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_292
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_293
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_294
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_295
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_296
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_297
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_298
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_299
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_300
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_301
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_302
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_303
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_304
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_305
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_306
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_307
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_308
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_309
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_310
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_311
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_312
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_313
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_314
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_315
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_316
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_317
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_318
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_319
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_320
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_321
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_322
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_323
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_324
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_325
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_326
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_327
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_328
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_329
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_330
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_331
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_332
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_333
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_334
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_335
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_336
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_337
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_338
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_339
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_340
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_341
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_342
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_343
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_344
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_345
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_346
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_347
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_348
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_349
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_350
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_351
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_352
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_353
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_354
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_355
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_356
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_357
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_358
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_359
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_360
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_361
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_362
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_363
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_364
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_365
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_366
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_367
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_368
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_369
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_370
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_371
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_372
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_373
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_374
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_375
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_376
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_377
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_378
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_379
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_380
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_381
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_382
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_383
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_384
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_385
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_386
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_387
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_388
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_389
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_390
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_391
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_392
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_393
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_394
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_395
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_396
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_397
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_398
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_399
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_400
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_401
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_402
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_403
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_404
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_405
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_406
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_407
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_408
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_409
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_410
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_411
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_412
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_413
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_414
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_415
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_416
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_417
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_418
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_419
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_420
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_421
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_422
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_423
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_424
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_425
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_426
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_427
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_428
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_429
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_430
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_431
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_432
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_433
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_434
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_435
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_436
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_437
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_438
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_439
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_440
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_441
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_442
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_443
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_444
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_445
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_446
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_447
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_448
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_449
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_450
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_451
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_452
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_453
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_454
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_455
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_456
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_457
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_458
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_459
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_460
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_461
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_462
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_463
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_464
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_465
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_466
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_467
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_468
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_469
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_470
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_471
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_472
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_473
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_474
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_475
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_476
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_477
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_478
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_479
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_480
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_481
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_482
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_483
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_484
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_485
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_486
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_487
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_488
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_489
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_490
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_491
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_492
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_493
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_494
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_495
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_496
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_497
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_498
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_499
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_500
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_501
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_502
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_503
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_504
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_505
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_506
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_507
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_508
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_509
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_510
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_511
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_512
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_513
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_514
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_515
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_516
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_517
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_518
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_519
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_520
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_521
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_522
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_523
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_524
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_525
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_526
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_527
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_528
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_529
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_530
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_531
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_532
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_533
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_534
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_535
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_536
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_537
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_538
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_539
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_540
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_541
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_542
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_543
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_544
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_545
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_546
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_547
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_548
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_549
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_550
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_551
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_552
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_553
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_554
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_555
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_556
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_557
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_558
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_559
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_560
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_561
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_562
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_563
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_564
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_565
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_566
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_567
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_568
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_569
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_570
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_571
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_572
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_573
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_574
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_575
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_576
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_577
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_578
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_579
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_580
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_581
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_582
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_583
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_584
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_585
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_586
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_587
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_588
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_589
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_590
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_591
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_592
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_593
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_594
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_595
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_596
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_597
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_598
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_599
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_600
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_601
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_602
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_603
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_604
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_605
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_606
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_607
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_608
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_609
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_610
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_611
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_612
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_613
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_614
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_615
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_616
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_617
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_618
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_619
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_620
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_621
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_622
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_623
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_624
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_625
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_626
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_627
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_628
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_629
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_630
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_631
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_632
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_633
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_634
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_635
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_636
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_637
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_638
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_639
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_640
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_641
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_642
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_643
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_644
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_645
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_646
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_647
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_648
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_649
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_650
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_651
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_652
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_653
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_654
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_655
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_656
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_657
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_658
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_659
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_660
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_661
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_662
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_663
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_664
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_665
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_666
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_667
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_668
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_669
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_670
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_671
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_672
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_673
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_674
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_675
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_676
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_677
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_678
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_679
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_680
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_681
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_682
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_683
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_684
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_685
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_686
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_687
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_688
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_689
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_690
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_691
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_692
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_693
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_694
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_695
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_696
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_697
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_698
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_699
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_700
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_701
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_702
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_703
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_704
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_705
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_706
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_707
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_708
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_709
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_710
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_711
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_712
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_713
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_714
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_715
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_716
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_717
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_718
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_719
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_720
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_721
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_722
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_723
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_724
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_725
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_726
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_727
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_728
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_729
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_730
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_731
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_732
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_733
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_734
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_735
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_736
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_737
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_738
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_739
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_740
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_741
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_742
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_743
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_744
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_745
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_746
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_747
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_748
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_749
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_750
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_751
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_752
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_753
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_754
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_755
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_756
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_757
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_758
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_759
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_760
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_761
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_762
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_763
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_764
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_765
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_766
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_767
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_768
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_769
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_770
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_771
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_772
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_773
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_774
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_775
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_776
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_777
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_778
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_779
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_780
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_781
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_782
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_783
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_784
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_785
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_786
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_787
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_788
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_789
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_790
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_791
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_792
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_793
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_794
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_795
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_796
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_797
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_798
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_799
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_800
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_801
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_802
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_803
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_804
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_805
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_806
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_807
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_808
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_809
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_810
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_811
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_812
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_813
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_814
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_815
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_816
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_817
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_818
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_819
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_820
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_821
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_822
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_823
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_824
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_825
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_826
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_827
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_828
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_829
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_830
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_831
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_832
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_833
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_834
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_835
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_836
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_837
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_838
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_839
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_840
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_841
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_842
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_843
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_844
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_845
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_846
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_847
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_848
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_849
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_850
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_851
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_852
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_853
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_854
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_855
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_856
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_857
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_858
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_859
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_860
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_861
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_862
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_863
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_864
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_865
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_866
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_867
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_868
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_869
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_870
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_871
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_872
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_873
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_874
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_875
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_876
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_877
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_878
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_879
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_880
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_881
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_882
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_883
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_884
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_885
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_886
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_887
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_888
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_889
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_890
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_891
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_892
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_893
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_894
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_895
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_896
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_897
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_898
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_899
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_900
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_901
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_902
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_903
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_904
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_905
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_906
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_907
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_908
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_909
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_910
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_911
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_912
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_913
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_914
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_915
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_916
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_917
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_918
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_919
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_920
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_921
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_922
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_923
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_924
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_925
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_926
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_927
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_928
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_929
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_930
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_931
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_932
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_933
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_934
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_935
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_936
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_937
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_938
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_939
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_940
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_941
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_942
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_943
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_944
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_945
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_946
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_947
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_948
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_949
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_950
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_951
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_952
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_953
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_954
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_955
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_956
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_957
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_958
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_959
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_960
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_961
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_962
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_963
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_964
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_965
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_966
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_967
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_968
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_969
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_970
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_971
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_972
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_973
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_974
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_975
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_976
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_977
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_978
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_979
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_980
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_981
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_982
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_983
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_984
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_985
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_986
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_987
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_988
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_989
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_990
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_991
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_992
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_993
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_994
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_995
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_996
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_997
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_998
+DEL l10n_tr_nilvera_einvoice_extended.tax.office: l10n_tr_nilvera_einvoice_extended.l10n_tr_nilvera_einvoice_extended_tax_office_999
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_aboneno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_aracikurumetiket
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_aracikurumvkn
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_bayino
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_ciftcino
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_distributorno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_dosyano
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_epdkno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_hastano
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_hizmetno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_imalatcino
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_mersisno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_musterino
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_pasaportno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_sayacno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_subeno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_tapdkno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_telefonno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_tesisatno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_ticaretsicilno
+DEL res.partner.category: l10n_tr_nilvera_einvoice.res_partner_category_ureticino
+---Probably obsolete module l10n_tr_nilvera_einvoice_extended---
+---Models in module 'l10n_tr_nilvera_einvoice_extended'---
+---Fields in module 'l10n_tr_nilvera_einvoice_extended'---
+---XML records in module 'l10n_tr_nilvera_einvoice_extended'---
+---nothing has changed in this module--
+---Probably obsolete module transifex---
+---Models in module 'transifex'---
+obsolete model transifex.code.translation
+obsolete model transifex.translation [abstract]
+---Fields in module 'transifex'---
+transifex    / transifex.code.translation / lang (selection)              : DEL selection_keys: function
+transifex    / transifex.code.translation / module (char)                 : DEL
+transifex    / transifex.code.translation / source (text)                 : DEL
+transifex    / transifex.code.translation / value (text)                  : DEL
+---XML records in module 'transifex'---
+DEL ir.actions.server: transifex.action_code_translations
+DEL ir.config_parameter: transifex.transifex_project_url (noupdate)
+DEL ir.cron: transifex.transifex_code_translation_reload (noupdate)
+DEL ir.model.access: transifex.access_transifex_code_translation
+DEL ir.ui.menu: transifex.menu_transifex_code_translations
+DEL ir.ui.view: transifex.transifex_code_translation_tree_view
+DEL ir.ui.view: transifex.transifex_code_translation_view_search
+---Probably obsolete module website_sale_mondialrelay---
+---Models in module 'website_sale_mondialrelay'---
+---Fields in module 'website_sale_mondialrelay'---
+---XML records in module 'website_sale_mondialrelay'---
+DEL ir.ui.view: website_sale_mondialrelay.address_on_checkout
+DEL ir.ui.view: website_sale_mondialrelay.delivery_carrier_view_search
+DEL ir.ui.view: website_sale_mondialrelay.mondialrelay_delivery_method
+DEL ir.ui.view: website_sale_mondialrelay.website_sale_mondialrelay_address_card
+DEL ir.ui.view: website_sale_mondialrelay.website_sale_mondialrelay_billing_address_list

@@ -1,0 +1,11 @@
+---Models in module 'l10n_ro_edi_stock'---
+---Fields in module 'l10n_ro_edi_stock'---
+---XML records in module 'l10n_ro_edi_stock'---
+NEW ir.ui.view: l10n_ro_edi_stock.report_picking_batch
+NEW ir.ui.view: l10n_ro_edi_stock.stock_picking_batch_filter
+NEW ir.ui.view: l10n_ro_edi_stock.stock_picking_batch_form
+NEW ir.ui.view: l10n_ro_edi_stock.stock_picking_batch_tree
+DEL ir.ui.view: l10n_ro_edi_stock_batch.l10n_ro_edi_stock_report_picking_batch
+DEL ir.ui.view: l10n_ro_edi_stock_batch.l10n_ro_edi_stock_stock_picking_batch_filter
+DEL ir.ui.view: l10n_ro_edi_stock_batch.l10n_ro_edi_stock_stock_picking_batch_view_tree
+DEL ir.ui.view: l10n_ro_edi_stock_batch.l10n_ro_edi_stock_view_batch_form

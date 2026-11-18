@@ -1,0 +1,5 @@
+---Models in module 'pos_stripe'---
+---Fields in module 'pos_stripe'---
+---XML records in module 'pos_stripe'---
+DEL ir.ui.view: pos_self_order_stripe.stripe
+DEL ir.ui.view: pos_stripe.stripe
