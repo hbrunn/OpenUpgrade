@@ -155,6 +155,8 @@ DEL ir.ui.view: base.res_partner_view_form_private
 DEL ir.ui.view: base.user_groups_view
 DEL ir.ui.view: base.view_partner_title_form
 DEL ir.ui.view: base.view_partner_title_tree
+DEL res.bank: base.bank_bnp (noupdate)
+DEL res.bank: base.bank_ing (noupdate)
 NEW res.country: base.xi (noupdate)
 NEW res.country.group: base.dom-tom [renamed from l10n_fr module] (noupdate) (noupdate switched)
 NEW res.country.group: base.europe_prefix (noupdate)
@@ -569,13 +571,221 @@ DEL res.country.state: base.state_vn_VN-67
 DEL res.country.state: base.state_vn_VN-70
 DEL res.country.state: base.state_vn_VN-72
 DEL res.country.state: base.state_vn_VN-73
+DEL res.currency.rate: base.rateAED (noupdate)
+DEL res.currency.rate: base.rateAFN (noupdate)
+DEL res.currency.rate: base.rateALL (noupdate)
+DEL res.currency.rate: base.rateAMD (noupdate)
+DEL res.currency.rate: base.rateANG (noupdate)
+DEL res.currency.rate: base.rateAOA (noupdate)
+DEL res.currency.rate: base.rateARS (noupdate)
+DEL res.currency.rate: base.rateAUD (noupdate)
+DEL res.currency.rate: base.rateAWG (noupdate)
+DEL res.currency.rate: base.rateAZN (noupdate)
+DEL res.currency.rate: base.rateBAM (noupdate)
+DEL res.currency.rate: base.rateBBD (noupdate)
+DEL res.currency.rate: base.rateBDT (noupdate)
+DEL res.currency.rate: base.rateBGN (noupdate)
+DEL res.currency.rate: base.rateBHD (noupdate)
+DEL res.currency.rate: base.rateBIF (noupdate)
+DEL res.currency.rate: base.rateBMD (noupdate)
+DEL res.currency.rate: base.rateBND (noupdate)
+DEL res.currency.rate: base.rateBOB (noupdate)
+DEL res.currency.rate: base.rateBRL (noupdate)
+DEL res.currency.rate: base.rateBSD (noupdate)
+DEL res.currency.rate: base.rateBTN (noupdate)
+DEL res.currency.rate: base.rateBWP (noupdate)
+DEL res.currency.rate: base.rateBYN (noupdate)
+DEL res.currency.rate: base.rateBYR (noupdate)
+DEL res.currency.rate: base.rateBZD (noupdate)
+DEL res.currency.rate: base.rateCAD (noupdate)
+DEL res.currency.rate: base.rateCDF (noupdate)
+DEL res.currency.rate: base.rateCHF (noupdate)
+DEL res.currency.rate: base.rateCLP (noupdate)
+DEL res.currency.rate: base.rateCNY (noupdate)
+DEL res.currency.rate: base.rateCOP (noupdate)
+DEL res.currency.rate: base.rateCRC (noupdate)
+DEL res.currency.rate: base.rateCUP (noupdate)
+DEL res.currency.rate: base.rateCVE (noupdate)
+DEL res.currency.rate: base.rateCZK (noupdate)
+DEL res.currency.rate: base.rateDJF (noupdate)
+DEL res.currency.rate: base.rateDKK (noupdate)
+DEL res.currency.rate: base.rateDOP (noupdate)
+DEL res.currency.rate: base.rateDZD (noupdate)
+DEL res.currency.rate: base.rateEEB (noupdate)
+DEL res.currency.rate: base.rateEGP (noupdate)
+DEL res.currency.rate: base.rateERN (noupdate)
+DEL res.currency.rate: base.rateEUR (noupdate)
+DEL res.currency.rate: base.rateFJD (noupdate)
+DEL res.currency.rate: base.rateFKP (noupdate)
+DEL res.currency.rate: base.rateGBP (noupdate)
+DEL res.currency.rate: base.rateGEL (noupdate)
+DEL res.currency.rate: base.rateGHS (noupdate)
+DEL res.currency.rate: base.rateGIP (noupdate)
+DEL res.currency.rate: base.rateGMD (noupdate)
+DEL res.currency.rate: base.rateGNF (noupdate)
+DEL res.currency.rate: base.rateGTQ (noupdate)
+DEL res.currency.rate: base.rateGYD (noupdate)
+DEL res.currency.rate: base.rateHKD (noupdate)
+DEL res.currency.rate: base.rateHNL (noupdate)
+DEL res.currency.rate: base.rateHRK (noupdate)
+DEL res.currency.rate: base.rateHTG (noupdate)
+DEL res.currency.rate: base.rateHUF (noupdate)
+DEL res.currency.rate: base.rateIDR (noupdate)
+DEL res.currency.rate: base.rateIDR1 (noupdate)
+DEL res.currency.rate: base.rateILS (noupdate)
+DEL res.currency.rate: base.rateINR (noupdate)
+DEL res.currency.rate: base.rateIQD (noupdate)
+DEL res.currency.rate: base.rateIRR (noupdate)
+DEL res.currency.rate: base.rateISK (noupdate)
+DEL res.currency.rate: base.rateJMD (noupdate)
+DEL res.currency.rate: base.rateJOD (noupdate)
+DEL res.currency.rate: base.rateJPY (noupdate)
+DEL res.currency.rate: base.rateKES (noupdate)
+DEL res.currency.rate: base.rateKGS (noupdate)
+DEL res.currency.rate: base.rateKHR (noupdate)
+DEL res.currency.rate: base.rateKMF (noupdate)
+DEL res.currency.rate: base.rateKPW (noupdate)
+DEL res.currency.rate: base.rateKRW (noupdate)
+DEL res.currency.rate: base.rateKWD (noupdate)
+DEL res.currency.rate: base.rateKYD (noupdate)
+DEL res.currency.rate: base.rateKZT (noupdate)
+DEL res.currency.rate: base.rateLAK (noupdate)
+DEL res.currency.rate: base.rateLBP (noupdate)
+DEL res.currency.rate: base.rateLKR (noupdate)
+DEL res.currency.rate: base.rateLRD (noupdate)
+DEL res.currency.rate: base.rateLSL (noupdate)
+DEL res.currency.rate: base.rateLTL (noupdate)
+DEL res.currency.rate: base.rateLVL (noupdate)
+DEL res.currency.rate: base.rateLYD (noupdate)
+DEL res.currency.rate: base.rateMAD (noupdate)
+DEL res.currency.rate: base.rateMDL (noupdate)
+DEL res.currency.rate: base.rateMGA (noupdate)
+DEL res.currency.rate: base.rateMKD (noupdate)
+DEL res.currency.rate: base.rateMMK (noupdate)
+DEL res.currency.rate: base.rateMNT (noupdate)
+DEL res.currency.rate: base.rateMOP (noupdate)
+DEL res.currency.rate: base.rateMRO (noupdate)
+DEL res.currency.rate: base.rateMUR (noupdate)
+DEL res.currency.rate: base.rateMVR (noupdate)
+DEL res.currency.rate: base.rateMWK (noupdate)
+DEL res.currency.rate: base.rateMXN (noupdate)
+DEL res.currency.rate: base.rateMYR (noupdate)
+DEL res.currency.rate: base.rateMZN (noupdate)
+DEL res.currency.rate: base.rateNAD (noupdate)
+DEL res.currency.rate: base.rateNGN (noupdate)
+DEL res.currency.rate: base.rateNIO (noupdate)
+DEL res.currency.rate: base.rateNOK (noupdate)
+DEL res.currency.rate: base.rateNPR (noupdate)
+DEL res.currency.rate: base.rateNZD (noupdate)
+DEL res.currency.rate: base.rateOMR (noupdate)
+DEL res.currency.rate: base.ratePAB (noupdate)
+DEL res.currency.rate: base.ratePEN (noupdate)
+DEL res.currency.rate: base.ratePGK (noupdate)
+DEL res.currency.rate: base.ratePHP (noupdate)
+DEL res.currency.rate: base.ratePKR (noupdate)
+DEL res.currency.rate: base.ratePLN (noupdate)
+DEL res.currency.rate: base.ratePYG (noupdate)
+DEL res.currency.rate: base.rateQAR (noupdate)
+DEL res.currency.rate: base.rateRON (noupdate)
+DEL res.currency.rate: base.rateRSD (noupdate)
+DEL res.currency.rate: base.rateRUB (noupdate)
+DEL res.currency.rate: base.rateRWF (noupdate)
+DEL res.currency.rate: base.rateSAR (noupdate)
+DEL res.currency.rate: base.rateSBD (noupdate)
+DEL res.currency.rate: base.rateSCR (noupdate)
+DEL res.currency.rate: base.rateSDG (noupdate)
+DEL res.currency.rate: base.rateSEK (noupdate)
+DEL res.currency.rate: base.rateSGD (noupdate)
+DEL res.currency.rate: base.rateSHP (noupdate)
+DEL res.currency.rate: base.rateSLE (noupdate)
+DEL res.currency.rate: base.rateSLL (noupdate)
+DEL res.currency.rate: base.rateSOS (noupdate)
+DEL res.currency.rate: base.rateSRD (noupdate)
+DEL res.currency.rate: base.rateSSP (noupdate)
+DEL res.currency.rate: base.rateSTD (noupdate)
+DEL res.currency.rate: base.rateSVC (noupdate)
+DEL res.currency.rate: base.rateSYP (noupdate)
+DEL res.currency.rate: base.rateSZL (noupdate)
+DEL res.currency.rate: base.rateTHB (noupdate)
+DEL res.currency.rate: base.rateTJS (noupdate)
+DEL res.currency.rate: base.rateTMT (noupdate)
+DEL res.currency.rate: base.rateTND (noupdate)
+DEL res.currency.rate: base.rateTOP (noupdate)
+DEL res.currency.rate: base.rateTRY (noupdate)
+DEL res.currency.rate: base.rateTTD (noupdate)
+DEL res.currency.rate: base.rateTWD (noupdate)
+DEL res.currency.rate: base.rateTZS (noupdate)
+DEL res.currency.rate: base.rateUAH (noupdate)
+DEL res.currency.rate: base.rateUGX (noupdate)
+DEL res.currency.rate: base.rateUSD (noupdate)
+DEL res.currency.rate: base.rateUYI (noupdate)
+DEL res.currency.rate: base.rateUYU (noupdate)
+DEL res.currency.rate: base.rateUZS (noupdate)
+DEL res.currency.rate: base.rateVEF (noupdate)
+DEL res.currency.rate: base.rateVND (noupdate)
+DEL res.currency.rate: base.rateVUV (noupdate)
+DEL res.currency.rate: base.rateWST (noupdate)
+DEL res.currency.rate: base.rateXAF (noupdate)
+DEL res.currency.rate: base.rateXCD (noupdate)
+DEL res.currency.rate: base.rateXCG (noupdate)
+DEL res.currency.rate: base.rateXOF (noupdate)
+DEL res.currency.rate: base.rateXPF (noupdate)
+DEL res.currency.rate: base.rateYER (noupdate)
+DEL res.currency.rate: base.rateZAR (noupdate)
+DEL res.currency.rate: base.rateZIG (noupdate)
+DEL res.currency.rate: base.rateZMW (noupdate)
 NEW res.groups: base.default_user_group (noupdate)
 NEW res.groups.privilege: base.res_groups_privilege_contact
 NEW res.groups.privilege: base.res_groups_privilege_export
 NEW res.lang: base.lang_uz
+DEL res.partner: base.partner_demo (noupdate)
+DEL res.partner: base.partner_demo_portal (noupdate)
+DEL res.partner: base.res_partner_1
+DEL res.partner: base.res_partner_10
+DEL res.partner: base.res_partner_12
+DEL res.partner: base.res_partner_18
+DEL res.partner: base.res_partner_2
+DEL res.partner: base.res_partner_3
+DEL res.partner: base.res_partner_4
+DEL res.partner: base.res_partner_5
+DEL res.partner: base.res_partner_address_1
+DEL res.partner: base.res_partner_address_10
+DEL res.partner: base.res_partner_address_11
+DEL res.partner: base.res_partner_address_13
+DEL res.partner: base.res_partner_address_14
+DEL res.partner: base.res_partner_address_15
+DEL res.partner: base.res_partner_address_16
+DEL res.partner: base.res_partner_address_17
+DEL res.partner: base.res_partner_address_18
+DEL res.partner: base.res_partner_address_2
+DEL res.partner: base.res_partner_address_24
+DEL res.partner: base.res_partner_address_25
+DEL res.partner: base.res_partner_address_27
+DEL res.partner: base.res_partner_address_28
+DEL res.partner: base.res_partner_address_3
+DEL res.partner: base.res_partner_address_30
+DEL res.partner: base.res_partner_address_31
+DEL res.partner: base.res_partner_address_32
+DEL res.partner: base.res_partner_address_33
+DEL res.partner: base.res_partner_address_34
+DEL res.partner: base.res_partner_address_4
+DEL res.partner: base.res_partner_address_5
+DEL res.partner: base.res_partner_address_7
+DEL res.partner: base.res_partner_main1
+DEL res.partner: base.res_partner_main2
+DEL res.partner.bank: base.bank_partner_demo (noupdate)
+DEL res.partner.category: base.res_partner_category_0
+DEL res.partner.category: base.res_partner_category_11
+DEL res.partner.category: base.res_partner_category_12
+DEL res.partner.category: base.res_partner_category_14
+DEL res.partner.category: base.res_partner_category_2
+DEL res.partner.category: base.res_partner_category_3
+DEL res.partner.category: base.res_partner_category_8
 DEL res.partner.title: base.res_partner_title_doctor (noupdate)
 DEL res.partner.title: base.res_partner_title_madam (noupdate)
 DEL res.partner.title: base.res_partner_title_miss (noupdate)
 DEL res.partner.title: base.res_partner_title_mister (noupdate)
 DEL res.partner.title: base.res_partner_title_prof (noupdate)
 DEL res.users: base.default_user (noupdate)
+DEL res.users: base.demo_user0 (noupdate)
+DEL res.users: base.user_demo (noupdate)
